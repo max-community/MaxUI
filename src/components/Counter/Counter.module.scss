@@ -1,0 +1,51 @@
+@use '../../styles/shared-mixins/typography';
+
+.Counter {
+  @include typography.subheadMedium;
+
+  min-width: var(--size-border-radius-semantic-border-radius-promo);
+  min-height: var(--size-border-radius-semantic-border-radius-promo);
+  padding: 1px var(--spacing-size-s);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+// [Properties] Appearances
+.Counter_appearance_themed {
+  background-color: var(--background-accent-themed);
+  color: var(--text-contrast-static);
+}
+.Counter_appearance_contrast {
+  background-color: var(--background-accent-contrast);
+  color: var(--text-primary);
+}
+.Counter_appearance_contrast-static {
+  background-color: var(--background-accent-contrast-static);
+  color: var(--text-primary-static);
+}
+.Counter_appearance_neutral {
+  background-color: var(--background-accent-neutral);
+  color: var(--text-contrast);
+}
+.Counter_appearance_neutral-static {
+  background-color: var(--background-accent-neutral-static);
+  color: var(--text-contrast-static);
+}
+.Counter_appearance_neutral-fade {
+  background-color: var(--background-accent-neutral-fade);
+  color: var(--text-secondary);
+}
+.Counter_appearance_neutral-fade {
+  background-color: var(--background-accent-neutral-fade);
+  color: var(--text-secondary);
+}
+.Counter_appearance_accent-red {
+  background-color: var(--background-accent-negative);
+  color: var(--text-contrast-static);
+}
+.Counter_appearance_inherit {
+  background-color: var(--OneMe-external_background, var(--background-accent-themed));
+  color: var(--OneMe-external_foreground, var(--text-contrast-static));
+}

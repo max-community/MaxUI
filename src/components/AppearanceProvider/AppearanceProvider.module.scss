@@ -1,0 +1,29 @@
+@use '../../styles/sizes';
+@use '../../styles/colors';
+@use '../../styles/gradients';
+
+.OneMeUI {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Apple Color Emoji", "Helvetica Neue", sans-serif;
+
+  @include gradients.gradients;
+
+  &_platform {
+
+    &_ios {
+      @include sizes.iosSizes;
+    }
+
+    &_android {
+      @include sizes.androidSizes;
+    }
+  }
+
+  &_theme {
+
+    &_light {
+      @include colors.lightPalette;
+    }
+
+    &_dark {}
+  }
+}

@@ -1,0 +1,7 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--OneMe-Container__gap);
+  margin-left: var(--spacing-size-xl);
+  margin-right: var(--spacing-size-xl);
+}

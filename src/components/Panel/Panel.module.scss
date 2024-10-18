@@ -1,0 +1,18 @@
+.Panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+// [Property] Centered
+.Panel_centered {
+  justify-content: center;
+}
+
+// [Properties] Modes
+.Panel_mode_primary {
+  background-color: var(--background-surface-primary);
+}
+.Panel_mode_secondary {
+  background-color: var(--background-surface-ground);
+}

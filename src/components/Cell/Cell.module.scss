@@ -1,0 +1,74 @@
+@use '../../styles/shared-mixins/typography';
+@use '../../styles/shared-mixins/reset-clickable';
+
+.Cell {
+  @include reset-clickable.resetClickable;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// [Property] With hover
+.Cell_withHover {
+
+  &:hover {
+    background-color: var(--states-background-hovered-card);
+  }
+}
+
+// [Properties] Sizes
+.Cell_size_compact {
+  padding: var(--spacing-size-xs) var(--spacing-size-xl)
+}
+.Cell_size_normal {
+  padding: var(--spacing-size-m) var(--spacing-size-xl)
+}
+
+// [Parts] Before
+.Cell__before {
+  margin-right: var(--spacing-size-xl);
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// [Parts] After
+.Cell__after {
+  margin-left: var(--spacing-size-xl);
+  display: flex;
+  align-items: center;
+}
+
+// [Parts] Content
+.Cell__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 0
+}
+
+// [Parts] Heading
+.Cell__heading {
+  @include typography.headlineLevel1;
+
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+}
+
+// [Parts] Chevron
+.Cell__chevron {
+  color: var(--icon-quaternary);
+  margin-left: var(--spacing-size-s);
+}
+
+// [Parts] Subtitle
+.Cell__subtitle {
+  @include typography.subhead;
+
+  color: var(--text-secondary);
+}

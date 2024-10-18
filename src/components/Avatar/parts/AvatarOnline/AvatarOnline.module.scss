@@ -1,0 +1,15 @@
+.AvatarOnline {
+  position: relative;
+  bottom: -2px;
+  right: -2px;
+}
+
+// [Parts] Dot
+.AvatarOnline__dot {
+  background-color: var(--icon-positive);
+  border: 2px solid var(--background-surface-primary);
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: flex;
+}

@@ -1,0 +1,11 @@
+@use '../../styles/shared-mixins/typography';
+
+.Subhead {}
+
+// [Properties] Variants
+.Subhead_variant_subhead {
+  @include typography.subhead;
+}
+.Subhead_variant_subhead-medium {
+  @include typography.subheadMedium;
+}

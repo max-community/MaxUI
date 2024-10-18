@@ -1,0 +1,57 @@
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
+import { Button } from '../Button';
+import { Counter, type CounterProps } from '../Counter';
+
+const meta = {
+  title: 'Counter',
+  component: Counter,
+  parameters: {
+    layout: 'centered'
+  },
+  tags: ['autodocs'],
+  args: {
+    appearance: 'themed',
+    value: 1200,
+    rounded: false
+  },
+  decorators: [
+    (Story, context) => (
+      <OverlayContainer
+        style={{ width: 375 }}
+        appearance={context.args.appearance === 'contrast-static' ? 'dark' : 'light'}
+      >
+        <Story />
+      </OverlayContainer>
+    )
+  ]
+} satisfies Meta<CounterProps>;
+
+export default meta;
+type Story = StoryObj<CounterProps>;
+
+export const Playground: Story = {
+  render: ({ ...args }) => {
+    return (
+      <Counter {...args} />
+    );
+  }
+};
+
+export const CounterInButton: Story = {
+  name: 'Counter in Button',
+  args: {
+    appearance: 'inherit',
+    value: 32
+  },
+  render: ({ ...args }) => {
+    return (
+      <Button
+        indicator={<Counter {...args} />}
+      >
+        Messages
+      </Button>
+    );
+  }
+};

@@ -1,0 +1,171 @@
+@mixin titleLevel1 {
+  font-size: var(--size-title-1);
+  line-height: var(--height-title-1);
+  letter-spacing: var(--letter-spacing-title-1);
+  font-weight: 600;
+}
+
+@mixin titleLevel2 {
+  font-size: var(--size-title-2);
+  line-height: var(--height-title-2);
+  letter-spacing: var(--letter-spacing-title-2);
+  font-weight: 500;
+}
+
+@mixin titleLevel2Regular {
+  font-size: var(--size-title-2);
+  line-height: var(--height-title-2);
+  letter-spacing: var(--letter-spacing-title-2);
+  font-weight: 400;
+}
+
+@mixin titleLevel3 {
+  font-size: var(--size-title-3);
+  line-height: var(--height-title-3);
+  letter-spacing: var(--letter-spacing-title-3);
+  font-weight: 600;
+}
+
+@mixin titleLevel3Regular {
+  font-size: var(--size-title-3);
+  line-height: var(--height-title-3);
+  letter-spacing: var(--letter-spacing-title-3);
+  font-weight: 400;
+}
+
+@mixin headlineLevel1 {
+  font-size: var(--size-headline-1);
+  line-height: var(--height-headline-1);
+  letter-spacing: var(--letter-spacing-headline-1);
+  font-weight: 500;
+}
+
+@mixin headlineLevel2 {
+  font-size: var(--size-headline-2);
+  line-height: var(--height-headline-2);
+  letter-spacing: var(--letter-spacing-headline-2);
+  font-weight: 500;
+}
+
+@mixin text {
+  font-size: var(--size-text);
+  line-height: var(--height-text);
+  letter-spacing: var(--letter-spacing-text);
+  font-weight: 400;
+}
+
+@mixin paragraph {
+  font-size: var(--size-paragraph);
+  line-height: var(--height-paragraph);
+  letter-spacing: var(--letter-spacing-paragraph);
+  font-weight: 400;
+}
+
+@mixin subhead {
+  font-size: var(--size-subhead);
+  line-height: var(--height-subhead);
+  letter-spacing: var(--letter-spacing-subhead);
+  font-weight: 400;
+}
+
+@mixin subheadMedium {
+  font-size: var(--size-subhead);
+  line-height: var(--height-subhead);
+  letter-spacing: var(--letter-spacing-subhead);
+  font-weight: 500;
+}
+
+@mixin footnote {
+  font-size: var(--size-footnote);
+  line-height: var(--height-footnote);
+  letter-spacing: var(--letter-spacing-footnote);
+  font-weight: 400;
+}
+
+@mixin footnoteMedium {
+  font-size: var(--size-footnote);
+  line-height: var(--height-footnote);
+  letter-spacing: var(--letter-spacing-footnote);
+  font-weight: 500;
+}
+
+@mixin footnoteCaps {
+  font-size: var(--size-footnote);
+  line-height: var(--height-footnote);
+  letter-spacing: var(--letter-spacing-footnote);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin captionLevel1 {
+  font-size: var(--size-caption-1);
+  line-height: var(--height-caption-1);
+  letter-spacing: var(--letter-spacing-caption-1);
+  font-weight: 400;
+}
+
+@mixin captionLevel1Medium {
+  font-size: var(--size-caption-1);
+  line-height: var(--height-caption-1);
+  letter-spacing: var(--letter-spacing-caption-1);
+  font-weight: 500;
+}
+
+@mixin captionLevel1Caps {
+  font-size: var(--size-caption-1);
+  line-height: var(--height-caption-1);
+  letter-spacing: var(--letter-spacing-caption-1);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin captionLevel2 {
+  font-size: var(--size-caption-2);
+  line-height: var(--height-caption-2);
+  letter-spacing: var(--letter-spacing-caption-2);
+  font-weight: 400;
+}
+
+@mixin captionLevel2Caps {
+  font-size: var(--size-caption-2);
+  line-height: var(--height-caption-2);
+  letter-spacing: var(--letter-spacing-caption-2);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin captionLevel3 {
+  font-size: var(--size-caption-3);
+  line-height: var(--height-caption-3);
+  letter-spacing: var(--letter-spacing-caption-3);
+  font-weight: 500;
+}
+
+@mixin captionLevel3Caps {
+  font-size: var(--size-caption-3);
+  line-height: var(--height-caption-3);
+  letter-spacing: var(--letter-spacing-caption-3);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@mixin actionLevel1 {
+  font-size: var(--size-title-3);
+  line-height: var(--height-title-3);
+  letter-spacing: var(--letter-spacing-title-3);
+  font-weight: 600;
+}
+
+@mixin actionLevel2 {
+  font-size: var(--size-headline-1);
+  line-height: var(--height-headline-1);
+  letter-spacing: var(--letter-spacing-headline-1);
+  font-weight: 500;
+}
+
+@mixin actionLevel3 {
+  font-size: var(--size-subhead);
+  line-height: var(--height-subhead);
+  letter-spacing: var(--letter-spacing-subhead);
+  font-weight: 500;
+}

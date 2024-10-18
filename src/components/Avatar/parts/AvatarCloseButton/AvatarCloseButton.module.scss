@@ -1,0 +1,13 @@
+@use '../../../../styles/shared-mixins/reset-clickable';
+
+// todo отрефакторить
+.AvatarCloseButton {
+  @include reset-clickable.resetClickable;
+
+  position: relative;
+  top: -2px;
+  right: -2px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
