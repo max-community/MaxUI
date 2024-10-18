@@ -1,10 +1,21 @@
 {
   "name": "@onemehub/one-me-ui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Vadim Tregubenko",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "type": "module",
+  "description": "OneMe UI Kit React",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OneMeHub/OneMeUI.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OneMeHub/OneMeUI/issues"
+  },
+  "homepage": "https://github.com/OneMeHub/OneMeUI#readme",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -12,6 +23,10 @@
     "prepare": "husky",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
+  "files": [
+    "./dist"
+  ],
+  "private": false,
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
