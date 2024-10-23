@@ -1,1 +1,1 @@
-export { AvatarContainer, type AvatarContainerProps } from './AvatarContainer';
+export { AvatarContainer, type AvatarContainerElementKey, type AvatarContainerFrom, type AvatarContainerProps, type AvatarContainerSize } from './AvatarContainer';

@@ -9,6 +9,7 @@ export interface AvatarTextProps extends ComponentProps<'span'> {
   gradient?: AvatarTextGradient
 }
 
+// todo уточнить у дизайнеров размер текста при разных размерах аватарки
 export const AvatarText = forwardRef<HTMLSpanElement, AvatarTextProps>((props, forwardedRef) => {
   const {
     className,

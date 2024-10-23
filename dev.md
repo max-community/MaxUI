@@ -14,3 +14,10 @@ CSS переменные составляются по следующему пр
   - `--OneMe-external` — переменная используется для проброса значений в дочерние элементы, например, фон Counter внутри Button
 - Элемент, опционально: `--OneMe__iconBefore` — переменная для внутреннего элемента iconBefore в Button
 - Свойство: `--OneMe-Button_foreground`, `--OneMe-Button__iconBefore_background`
+
+### Структура компонента
+- Component.tsx
+- Component.module.scss
+- index.ts
+- helpers.ts
+- /parts

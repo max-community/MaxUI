@@ -2,14 +2,58 @@
   position: relative;
   bottom: -2px;
   right: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// [Properties] Sizes
+.AvatarOnline_size_xs {
+  width: 12px;
+  height: 12px;
+
+  .AvatarOnline__dot {
+    width: 6px;
+    height: 6px;
+    border-width: 2px;
+  }
+}
+.AvatarOnline_size_s {
+  width: 16px;
+  height: 16px;
+
+  .AvatarOnline__dot {
+    width: 8px;
+    height: 8px;
+    border-width: 2px;
+  }
+}
+.AvatarOnline_size_m {
+  width: 20px;
+  height: 20px;
+
+  .AvatarOnline__dot {
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+  }
+}
+.AvatarOnline_size_l {
+  width: 24px;
+  height: 24px;
+
+  .AvatarOnline__dot {
+    width: 12px;
+    height: 12px;
+    border-width: 3px;
+  }
 }
 
 // [Parts] Dot
 .AvatarOnline__dot {
   background-color: var(--icon-positive);
-  border: 2px solid var(--background-surface-primary);
-  width: 10px;
-  height: 10px;
+  border-color: var(--background-surface-primary);
+  border-style: solid;
   border-radius: 100%;
   display: flex;
 }

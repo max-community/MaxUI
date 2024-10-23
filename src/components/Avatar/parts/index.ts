@@ -1,5 +1,5 @@
 export { AvatarCloseButton, type AvatarCloseButtonProps } from './AvatarCloseButton';
-export { AvatarContainer, type AvatarContainerProps } from './AvatarContainer';
+export { AvatarContainer, type AvatarContainerElementKey, type AvatarContainerFrom, type AvatarContainerProps, type AvatarContainerSize } from './AvatarContainer';
 export { AvatarIcon, type AvatarIconProps } from './AvatarIcon';
 export { AvatarImage, type AvatarImageProps } from './AvatarImage';
 export { AvatarOnline, type AvatarOnlineProps } from './AvatarOnline';

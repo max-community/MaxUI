@@ -12,4 +12,5 @@ export const AppearanceProviderContext = createContext<AppearanceProviderContext
   theme: 'light'
 });
 
+// todo rename to useAppearanceContext/useAppearance
 export const useAppearanceProvider = (): AppearanceProviderContextInterface => useContext(AppearanceProviderContext);
