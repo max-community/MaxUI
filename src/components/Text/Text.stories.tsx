@@ -1,18 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
 import { EllipsisText } from '../EllipsisText';
 import { Text, type TextProps } from './Text';
 
 const meta = {
   title: 'Typography/Text',
   component: Text,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   argTypes: {
-    fallbackElement: { table: { disable: true } },
-    asChild: { table: { disable: true } }
+    ...SB_ARGTYPES_RESETS
   },
   args: {
     children: 'Hello world'

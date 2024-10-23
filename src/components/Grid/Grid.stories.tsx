@@ -5,13 +5,6 @@ import { Grid, type GridProps } from './Grid';
 const meta = {
   title: 'Layout/Grid',
   component: Grid,
-  parameters: {
-    layout: 'centered'
-  },
-  argTypes: {
-    asChild: { table: { disable: true } },
-    fallbackElement: { table: { disable: true } }
-  },
   args: {
     gapX: 30,
     gapY: 10,

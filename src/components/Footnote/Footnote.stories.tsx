@@ -1,18 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
 import { EllipsisText } from '../EllipsisText';
 import { Footnote, type FootnoteProps } from './Footnote';
 
 const meta = {
   title: 'Typography/Footnote',
   component: Footnote,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   argTypes: {
-    fallbackElement: { table: { disable: true } },
-    asChild: { table: { disable: true } }
+    ...SB_ARGTYPES_RESETS
   },
   args: {
     children: 'Hello world',

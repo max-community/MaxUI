@@ -5,6 +5,7 @@ import { type ReactNode } from 'react';
 import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
+import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
 import { Counter } from '../Counter';
 import { Dot } from '../Dot';
 import { Button, type ButtonProps, type ButtonSize } from './Button';
@@ -18,14 +19,11 @@ const iconsMapping: Record<ButtonSize, ReactNode> = {
 const meta = {
   title: 'Common/Button',
   component: Button,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   argTypes: {
+    ...SB_ARGTYPES_RESETS,
+
     iconBefore: { control: 'boolean' },
     iconAfter: { control: 'boolean' },
-    innerClassNames: { table: { disable: true } },
     indicator: {
       options: [0, 1, 2],
       mapping: [undefined, <Counter key="counter" value={123456} />, <Dot key="dot" aria-label="Есть новые уведомления" />],
@@ -33,10 +31,7 @@ const meta = {
         type: 'select',
         labels: ['None', 'Counter', 'Dot']
       }
-    },
-    fallbackElement: { table: { disable: true } },
-    asChild: { table: { disable: true } },
-    onClick: { table: { disable: true } }
+    }
   },
   args: {
     mode: 'primary',

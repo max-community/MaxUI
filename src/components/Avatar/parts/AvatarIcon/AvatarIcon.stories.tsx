@@ -7,19 +7,7 @@ import { AvatarIcon } from './AvatarIcon';
 const meta = {
   title: 'Common/Avatar/Avatar.Icon',
   component: AvatarIcon,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
-  argTypes: {},
-  args: {},
-  decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', gap: 24 }}>
-        <Story />
-      </div>
-    )
-  ]
+  tags: ['autodocs']
 } satisfies Meta<AvatarIconProps>;
 
 export default meta;

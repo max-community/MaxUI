@@ -10,14 +10,7 @@ const meta = {
   parameters: {
     layout: 'centered'
   },
-  tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', gap: 24 }}>
-        <Story />
-      </div>
-    )
-  ]
+  tags: ['autodocs']
 } satisfies Meta<AvatarOverlayProps>;
 
 export default meta;

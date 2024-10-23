@@ -8,11 +8,6 @@ import { Section, type SectionProps } from './Section';
 const meta = {
   title: 'Common/Section',
   component: Section,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
-  argTypes: {},
   args: {
     mode: 'island',
     filled: true

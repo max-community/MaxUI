@@ -7,10 +7,6 @@ import { Dot, type DotProps } from './Dot';
 const meta = {
   title: 'Common/Dot',
   component: Dot,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   args: {
     appearance: 'themed'
   },

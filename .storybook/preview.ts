@@ -9,8 +9,10 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i
       }
-    }
+    },
+    layout: 'centered'
   },
+  tags: ['autodocs'],
   decorators: [withConfigProvider]
 };
 

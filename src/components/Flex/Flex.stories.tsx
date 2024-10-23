@@ -1,16 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
 import { Flex, type FlexProps } from './Flex';
 
 const meta = {
   title: 'Layout/Flex',
   component: Flex,
-  parameters: {
-    layout: 'centered'
-  },
   argTypes: {
-    asChild: { table: { disable: true } },
-    fallbackElement: { table: { disable: true } }
+    ...SB_ARGTYPES_RESETS
   },
   args: {
     gap: 12

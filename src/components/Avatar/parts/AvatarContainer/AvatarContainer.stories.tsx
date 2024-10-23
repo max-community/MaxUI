@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Icon16Placeholder from '../../../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../../../.storybook/assets/icons/icon-24-placeholder.svg';
+import { SB_ARGTYPES_RESETS } from '../../../../../.storybook/shared/args-resets.ts';
+import { Flex } from '../../../Flex';
 import { IconButton } from '../../../IconButton';
 import { Avatar } from '../../index';
 import { AvatarContainer, type AvatarContainerProps } from './AvatarContainer';
@@ -9,15 +11,9 @@ import { AvatarContainer, type AvatarContainerProps } from './AvatarContainer';
 const meta = {
   title: 'Common/Avatar/Avatar.Container',
   component: AvatarContainer,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   argTypes: {
-    // todo вынести код сокрытия ненужных пропов в отдельную функцию/константу и переиспользовать ее в сторисах
-    innerClassNames: { table: { disable: true } },
-    asChild: { table: { disable: true } },
-    fallbackElement: { table: { disable: true } },
+    ...SB_ARGTYPES_RESETS,
+
     overlay: { type: 'boolean' },
     rightTopCorner: {
       options: [0, 1],
@@ -57,9 +53,9 @@ const meta = {
   },
   decorators: [
     (Story) => (
-      <div style={{ display: 'flex', gap: 24 }}>
+      <Flex gap={16}>
         <Story />
-      </div>
+      </Flex>
     )
   ]
 } satisfies Meta<AvatarContainerProps>;

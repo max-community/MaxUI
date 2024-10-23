@@ -4,6 +4,7 @@ import { type ReactNode } from 'react';
 import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
+import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
 import { IconButton, type IconButtonProps, type IconButtonSize } from './IconButton';
 
 const iconsMapping: Record<IconButtonSize, ReactNode> = {
@@ -15,15 +16,10 @@ const iconsMapping: Record<IconButtonSize, ReactNode> = {
 const meta = {
   title: 'Common/IconButton',
   component: IconButton,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   argTypes: {
-    fallbackElement: { table: { disable: true } },
+    ...SB_ARGTYPES_RESETS,
+
     children: { table: { disable: true } },
-    asChild: { table: { disable: true } },
-    innerClassNames: { table: { disable: true } },
     'aria-label': { table: { disable: true } }
   },
   args: {

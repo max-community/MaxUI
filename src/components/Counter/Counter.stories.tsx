@@ -7,10 +7,6 @@ import { Counter, type CounterProps } from '../Counter';
 const meta = {
   title: 'Common/Counter',
   component: Counter,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   args: {
     appearance: 'themed',
     value: 1200,

@@ -7,17 +7,7 @@ import { AvatarOnline } from './AvatarOnline.tsx';
 const meta = {
   title: 'Common/Avatar/Avatar.Online',
   component: AvatarOnline,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
-  decorators: [
-    (Story) => (
-      <div style={{ display: 'flex', gap: 24 }}>
-        <Story />
-      </div>
-    )
-  ]
+  tags: ['autodocs']
 } satisfies Meta<AvatarOnlineProps>;
 
 export default meta;

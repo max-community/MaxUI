@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
+import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { Counter } from '../Counter';
@@ -11,15 +12,9 @@ import { Cell, type CellProps } from './Cell';
 const meta = {
   title: 'Common/Cell',
   component: Cell,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs'],
   argTypes: {
-    fallbackElement: { table: { disable: true } },
-    asChild: { table: { disable: true } },
-    innerClassNames: { table: { disable: true } },
-    onClick: { table: { disable: true } },
+    ...SB_ARGTYPES_RESETS,
+
     before: {
       options: [0, 1, 2],
       mapping: [
