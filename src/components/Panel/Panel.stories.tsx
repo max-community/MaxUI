@@ -7,7 +7,7 @@ import { Section } from '../Section';
 import { Panel, type PanelProps } from './Panel';
 
 const meta = {
-  title: 'Panel',
+  title: 'Common/Panel',
   component: Panel,
   parameters: {
     layout: 'centered'

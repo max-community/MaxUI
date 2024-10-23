@@ -13,7 +13,7 @@ const iconsMapping: Record<IconButtonSize, ReactNode> = {
 };
 
 const meta = {
-  title: 'IconButton',
+  title: 'Common/IconButton',
   component: IconButton,
   parameters: {
     layout: 'centered'

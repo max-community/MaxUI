@@ -5,7 +5,7 @@ import { Button } from '../Button';
 import { Dot, type DotProps } from './Dot';
 
 const meta = {
-  title: 'Dot',
+  title: 'Common/Dot',
   component: Dot,
   parameters: {
     layout: 'centered'

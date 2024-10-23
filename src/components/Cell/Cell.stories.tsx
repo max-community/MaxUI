@@ -9,7 +9,7 @@ import { EllipsisText } from '../EllipsisText';
 import { Cell, type CellProps } from './Cell';
 
 const meta = {
-  title: 'Cell',
+  title: 'Common/Cell',
   component: Cell,
   parameters: {
     layout: 'centered'

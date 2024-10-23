@@ -16,7 +16,7 @@ const iconsMapping: Record<ButtonSize, ReactNode> = {
 };
 
 const meta = {
-  title: 'Button',
+  title: 'Common/Button',
   component: Button,
   parameters: {
     layout: 'centered'
