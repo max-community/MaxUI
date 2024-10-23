@@ -9,6 +9,7 @@ export * from './EllipsisText';
 export * from './FatherComponent';
 export * from './Flex';
 export * from './Footnote';
+export * from './Grid';
 export * from './Headline';
 export * from './IconButton';
 export * from './Panel';
