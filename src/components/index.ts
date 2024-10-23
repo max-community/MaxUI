@@ -7,6 +7,7 @@ export * from './Counter';
 export * from './Dot';
 export * from './EllipsisText';
 export * from './FatherComponent';
+export * from './Flex';
 export * from './Footnote';
 export * from './Headline';
 export * from './IconButton';
