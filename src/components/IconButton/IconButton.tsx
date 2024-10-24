@@ -1,9 +1,10 @@
 import { Slottable } from '@radix-ui/react-slot';
-import { type ClassValue, clsx } from 'clsx';
+import { clsx } from 'clsx';
 import { forwardRef } from 'react';
 
 import { getSubtree } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
+import { type InnerClassNamesProp } from '../../types.ts';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import { Ripple } from '../Ripple';
 import styles from './IconButton.module.scss';
@@ -18,7 +19,7 @@ export interface IconButtonProps extends FatherComponentProps {
   mode?: IconButtonMode
   appearance?: IconButtonAppearance
   disabled?: boolean
-  innerClassNames?: { [K in IconButtonInnerElementKey]?: ClassValue }
+  innerClassNames?: InnerClassNamesProp<IconButtonInnerElementKey>
 }
 
 export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, forwardedRef) => {

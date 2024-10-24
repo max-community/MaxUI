@@ -1,9 +1,10 @@
 import { Slottable } from '@radix-ui/react-slot';
-import { type ClassValue, clsx } from 'clsx';
+import { clsx } from 'clsx';
 import { forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
+import { type InnerClassNamesProp } from '../../types.ts';
 import { EllipsisText } from '../EllipsisText';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import { Ripple } from '../Ripple';
@@ -23,7 +24,7 @@ export interface ButtonProps extends FatherComponentProps {
   iconBefore?: ReactNode
   iconAfter?: ReactNode
   indicator?: ReactNode
-  innerClassNames?: { [K in ButtonInnerElementKey]?: ClassValue }
+  innerClassNames?: InnerClassNamesProp<ButtonInnerElementKey>
 }
 
 export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedRef) => {

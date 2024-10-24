@@ -1,9 +1,10 @@
 import { Slottable } from '@radix-ui/react-slot';
-import { type ClassValue, clsx } from 'clsx';
+import { clsx } from 'clsx';
 import { forwardRef, isValidElement, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { Icon16Chevron } from '../../icons';
+import { type InnerClassNamesProp } from '../../types';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import styles from './Cell.module.scss';
 
@@ -12,7 +13,7 @@ export type CellInnerElementKey = 'before' | 'after' | 'chevron' | 'content' | '
 
 export interface CellProps extends FatherComponentProps {
   height?: CellHeight
-  innerClassNames?: { [K in CellInnerElementKey]?: ClassValue } // todo вынести конструкцию в отдельный тип, поскольку переиспользуется в нескольких местах
+  innerClassNames?: InnerClassNamesProp<CellInnerElementKey>
   heading?: ReactNode
   subtitle?: ReactNode
   before?: ReactNode
@@ -39,7 +40,7 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
 
   const rootClassName = clsx(
     styles.Cell,
-    styles[`Cell_size_${height}`],
+    styles[`Cell_height_${height}`],
     {
       [styles.Cell_withHover]: hasHover
     },

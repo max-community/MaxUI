@@ -12,17 +12,18 @@
 
 // [Property] With hover
 .Cell_withHover {
+  cursor: pointer;
 
   &:hover {
     background-color: var(--states-background-hovered-card);
   }
 }
 
-// [Properties] Sizes
-.Cell_size_compact {
+// [Properties] Heights
+.Cell_height_compact {
   padding: var(--spacing-size-xs) var(--spacing-size-xl)
 }
-.Cell_size_normal {
+.Cell_height_normal {
   padding: var(--spacing-size-m) var(--spacing-size-xl)
 }
 

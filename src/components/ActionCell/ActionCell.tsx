@@ -5,11 +5,13 @@ import { forwardRef, isValidElement, type ReactNode } from 'react';
 import { getSubtree, hasReactNode } from '../../helpers';
 import { useButtonLikeProps } from '../../hooks';
 import { Icon16Chevron } from '../../icons';
+import { type InnerClassNamesProp } from '../../types.ts';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import styles from './ActionCell.module.scss';
 
 export type ActionCellMode = 'primary' | 'destructive' | 'custom';
 export type ActionCellHeight = 'compact' | 'normal';
+export type ActionCellInnerElementKey = 'before' | 'chevron' | 'content';
 
 export interface ActionCellProps extends FatherComponentProps {
   mode?: ActionCellMode
@@ -17,6 +19,7 @@ export interface ActionCellProps extends FatherComponentProps {
   before?: ReactNode
   showChevron?: boolean
   disabled?: boolean
+  innerClassNames?: InnerClassNamesProp<ActionCellInnerElementKey>
 }
 
 export const ActionCell = forwardRef<HTMLDivElement, ActionCellProps>((props, forwardedRef) => {
@@ -30,6 +33,7 @@ export const ActionCell = forwardRef<HTMLDivElement, ActionCellProps>((props, fo
     showChevron = false,
     disabled = false,
     fallbackElement = 'button',
+    innerClassNames,
     ...rest
   } = props;
 
@@ -58,21 +62,21 @@ export const ActionCell = forwardRef<HTMLDivElement, ActionCellProps>((props, fo
       {...rest}
     >
       {hasReactNode(before) && (
-        <div className={clsx(styles.ActionCell__before)}>
+        <div className={clsx(styles.ActionCell__before, innerClassNames?.before)}>
           {before}
         </div>
       )}
 
       <Slottable>
         {getSubtree({ asChild, children }, (children) => (
-          <span key="subtree-container" className={clsx(styles.ActionCell__content)}>
+          <span key="subtree-container" className={clsx(styles.ActionCell__content, innerClassNames?.content)}>
             {children}
           </span>
         ))}
       </Slottable>
 
       {showChevron && (
-        <Icon16Chevron className={clsx(styles.Cell__chevron)} />
+        <Icon16Chevron className={clsx(styles.Cell__chevron, innerClassNames?.chevron)} />
       )}
     </FatherComponent>
   );

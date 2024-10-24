@@ -1,9 +1,9 @@
 import { Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type ClassValue } from 'clsx/clsx';
 import { type CSSProperties, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../../../helpers';
+import { type InnerClassNamesProp } from '../../../../types.ts';
 import { FatherComponent, type FatherComponentProps } from '../../../FatherComponent';
 import styles from './AvatarContainer.module.scss';
 import { AvatarContainerContext } from './AvatarContainerContext';
@@ -16,7 +16,7 @@ export interface AvatarContainerProps extends FatherComponentProps {
   size?: AvatarContainerSize
   overlay?: ReactNode
   form?: AvatarContainerFrom
-  innerClassNames?: { [K in AvatarContainerElementKey]?: ClassValue }
+  innerClassNames?: InnerClassNamesProp<AvatarContainerElementKey>
   rightTopCorner?: ReactNode
   rightBottomCorner?: ReactNode
 }
