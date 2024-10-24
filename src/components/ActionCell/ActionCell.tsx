@@ -3,6 +3,7 @@ import { clsx } from 'clsx';
 import { forwardRef, isValidElement, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
+import { useButtonLikeProps } from '../../hooks';
 import { Icon16Chevron } from '../../icons';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import styles from './ActionCell.module.scss';
@@ -23,12 +24,16 @@ export const ActionCell = forwardRef<HTMLDivElement, ActionCellProps>((props, fo
     className,
     before,
     children,
+    asChild = false,
     mode = 'primary',
     height = 'normal',
     showChevron = false,
     disabled = false,
+    fallbackElement = 'button',
     ...rest
   } = props;
+
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement });
 
   const hasHover = !!rest?.onClick || (isValidElement(children) && 'href' in children.props);
 
@@ -47,6 +52,9 @@ export const ActionCell = forwardRef<HTMLDivElement, ActionCellProps>((props, fo
     <FatherComponent
       ref={forwardedRef}
       className={rootClassName}
+      asChild={asChild}
+      fallbackElement={fallbackElement}
+      {...buttonLikeProps}
       {...rest}
     >
       {hasReactNode(before) && (
@@ -56,7 +64,7 @@ export const ActionCell = forwardRef<HTMLDivElement, ActionCellProps>((props, fo
       )}
 
       <Slottable>
-        {getSubtree({ asChild: props.asChild, children }, (children) => (
+        {getSubtree({ asChild, children }, (children) => (
           <span key="subtree-container" className={clsx(styles.ActionCell__content)}>
             {children}
           </span>

@@ -3,7 +3,7 @@ import { type ClassValue, clsx } from 'clsx';
 import { forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
-import { usePlatform } from '../../hooks';
+import { useButtonLikeProps, usePlatform } from '../../hooks';
 import { EllipsisText } from '../EllipsisText';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import { Ripple } from '../Ripple';
@@ -34,6 +34,8 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
     iconAfter,
     indicator,
     children,
+    asChild = false,
+    fallbackElement = 'button',
     innerClassNames,
     stretched = false,
     size = 'medium',
@@ -43,6 +45,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
   } = props;
 
   const platform = usePlatform();
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement });
 
   const withRipple = platform === 'android' && mode !== 'link';
 
@@ -63,7 +66,9 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
     <FatherComponent
       ref={forwardedRef}
       className={rootClassName}
-      fallbackElement="button"
+      asChild={asChild}
+      fallbackElement={fallbackElement}
+      {...buttonLikeProps}
       {...rest}
     >
       {hasReactNode(iconBefore) && (
@@ -73,7 +78,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
       )}
 
       <Slottable>
-        {getSubtree({ asChild: props.asChild, children }, (children) => (
+        {getSubtree({ asChild, children }, (children) => (
           <EllipsisText
             key="subtree-container"
             className={clsx(styles.Button__content, innerClassNames?.content)}
@@ -95,7 +100,7 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
         </span>
       )}
 
-      {platform === 'android' && <Ripple className={styles.Button__ripple} />}
+      {platform === 'android' && !disabled && <Ripple className={styles.Button__ripple} />}
     </FatherComponent>
   );
 });

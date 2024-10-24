@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { type ReactNode } from 'react';
 
 import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
@@ -27,6 +28,7 @@ const meta = {
     appearance: 'accent',
     size: 'medium',
     disabled: false,
+    onClick: fn(),
     'aria-label': 'Название кнопки'
   },
   decorators: [

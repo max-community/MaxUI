@@ -3,7 +3,7 @@ import { type ClassValue, clsx } from 'clsx';
 import { forwardRef } from 'react';
 
 import { getSubtree } from '../../helpers';
-import { usePlatform } from '../../hooks';
+import { useButtonLikeProps, usePlatform } from '../../hooks';
 import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import { Ripple } from '../Ripple';
 import styles from './IconButton.module.scss';
@@ -27,6 +27,8 @@ export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, fo
     className,
     disabled,
     innerClassNames,
+    asChild = false,
+    fallbackElement = 'button',
     size = 'medium',
     mode = 'primary',
     appearance = 'accent',
@@ -34,6 +36,7 @@ export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, fo
   } = props;
 
   const platform = usePlatform();
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement });
 
   const withRipple = platform === 'android' && mode !== 'link';
 
@@ -53,11 +56,13 @@ export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, fo
     <FatherComponent
       ref={forwardedRef}
       className={rootClassName}
-      fallbackElement="button"
+      asChild={asChild}
+      fallbackElement={fallbackElement}
+      {...buttonLikeProps}
       {...rest}
     >
       <Slottable>
-        {getSubtree({ asChild: props.asChild, children }, (children) => (
+        {getSubtree({ asChild, children }, (children) => (
           <span
             key="subtree-container"
             className={clsx(styles.IconButton__content, innerClassNames?.content)}
@@ -67,7 +72,7 @@ export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, fo
         ))}
       </Slottable>
 
-      {platform === 'android' && <Ripple className={styles.IconButton__ripple} />}
+      {platform === 'android' && !disabled && <Ripple className={styles.IconButton__ripple} />}
     </FatherComponent>
   );
 });
