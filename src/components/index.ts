@@ -1,3 +1,4 @@
+export * from './ActionCell';
 export * from './AppearanceProvider';
 export * from './Avatar';
 export * from './Button';
