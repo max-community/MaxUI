@@ -4,9 +4,10 @@
 // todo учесть дефолтные все стили от button, a, etc
 @mixin resetClickable {
   text-decoration: none;
-  border: 0;
+  border: unset;
   color: inherit;
   line-height: 0;
   background: unset;
   text-align: unset;
+  padding: unset;
 }

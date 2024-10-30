@@ -18,5 +18,6 @@ export * from './Paragraph';
 export * from './Ripple';
 export * from './Section';
 export * from './Subhead';
+export * from './Switch';
 export * from './Text';
 export * from './Title';
