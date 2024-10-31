@@ -17,7 +17,7 @@ export const AppearanceProvider: FC<AppearanceProviderProps> = (props) => {
   } = props;
 
   const systemColorScheme = useSystemColorScheme({
-    listenChanges: Boolean(colorSchemeProp)
+    listenChanges: !colorSchemeProp
   });
   const colorScheme = colorSchemeProp ?? systemColorScheme;
 
