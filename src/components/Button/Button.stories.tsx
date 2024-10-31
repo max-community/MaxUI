@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { type ReactNode } from 'react';
 
 import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
+import { useColorScheme } from '../../hooks';
 import { Counter } from '../Counter';
 import { Dot } from '../Dot';
 import { Button, type ButtonProps, type ButtonSize } from './Button';
@@ -20,7 +20,7 @@ const meta = {
   title: 'Common/Button',
   component: Button,
   argTypes: {
-    ...SB_ARGTYPES_RESETS,
+    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
 
     iconBefore: { control: 'boolean' },
     iconAfter: { control: 'boolean' },
@@ -42,18 +42,21 @@ const meta = {
     indicator: 0,
     children: 'Button',
     disabled: false,
-    stretched: false,
-    onClick: fn
+    stretched: false
   },
   decorators: [
-    (Story, context) => (
-      <OverlayContainer
-        style={{ width: 375 }}
-        appearance={context.args.appearance === 'contrast-static' ? 'dark' : 'light'}
-      >
-        <Story />
-      </OverlayContainer>
-    )
+    (Story, context) => {
+      const colorScheme = useColorScheme();
+
+      return (
+        <OverlayContainer
+          style={{ width: 375 }}
+          appearance={context.args.appearance === 'contrast-static' || colorScheme === 'dark' ? 'dark' : 'light'}
+        >
+          <Story />
+        </OverlayContainer>
+      );
+    }
   ]
 } satisfies Meta<ButtonProps>;
 

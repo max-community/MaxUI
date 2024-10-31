@@ -1,16 +1,15 @@
 import { createContext, useContext } from 'react';
 
-import { type PlatformType, type ThemeType } from '../../types';
+import { type ColorSchemeType, type PlatformType } from '../../types';
 
 export interface AppearanceProviderContextInterface {
   platform: PlatformType
-  theme: ThemeType
+  colorScheme: ColorSchemeType
 }
 
 export const AppearanceProviderContext = createContext<AppearanceProviderContextInterface>({
   platform: 'ios',
-  theme: 'light'
+  colorScheme: 'light'
 });
 
-// todo rename to useAppearanceContext/useAppearance
-export const useAppearanceProvider = (): AppearanceProviderContextInterface => useContext(AppearanceProviderContext);
+export const useAppearance = (): AppearanceProviderContextInterface => useContext(AppearanceProviderContext);

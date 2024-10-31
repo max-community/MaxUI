@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { Counter } from '../Counter';
@@ -13,7 +12,7 @@ const meta = {
   title: 'Common/Cell',
   component: Cell,
   argTypes: {
-    ...SB_ARGTYPES_RESETS,
+    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
 
     before: {
       options: [0, 1, 2],
@@ -44,8 +43,7 @@ const meta = {
     height: 'normal',
     showChevron: true,
     before: 1,
-    after: 2,
-    onClick: fn
+    after: 2
   },
   decorators: [
     (Story) => (

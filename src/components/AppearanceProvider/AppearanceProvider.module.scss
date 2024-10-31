@@ -4,6 +4,8 @@
 
 .OneMeUI {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Apple Color Emoji", "Helvetica Neue", sans-serif;
+  background-color: var(--background-surface-primary);
+  color: var(--text-primary);
 
   @include gradients.gradients;
 
@@ -18,12 +20,14 @@
     }
   }
 
-  &_theme {
+  &_colorScheme {
 
     &_light {
       @include colors.lightPalette;
     }
 
-    &_dark {}
+    &_dark {
+      @include colors.darkPalette;
+    }
   }
 }

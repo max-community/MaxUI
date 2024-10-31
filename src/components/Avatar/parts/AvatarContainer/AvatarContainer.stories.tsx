@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Icon16Placeholder from '../../../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../../../.storybook/assets/icons/icon-24-placeholder.svg';
-import { SB_ARGTYPES_RESETS } from '../../../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../../../.storybook/shared/args-manager.ts';
 import { Flex } from '../../../Flex';
 import { IconButton } from '../../../IconButton';
 import { Avatar } from '../../index';
@@ -12,7 +12,7 @@ const meta = {
   title: 'Common/Avatar/Avatar.Container',
   component: AvatarContainer,
   argTypes: {
-    ...SB_ARGTYPES_RESETS,
+    ...hideArgsControl(['innerClassNames', 'asChild', 'fallbackElement']),
 
     overlay: { type: 'boolean' },
     rightTopCorner: {

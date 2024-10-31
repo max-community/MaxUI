@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { EllipsisText } from '../EllipsisText';
 import { Footnote, type FootnoteProps } from './Footnote';
 
@@ -8,7 +8,7 @@ const meta = {
   title: 'Typography/Footnote',
   component: Footnote,
   argTypes: {
-    ...SB_ARGTYPES_RESETS
+    ...hideArgsControl(['asChild', 'fallbackElement'])
   },
   args: {
     children: 'Hello world',

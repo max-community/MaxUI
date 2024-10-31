@@ -6,8 +6,7 @@ import { AvatarIcon } from './AvatarIcon';
 
 const meta = {
   title: 'Common/Avatar/Avatar.Icon',
-  component: AvatarIcon,
-  tags: ['autodocs']
+  component: AvatarIcon
 } satisfies Meta<AvatarIconProps>;
 
 export default meta;

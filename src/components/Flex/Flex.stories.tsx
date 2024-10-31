@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
 import { Flex, type FlexProps } from './Flex';
 
 const meta = {
   title: 'Layout/Flex',
   component: Flex,
   argTypes: {
-    ...SB_ARGTYPES_RESETS
+    ...hideArgsControl(['asChild', 'fallbackElement'])
   },
   args: {
     gap: 12
-  },
-  tags: ['autodocs']
+  }
 } satisfies Meta<FlexProps>;
 
 export default meta;
@@ -26,7 +25,7 @@ export const Playground: Story = {
           <div
             key={index}
             style={{
-              backgroundColor: 'var(--background-surface-ground)',
+              backgroundColor: 'var(--background-surface-secondary)',
               width: 75,
               height: 75
             }}

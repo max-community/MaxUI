@@ -4,7 +4,7 @@ import { AppearanceProvider } from '../../src';
 
 export const withConfigProvider: Decorator = (Story, context) => {
   return (
-    <AppearanceProvider platform="android" theme="light">
+    <AppearanceProvider platform={context.globals.platform} colorScheme={context.globals.theme}>
       <Story />
     </AppearanceProvider>
   );

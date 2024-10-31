@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { type ReactNode } from 'react';
 
 import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { disableArgs, hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
+import { useColorScheme } from '../../hooks';
 import { IconButton, type IconButtonProps, type IconButtonSize } from './IconButton';
 
 const iconsMapping: Record<IconButtonSize, ReactNode> = {
@@ -18,28 +18,29 @@ const meta = {
   title: 'Common/IconButton',
   component: IconButton,
   argTypes: {
-    ...SB_ARGTYPES_RESETS,
-
-    children: { table: { disable: true } },
-    'aria-label': { table: { disable: true } }
+    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
+    ...disableArgs(['aria-label'])
   },
   args: {
     mode: 'primary',
     appearance: 'accent',
     size: 'medium',
     disabled: false,
-    onClick: fn(),
     'aria-label': 'Название кнопки'
   },
   decorators: [
-    (Story, context) => (
-      <OverlayContainer
-        style={{ width: 375 }}
-        appearance={context.args.appearance === 'contrast-static' ? 'dark' : 'light'}
-      >
-        <Story />
-      </OverlayContainer>
-    )
+    (Story, context) => {
+      const colorScheme = useColorScheme();
+
+      return (
+        <OverlayContainer
+          style={{ width: 375 }}
+          appearance={context.args.appearance === 'contrast-static' || colorScheme === 'dark' ? 'dark' : 'light'}
+        >
+          <Story />
+        </OverlayContainer>
+      );
+    }
   ]
 } satisfies Meta<IconButtonProps>;
 

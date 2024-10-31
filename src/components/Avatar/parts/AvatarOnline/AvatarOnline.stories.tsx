@@ -6,8 +6,7 @@ import { AvatarOnline } from './AvatarOnline.tsx';
 
 const meta = {
   title: 'Common/Avatar/Avatar.Online',
-  component: AvatarOnline,
-  tags: ['autodocs']
+  component: AvatarOnline
 } satisfies Meta<AvatarOnlineProps>;
 
 export default meta;

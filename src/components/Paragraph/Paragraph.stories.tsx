@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
 import { EllipsisText } from '../EllipsisText';
 import { Paragraph, type ParagraphProps } from './Paragraph';
 
@@ -8,7 +8,7 @@ const meta = {
   title: 'Typography/Paragraph',
   component: Paragraph,
   argTypes: {
-    ...SB_ARGTYPES_RESETS
+    ...hideArgsControl(['asChild', 'fallbackElement'])
   },
   args: {
     children: 'Hello world'

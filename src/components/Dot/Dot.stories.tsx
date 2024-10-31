@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
+import { useColorScheme } from '../../hooks';
 import { Button } from '../Button';
 import { Dot, type DotProps } from './Dot';
 
@@ -11,14 +12,18 @@ const meta = {
     appearance: 'themed'
   },
   decorators: [
-    (Story, context) => (
-      <OverlayContainer
-        style={{ width: 375 }}
-        appearance={context.args.appearance === 'contrast-pinned' ? 'dark' : 'light'}
-      >
-        <Story />
-      </OverlayContainer>
-    )
+    (Story, context) => {
+      const colorScheme = useColorScheme();
+
+      return (
+        <OverlayContainer
+          style={{ width: 375 }}
+          appearance={context.args.appearance === 'contrast-pinned' || colorScheme === 'dark' ? 'dark' : 'light'}
+        >
+          <Story />
+        </OverlayContainer>
+      );
+    }
   ]
 } satisfies Meta<DotProps>;
 

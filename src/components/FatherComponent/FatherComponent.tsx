@@ -3,7 +3,7 @@ import { type ComponentProps, type ElementType, forwardRef } from 'react';
 
 export interface FatherComponentProps extends ComponentProps<'div'> {
   asChild?: boolean
-  fallbackElement?: ElementType
+  fallbackElement?: ElementType // todo переименовать в as
 }
 
 export const FatherComponent = forwardRef<HTMLDivElement, FatherComponentProps>((props, forwardedRef) => {

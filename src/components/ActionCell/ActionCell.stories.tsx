@@ -2,14 +2,14 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import Icon28Placeholder from '../../../.storybook/assets/icons/icon-28-placeholder.svg';
-import { SB_ARGTYPES_RESETS } from '../../../.storybook/shared/args-resets.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { ActionCell, type ActionCellProps } from './ActionCell';
 
 const meta = {
   title: 'Common/ActionCell',
   component: ActionCell,
   argTypes: {
-    ...SB_ARGTYPES_RESETS,
+    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
 
     before: {
       options: [0, 1],

@@ -1,16 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
 import { Grid, type GridProps } from './Grid';
 
 const meta = {
   title: 'Layout/Grid',
   component: Grid,
+  argTypes: {
+    ...hideArgsControl(['asChild', 'fallbackElement'])
+  },
   args: {
     gapX: 30,
     gapY: 10,
     cols: 3
-  },
-  tags: ['autodocs']
+  }
 } satisfies Meta<GridProps>;
 
 export default meta;
@@ -24,7 +27,7 @@ export const Playground: Story = {
           <div
             key={index}
             style={{
-              backgroundColor: 'var(--background-surface-ground)',
+              backgroundColor: 'var(--background-surface-secondary)',
               width: 75,
               height: 75
             }}

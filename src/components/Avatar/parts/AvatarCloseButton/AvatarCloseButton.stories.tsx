@@ -6,11 +6,7 @@ import { AvatarCloseButton } from './AvatarCloseButton.tsx';
 
 const meta = {
   title: 'Common/Avatar/Avatar.CloseButton',
-  component: AvatarCloseButton,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
+  component: AvatarCloseButton
 } satisfies Meta<AvatarCloseButtonProps>;
 
 export default meta;

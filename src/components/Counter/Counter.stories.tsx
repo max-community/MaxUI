@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
+import { useColorScheme } from '../../hooks';
 import { Button } from '../Button';
 import { Counter, type CounterProps } from '../Counter';
 
@@ -13,14 +14,18 @@ const meta = {
     rounded: false
   },
   decorators: [
-    (Story, context) => (
-      <OverlayContainer
-        style={{ width: 375 }}
-        appearance={context.args.appearance === 'contrast-static' ? 'dark' : 'light'}
-      >
-        <Story />
-      </OverlayContainer>
-    )
+    (Story, context) => {
+      const colorScheme = useColorScheme();
+
+      return (
+        <OverlayContainer
+          style={{ width: 375 }}
+          appearance={context.args.appearance === 'contrast-static' || colorScheme === 'dark' ? 'dark' : 'light'}
+        >
+          <Story />
+        </OverlayContainer>
+      );
+    }
   ]
 } satisfies Meta<CounterProps>;
 
@@ -29,9 +34,7 @@ type Story = StoryObj<CounterProps>;
 
 export const Playground: Story = {
   render: ({ ...args }) => {
-    return (
-      <Counter {...args} />
-    );
+    return <Counter {...args} />;
   }
 };
 

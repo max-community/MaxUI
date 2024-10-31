@@ -6,11 +6,7 @@ import { AvatarOverlay } from './AvatarOverlay.tsx';
 
 const meta = {
   title: 'Common/Avatar/Avatar.Overlay',
-  component: AvatarOverlay,
-  parameters: {
-    layout: 'centered'
-  },
-  tags: ['autodocs']
+  component: AvatarOverlay
 } satisfies Meta<AvatarOverlayProps>;
 
 export default meta;
