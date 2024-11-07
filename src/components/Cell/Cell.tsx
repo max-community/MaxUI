@@ -12,7 +12,7 @@ export type CellHeight = 'compact' | 'normal';
 export type CellInnerElementKey = 'before' | 'after' | 'chevron' | 'content' | 'heading' | 'subtitle';
 
 export interface CellProps extends FatherComponentProps {
-  height?: CellHeight
+  height?: CellHeight // todo спросить у дизайна, можно ли заменить на bool проп compact? или тут будет больше 2 свойств?
   innerClassNames?: InnerClassNamesProp<CellInnerElementKey>
   heading?: ReactNode
   subtitle?: ReactNode

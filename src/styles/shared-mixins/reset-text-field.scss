@@ -1,0 +1,9 @@
+@mixin resetTextField {
+  appearance: none;
+  background: unset;
+  border: unset;
+  box-shadow: none;
+  margin: unset;
+  padding: unset;
+  outline: none;
+}
