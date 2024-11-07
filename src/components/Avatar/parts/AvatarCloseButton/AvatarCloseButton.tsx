@@ -2,13 +2,14 @@ import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef, type MouseEventHandler } from 'react';
 
 import { Icon20CloseFilled } from '../../../../icons';
+import { SvgButton } from '../../../SvgButton';
 import { useAvatarContainerContext } from '../AvatarContainer/AvatarContainerContext.tsx';
 import styles from './AvatarCloseButton.module.scss';
 import { getButtonSize } from './helpers.ts';
 
-export interface AvatarCloseButtonProps extends ComponentProps<'button'> {}
+export interface AvatarCloseButtonProps extends ComponentProps<'div'> {}
 
-export const AvatarCloseButton = forwardRef<HTMLButtonElement, AvatarCloseButtonProps>((props, forwardedRef) => {
+export const AvatarCloseButton = forwardRef<HTMLDivElement, AvatarCloseButtonProps>((props, forwardedRef) => {
   const {
     className,
     onClick,
@@ -19,20 +20,20 @@ export const AvatarCloseButton = forwardRef<HTMLButtonElement, AvatarCloseButton
 
   const buttonSize = getButtonSize(containerSize);
 
-  const clickHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
+  const clickHandler: MouseEventHandler<HTMLDivElement> = (e) => {
     e.preventDefault();
     onClick?.(e);
   };
 
   return (
-    <button
+    <SvgButton
       ref={forwardedRef}
       className={clsx(styles.AvatarCloseButton, className)}
       onClick={clickHandler}
       {...rest}
     >
       <Icon20CloseFilled width={buttonSize} height={buttonSize} />
-    </button>
+    </SvgButton>
   );
 });
 
