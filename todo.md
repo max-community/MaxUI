@@ -14,3 +14,4 @@
 - [asChild] компоненты-потомки принимают ref HTMLDivElement, что не он для Button, например
 - [Input] указать aria-label у SvgButton
 - [Input/Textarea] innerClassNames
+- [chore] проверить реэкспорты типов компонентов

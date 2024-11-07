@@ -13,7 +13,7 @@ import { type PlatformType } from '../../types.ts';
 import { SvgButton } from '../SvgButton';
 import styles from './Input.module.scss';
 
-export const clearIconsMapping: Record<PlatformType, ReactNode> = {
+const clearIconsMapping: Record<PlatformType, ReactNode> = {
   ios: <Icon16CloseIos />,
   android: <Icon20CloseAndroid />
 };

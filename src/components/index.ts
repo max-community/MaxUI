@@ -17,6 +17,7 @@ export * from './Input';
 export * from './Panel';
 export * from './Paragraph';
 export * from './Ripple';
+export * from './SearchInput';
 export * from './Section';
 export * from './Subhead';
 export * from './SvgButton';
