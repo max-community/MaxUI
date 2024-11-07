@@ -19,7 +19,7 @@ export interface ButtonProps extends FatherComponentProps {
   size?: ButtonSize
   mode?: ButtonMode
   appearance?: ButtonAppearance
-  disabled?: boolean
+  disabled?: boolean // todo HTMLButtonElement
   stretched?: boolean
   iconBefore?: ReactNode
   iconAfter?: ReactNode

@@ -148,6 +148,7 @@
 .Button__iconBefore {
   position: relative;
   z-index: 1;
+  display: flex;
 
   .Button_size_small & {
     margin-right: var(--spacing-size-xs);
@@ -166,6 +167,7 @@
 .Button__iconAfter {
   position: relative;
   z-index: 1;
+  display: flex;
 
   .Button_size_small & {
     margin-left: var(--spacing-size-xs);
