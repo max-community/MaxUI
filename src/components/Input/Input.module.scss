@@ -1,5 +1,6 @@
 @use '../../styles/shared-mixins/reset-text-field';
 @use '../../styles/shared-mixins/typography';
+@use '../../styles/builders/form-field-modes-builder';
 
 .Input {
   border-radius: var(--size-border-radius-semantic-border-radius-card);
@@ -25,18 +26,10 @@
 
 // [Properties] Modes
 .Input_mode_primary {
-  background-color: var(--background-card);
-
-  &.Input_disabled {
-    background-color: var(--states-background-disabled-card);
-  }
+  @include form-field-modes-builder.buildFormFieldPrimaryMode('Input');
 }
 .Input_mode_secondary {
-  background-color: var(--background-accent-neutral-fade);
-
-  &.Input_disabled {
-    background-color: var(--states-background-disabled-neutral-fade);
-  }
+  @include form-field-modes-builder.buildFormFieldSecondaryMode('Input');
 }
 
 // [Parts] Icon Before

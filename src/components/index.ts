@@ -22,4 +22,5 @@ export * from './Subhead';
 export * from './SvgButton';
 export * from './Switch';
 export * from './Text';
+export * from './Textarea';
 export * from './Title';

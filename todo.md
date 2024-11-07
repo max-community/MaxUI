@@ -12,3 +12,5 @@
 - [AppearanceProvider] Подумать над концепцией компонента - он является рутовым и прокидывает все стили. Мб переименовать в <Theme /> / <OneMeTheme /> / <UIRoot /> / something else
 - [build] не все хуки нужно экспортировать в билд и делать публичными
 - [asChild] компоненты-потомки принимают ref HTMLDivElement, что не он для Button, например
+- [Input] указать aria-label у SvgButton
+- [Input/Textarea] innerClassNames
