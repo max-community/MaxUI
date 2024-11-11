@@ -15,3 +15,5 @@
 - [Input] указать aria-label у SvgButton
 - [Input/Textarea] innerClassNames
 - [chore] проверить реэкспорты типов компонентов
+- [ToolButton] hover, active, etc
+- [asChild] рефактор реализации ToolButton, при которой возможна конструкция с пустым тегом, по типу <ToolButton asChild><a ... /></ToolButton>

@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { type FC, type ReactNode } from 'react';
 
-import { useSystemColorScheme } from '../../hooks/use-system-color-scheme.ts';
+import { useSystemColorScheme } from '../../hooks';
 import styles from './AppearanceProvider.module.scss';
 import { AppearanceProviderContext, type AppearanceProviderContextInterface } from './AppearanceProviderContext';
 

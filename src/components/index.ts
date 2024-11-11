@@ -25,3 +25,4 @@ export * from './Switch';
 export * from './Text';
 export * from './Textarea';
 export * from './Title';
+export * from './ToolButton';
