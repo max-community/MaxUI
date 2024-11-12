@@ -21,10 +21,12 @@
 
 // [Properties] Heights
 .Cell_height_compact {
-  padding: var(--spacing-size-xs) var(--spacing-size-xl)
+  padding: var(--spacing-size-xs) var(--spacing-size-xl);
+  min-height: 48px;
 }
 .Cell_height_normal {
-  padding: var(--spacing-size-m) var(--spacing-size-xl)
+  padding: var(--spacing-size-m) var(--spacing-size-xl);
+  min-height: 56px;
 }
 
 // [Parts] Before

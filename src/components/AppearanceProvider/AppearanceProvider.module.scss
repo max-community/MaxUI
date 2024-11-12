@@ -3,7 +3,9 @@
 @use '../../styles/gradients';
 
 .OneMeUI {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Apple Color Emoji", "Helvetica Neue", sans-serif;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Apple Color Emoji", "Helvetica Neue", sans-serif;
+
+  font-family: var(--font);
   background-color: var(--background-surface-primary);
   color: var(--text-primary);
 

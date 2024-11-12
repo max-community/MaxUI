@@ -39,9 +39,11 @@
 // [Properties] Sizes
 .ActionCell_height_compact {
   padding: var(--spacing-size-xs) var(--spacing-size-xl);
+  min-height: 48px;
 }
 .ActionCell_height_normal {
   padding: var(--spacing-size-m) var(--spacing-size-xl);
+  min-height: 56px;
 }
 
 // [Parts] Before

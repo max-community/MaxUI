@@ -14,6 +14,7 @@ export * from './Grid';
 export * from './Headline';
 export * from './IconButton';
 export * from './Input';
+export * from './InputCell';
 export * from './Panel';
 export * from './Paragraph';
 export * from './Ripple';
