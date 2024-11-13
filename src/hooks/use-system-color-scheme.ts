@@ -9,7 +9,9 @@ interface Params {
 }
 
 export const useSystemColorScheme = ({ listenChanges }: Params = {}): SystemColorScheme => {
-  const [colorScheme, setColorScheme] = useState<SystemColorScheme>('light');
+  const [colorScheme, setColorScheme] = useState<SystemColorScheme>(
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
 
   const handleSchemeChanged = (event: MediaQueryListEvent): void => {
     setColorScheme(() => event.matches

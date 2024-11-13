@@ -1,5 +1,4 @@
 export * from './ActionCell';
-export * from './AppearanceProvider';
 export * from './Avatar';
 export * from './Button';
 export * from './Cell';
@@ -15,6 +14,7 @@ export * from './Headline';
 export * from './IconButton';
 export * from './Input';
 export * from './InputCell';
+export * from './OneMeUI';
 export * from './Panel';
 export * from './Paragraph';
 export * from './Ripple';

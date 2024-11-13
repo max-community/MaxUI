@@ -1,15 +1,14 @@
-@use '../../styles/sizes';
-@use '../../styles/colors';
-@use '../../styles/gradients';
+@use '../../styles/variables/common';
+@use '../../styles/variables/sizes';
+@use '../../styles/variables/colors';
 
 .OneMeUI {
-  --font: system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Apple Color Emoji", "Helvetica Neue", sans-serif;
+  @include common.commonVariables;
 
   font-family: var(--font);
   background-color: var(--background-surface-primary);
   color: var(--text-primary);
-
-  @include gradients.gradients;
+  width: 100%;
 
   &_platform {
 
