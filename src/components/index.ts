@@ -1,7 +1,7 @@
-export * from './ActionCell';
 export * from './Avatar';
 export * from './Button';
 export * from './Cell';
+export * from './CellAction';
 export * from './Container';
 export * from './Counter';
 export * from './Dot';
@@ -23,6 +23,7 @@ export * from './Section';
 export * from './Subhead';
 export * from './SvgButton';
 export * from './Switch';
+export * from './Tappable';
 export * from './Text';
 export * from './Textarea';
 export * from './Title';

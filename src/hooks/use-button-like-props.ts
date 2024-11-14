@@ -12,7 +12,7 @@ export interface ButtonLikeProps {
   fallbackElement?: ElementType
 }
 
-// Хук useButtonLikeProps используется в полиморфных компонентах-кнопках (FatherComponent с asChild пропом): Button, Cell, ActionCell
+// Хук useButtonLikeProps используется в полиморфных компонентах-кнопках (FatherComponent с asChild пропом): Button, Cell, CellAction, etc
 // Главная задача хука - собрать объект с валидными аттрибутами компонента, в зависимости от рутового элемента
 export const useButtonLikeProps = (props: ButtonLikeProps): ComponentProps<any> => {
   const { asChild, children, fallbackElement, disabled } = props;

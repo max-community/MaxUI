@@ -1,7 +1,5 @@
 ## TODO
 
-- [Cell, ActionCell] Узнать нужен ли ripple/highlighted эффект, запросить токены для :hover, :active и поддержать эти состояния
-- [Cell, ActionCell] Отрефакторить компоненты, вынести переиспользуемую базу (детект hasHover, риппл и тд) в общий компонент
 - [storybook] убрать сокрытие пропов asChild, fallbackElement, innerClassNames, вмето этого сделать их просто дизейблед;
 - [storybook] настроить корректный вывод типа innerClassNames
 - [storybook] написать доку, комменты по каждому пропу, по каждой стори
