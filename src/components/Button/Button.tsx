@@ -1,12 +1,11 @@
-import { Slottable } from '@radix-ui/react-slot';
+import { Slot, Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef, type ReactNode } from 'react';
+import { type ComponentProps, type ElementType, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
-import { type InnerClassNamesProp } from '../../types.ts';
+import { type AsChildProp, type InnerClassNamesProp } from '../../types.ts';
 import { EllipsisText } from '../EllipsisText';
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
 import { Ripple } from '../Ripple';
 import styles from './Button.module.scss';
 
@@ -15,11 +14,10 @@ export type ButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
 export type ButtonAppearance = 'accent' | 'negative' | 'neutral' | 'contrast-static';
 export type ButtonInnerElementKey = 'iconBefore' | 'iconAfter' | 'indicator' | 'content';
 
-export interface ButtonProps extends FatherComponentProps {
+export interface ButtonProps extends ComponentProps<'button'>, AsChildProp {
   size?: ButtonSize
   mode?: ButtonMode
   appearance?: ButtonAppearance
-  disabled?: boolean // todo HTMLButtonElement
   stretched?: boolean
   iconBefore?: ReactNode
   iconAfter?: ReactNode
@@ -27,7 +25,7 @@ export interface ButtonProps extends FatherComponentProps {
   innerClassNames?: InnerClassNamesProp<ButtonInnerElementKey>
 }
 
-export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedRef) => {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
   const {
     className,
     disabled,
@@ -36,7 +34,6 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
     indicator,
     children,
     asChild = false,
-    fallbackElement = 'button',
     innerClassNames,
     stretched = false,
     size = 'medium',
@@ -45,10 +42,12 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
     ...rest
   } = props;
 
-  const platform = usePlatform();
-  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement });
+  const rootElement: ElementType = 'button';
+  const Comp = asChild ? Slot : rootElement;
 
-  const withRipple = platform === 'android' && mode !== 'link';
+  const platform = usePlatform();
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement: rootElement });
+  const withRipple = platform === 'android' && mode !== 'link' && !disabled;
 
   const rootClassName = clsx(
     styles.Button,
@@ -64,11 +63,9 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
   );
 
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={rootClassName}
-      asChild={asChild}
-      fallbackElement={fallbackElement}
       {...buttonLikeProps}
       {...rest}
     >
@@ -101,8 +98,8 @@ export const Button = forwardRef<HTMLDivElement, ButtonProps>((props, forwardedR
         </span>
       )}
 
-      {platform === 'android' && !disabled && <Ripple className={styles.Button__ripple} />}
-    </FatherComponent>
+      {platform === 'android' && <Ripple className={styles.Button__ripple} />}
+    </Comp>
   );
 });
 
