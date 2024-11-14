@@ -1,0 +1,32 @@
+.Tappable {
+  position: relative;
+  overflow: hidden;
+}
+
+// [States] Hovered
+.Tappable_withHover:not(.Tappable_disabled):hover {
+  background-color: var(--OneMe-Tappable_background-hovered, var(--states-background-hovered-transparent));
+}
+
+// [States] Pressed
+.Tappable_activeMode_ripple:not(.Tappable_disabled) {
+  --Ripple_backgroundColor: var(--OneMe-Tappable_background-pressed, var(--states-background-pressed-transparent));
+}
+.Tappable_activeMode_highlight:not(.Tappable_disabled):active {
+  background-color: var(--OneMe-Tappable_background-pressed, var(--states-background-pressed-transparent));
+}
+
+// [States] Disabled
+.Tappable:not(.Tappable_disabled) {
+  cursor: pointer;
+}
+.Tappable_disabled {
+  cursor: not-allowed;
+}
+
+// [Parts] Ripple
+.Tappable__ripple {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
