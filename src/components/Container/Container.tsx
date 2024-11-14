@@ -1,10 +1,11 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type CSSProperties, forwardRef } from 'react';
+import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Container.module.scss';
 
-export interface ContainerProps extends FatherComponentProps {
+export interface ContainerProps extends ComponentProps<'div'>, AsChildProp {
   gap?: number
 }
 
@@ -13,11 +14,14 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>((props, forw
     gap = 0,
     style,
     className,
+    asChild,
     ...rest
   } = props;
 
+  const Comp = asChild ? Slot : 'div';
+
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={clsx(styles.Container, className)}
       style={{
