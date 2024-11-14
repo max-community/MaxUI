@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
@@ -12,8 +13,10 @@ const meta = {
   title: 'Common/Cell',
   component: Cell,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
+    ...hideArgsControl(['asChild', 'innerClassNames', 'onClick']),
 
+    title: { type: 'string' },
+    subtitle: { type: 'string' },
     before: {
       options: [0, 1, 2],
       mapping: [
@@ -38,12 +41,12 @@ const meta = {
     }
   },
   args: {
-    heading: 'Cell heading',
+    title: 'Cell heading',
     subtitle: 'Cell subtitle',
     height: 'normal',
-    showChevron: true,
+    showChevron: false,
     before: 1,
-    after: 2
+    after: 1
   },
   decorators: [
     (Story) => (
@@ -63,22 +66,22 @@ export const Playground: Story = {
   }
 };
 
-export const CellWithButton: Story = {
-  name: 'Cell with button',
+export const TappableCell: Story = {
+  name: 'Tappable',
   args: {
-    showChevron: false,
-    after: <Button size="small" mode="secondary">Открыть</Button>,
-    onClick: undefined
+    showChevron: true,
+    after: <Counter key="counter" value={1200} />,
+    onClick: fn()
   },
   render: ({ ...args }) => {
     return <Cell {...args} />;
   }
 };
 
-export const CellAsLink: Story = {
-  name: 'Cell as link',
+export const AsLink: Story = {
+  name: 'As link',
   args: {
-    heading: 'Я — ссылка!',
+    title: 'Я — ссылка!',
     subtitle: 'И у меня есть hover состояние'
   },
   render: ({ children, ...args }) => {
@@ -97,13 +100,13 @@ export const CellAsLink: Story = {
 export const EllipsizedHeading: Story = {
   name: 'Ellipsized heading',
   args: {
-    heading: 'Я — ячейка с очень длинным заголовком, поэтому люди не смогут дочитать меня до конца',
+    title: 'Я — ячейка с очень длинным заголовком, поэтому люди не смогут дочитать меня до конца',
     subtitle: 'Подпись тоже очень длинная, но в этом примере она будет выводиться полностью'
   },
-  render: ({ heading, children, ...args }) => {
+  render: ({ title, children, ...args }) => {
     return (
       <Cell
-        heading={<EllipsisText>{heading}</EllipsisText>}
+        title={<EllipsisText>{title}</EllipsisText>}
         {...args}
       />
     );
@@ -113,7 +116,7 @@ export const EllipsizedHeading: Story = {
 export const EllipsizedSubtitle: Story = {
   name: 'Ellipsized subtitle',
   args: {
-    heading: 'Я — ячейка с очень длинным заголовком, но в этот раз текст не будет обрезан',
+    title: 'Я — ячейка с очень длинным заголовком, но в этот раз текст не будет обрезан',
     subtitle: 'Чего не скажешь о длинной подписи, в этом примере она будет обрезан'
   },
   render: ({ subtitle, children, ...args }) => {

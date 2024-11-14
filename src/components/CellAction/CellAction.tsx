@@ -12,13 +12,13 @@ export type CellActionMode = 'primary' | 'destructive' | 'custom';
 export type CellActionHeight = 'compact' | 'normal';
 export type CellActionInnerElementKey = 'before' | 'chevron' | 'content';
 
-type CellActionOwnProps = {
+interface CellActionOwnProps extends AsChildProp {
   mode?: CellActionMode
   height?: CellActionHeight
   before?: ReactNode
   showChevron?: boolean
   innerClassNames?: InnerClassNamesProp<CellActionInnerElementKey>
-} & AsChildProp;
+}
 
 export type CellActionProps = MergeProps<ComponentProps<'button'>, CellActionOwnProps>;
 

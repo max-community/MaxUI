@@ -20,7 +20,7 @@ const meta = {
   title: 'Common/Button',
   component: Button,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
+    ...hideArgsControl(['asChild', 'innerClassNames']),
 
     iconBefore: { control: 'boolean' },
     iconAfter: { control: 'boolean' },
@@ -77,8 +77,8 @@ export const Playground: Story = {
   }
 };
 
-export const LinkAsButton: Story = {
-  name: 'Link as Button',
+export const AsLink: Story = {
+  name: 'As link',
   args: {
     children: 'Я — ссылка!',
     onClick: undefined

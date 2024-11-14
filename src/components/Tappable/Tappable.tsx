@@ -37,7 +37,7 @@ export const Tappable = forwardRef<HTMLElement, TappableProps>((props, forwarded
   const rootClassName = clsx(
     styles.Tappable,
     {
-      [styles.Tappable_withHover]: hasAction,
+      [styles.Tappable_interactive]: hasAction,
       [styles.Tappable_disabled]: disabled,
       [styles.Tappable_activeMode_highlight]: !withRipple,
       [styles.Tappable_activeMode_ripple]: withRipple

@@ -1,56 +1,54 @@
 import { Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef, isValidElement, type ReactNode } from 'react';
+import { type ComponentProps, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { Icon16Chevron } from '../../icons';
-import { type InnerClassNamesProp } from '../../types';
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp, type InnerClassNamesProp, type MergeProps } from '../../types';
+import { Tappable } from '../Tappable';
 import styles from './Cell.module.scss';
 
 export type CellHeight = 'compact' | 'normal';
-export type CellInnerElementKey = 'before' | 'after' | 'chevron' | 'content' | 'heading' | 'subtitle';
+export type CellInnerElementKey = 'before' | 'after' | 'chevron' | 'content' | 'title' | 'subtitle';
 
-export interface CellProps extends FatherComponentProps {
-  height?: CellHeight // todo спросить у дизайна, можно ли заменить на bool проп compact? или тут будет больше 2 свойств?
+interface CellOwnProps extends AsChildProp {
+  height?: CellHeight
   innerClassNames?: InnerClassNamesProp<CellInnerElementKey>
-  heading?: ReactNode
+  title?: ReactNode
   subtitle?: ReactNode
   before?: ReactNode
   after?: ReactNode
   showChevron?: boolean
 }
 
+export type CellProps = MergeProps<ComponentProps<'div'>, CellOwnProps>;
+
 export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) => {
   const {
-    height = 'normal',
     className,
-    heading,
+    title,
     subtitle,
-    showChevron = false,
     before,
-    innerClassNames,
     after,
     children,
+    showChevron = false,
+    asChild = false,
+    innerClassNames,
+    height = 'normal',
     ...rest
   } = props;
-
-  // todo вынести в отдельную функцию и расширить перечень проверок
-  const hasHover = !!rest?.onClick || (isValidElement(children) && 'href' in children.props);
 
   const rootClassName = clsx(
     styles.Cell,
     styles[`Cell_height_${height}`],
-    {
-      [styles.Cell_withHover]: hasHover
-    },
     className
   );
 
   return (
-    <FatherComponent
+    <Tappable
       ref={forwardedRef}
       className={rootClassName}
+      asChild={asChild}
       {...rest}
     >
       {hasReactNode(before) && (
@@ -60,11 +58,11 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
       )}
 
       <Slottable>
-        {getSubtree({ asChild: props.asChild, children }, (children) => (
+        {getSubtree({ asChild, children }, (children) => (
           <span key="subtree-container" className={clsx(styles.Cell__content, innerClassNames?.content)}>
-            {hasReactNode(heading) && (
-              <div className={clsx(styles.Cell__heading, innerClassNames?.heading)}>
-                {heading}
+            {hasReactNode(title) && (
+              <div className={clsx(styles.Cell__title, innerClassNames?.title)}>
+                {title}
               </div>
             )}
 
@@ -85,7 +83,7 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
           {showChevron && <Icon16Chevron className={clsx(styles.Cell__chevron, innerClassNames?.chevron)} />}
         </div>
       )}
-    </FatherComponent>
+    </Tappable>
   );
 });
 
