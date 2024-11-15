@@ -1,8 +1,9 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type CSSProperties, forwardRef } from 'react';
+import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
 
 import { getCssSizeValue } from '../../helpers';
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Flex.module.scss';
 
 export type FlexDisplay = 'flex' | 'inline-flex';
@@ -11,7 +12,7 @@ export type FlexAlign = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'str
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexWrap = 'wrap' | 'nowrap' | 'wrap-reverse';
 
-export interface FlexProps extends FatherComponentProps {
+export interface FlexProps extends ComponentProps<'div'>, AsChildProp {
   display?: FlexDisplay
   direction?: FlexDirection
   align?: FlexAlign
@@ -29,6 +30,7 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>((props, forwardedRef) 
     direction = 'row',
     align = 'flex-start',
     justify = 'start',
+    asChild,
     wrap,
     style,
     gap,
@@ -37,8 +39,10 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>((props, forwardedRef) 
     ...rest
   } = props;
 
+  const Comp = asChild ? Slot : 'div';
+
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={clsx(styles.Flex, className)}
       style={{
