@@ -1,10 +1,11 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type CSSProperties, forwardRef } from 'react';
+import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './EllipsisText.module.scss';
 
-export interface EllipsisTextProps extends FatherComponentProps {
+export interface EllipsisTextProps extends ComponentProps<'div'>, AsChildProp {
   /**
    * Максимальное количество видимых строк
    *
@@ -20,8 +21,11 @@ export const EllipsisText = forwardRef<HTMLDivElement, EllipsisTextProps>((props
     className,
     maxLines = 1,
     style,
+    asChild,
     ...rest
   } = props;
+
+  const Comp = asChild ? Slot : 'span';
 
   const rootClassName = clsx(
     styles.EllipsisText,
@@ -33,10 +37,9 @@ export const EllipsisText = forwardRef<HTMLDivElement, EllipsisTextProps>((props
   );
 
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={rootClassName}
-      fallbackElement="span"
       style={{
         '--OneMe-EllipsisText_linesCount': maxLines,
         ...style
