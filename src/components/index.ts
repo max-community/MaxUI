@@ -6,7 +6,6 @@ export * from './Container';
 export * from './Counter';
 export * from './Dot';
 export * from './EllipsisText';
-export * from './FatherComponent';
 export * from './Flex';
 export * from './Footnote';
 export * from './Grid';
