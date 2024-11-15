@@ -1,22 +1,26 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
+import { type ComponentProps, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Footnote.module.scss';
 
 export type FootnoteVariant = 'footnote' | 'footnote-medium' | 'footnote-caps';
 
-export interface FootnoteProps extends FatherComponentProps {
+export interface FootnoteProps extends ComponentProps<'span'>, AsChildProp {
   /** Внешний вид, в соответствии с дизайн-системой */
   variant?: FootnoteVariant
 }
 
-export const Footnote = forwardRef<HTMLDivElement, FootnoteProps>((props, forwardedRef) => {
+export const Footnote = forwardRef<HTMLSpanElement, FootnoteProps>((props, forwardedRef) => {
   const {
     className,
     variant = 'footnote',
+    asChild,
     ...rest
   } = props;
+
+  const Comp = asChild ? Slot : 'span';
 
   const rootClassName = clsx(
     styles.Footnote,
@@ -25,7 +29,7 @@ export const Footnote = forwardRef<HTMLDivElement, FootnoteProps>((props, forwar
   );
 
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={rootClassName}
       {...rest}
