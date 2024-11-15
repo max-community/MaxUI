@@ -7,7 +7,7 @@ const meta = {
   title: 'Layout/Grid',
   component: Grid,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement'])
+    ...hideArgsControl(['asChild'])
   },
   args: {
     gapX: 30,

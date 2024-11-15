@@ -3,16 +3,18 @@ import { clsx } from 'clsx';
 import {
   type AllHTMLAttributes, type ElementType,
   forwardRef,
-  isValidElement
+  type ReactNode
 } from 'react';
 
 import { useButtonLikeProps, usePlatform } from '../../hooks';
 import { type AsChildProp, type MergeProps } from '../../types';
 import { Ripple } from '../Ripple';
+import { checkComponentHasAction } from './helpers';
 import styles from './Tappable.module.scss';
 
 type TappableOwnProps = {
   as?: ElementType
+  parentChildren?: ReactNode
 } & AsChildProp;
 
 export type TappableProps = MergeProps<AllHTMLAttributes<HTMLElement>, TappableOwnProps>;
@@ -23,6 +25,7 @@ export const Tappable = forwardRef<HTMLElement, TappableProps>((props, forwarded
     disabled,
     asChild,
     children,
+    parentChildren,
     as = 'div',
     ...rest
   } = props;
@@ -30,8 +33,8 @@ export const Tappable = forwardRef<HTMLElement, TappableProps>((props, forwarded
   const Comp = asChild ? Slot : as;
 
   const platform = usePlatform();
-  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement: as });
-  const hasAction = !!rest?.onClick || !!rest.href || (isValidElement(children) && ('href' in children.props || 'onClick' in children.props));
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, rootElement: as });
+  const hasAction = checkComponentHasAction(props);
   const withRipple = platform === 'android' && hasAction && !disabled;
 
   const rootClassName = clsx(
@@ -49,8 +52,7 @@ export const Tappable = forwardRef<HTMLElement, TappableProps>((props, forwarded
     <Comp
       ref={forwardedRef}
       className={rootClassName}
-      asChild={asChild}
-      {...buttonLikeProps}
+      {...(hasAction ? buttonLikeProps : {})}
       {...rest}
     >
       {children}

@@ -7,7 +7,7 @@ const meta = {
   title: 'Layout/Flex',
   component: Flex,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement'])
+    ...hideArgsControl(['asChild'])
   },
   args: {
     gap: 12

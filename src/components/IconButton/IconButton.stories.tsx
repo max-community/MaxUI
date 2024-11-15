@@ -18,7 +18,7 @@ const meta = {
   title: 'Common/IconButton',
   component: IconButton,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames']),
+    ...hideArgsControl(['asChild', 'innerClassNames']),
     ...disableArgs(['aria-label'])
   },
   args: {

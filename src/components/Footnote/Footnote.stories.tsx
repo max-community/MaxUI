@@ -8,7 +8,7 @@ const meta = {
   title: 'Typography/Footnote',
   component: Footnote,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement'])
+    ...hideArgsControl(['asChild'])
   },
   args: {
     children: 'Hello world',

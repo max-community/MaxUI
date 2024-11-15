@@ -7,9 +7,9 @@ import { useAvatarContainerContext } from '../AvatarContainer/AvatarContainerCon
 import styles from './AvatarCloseButton.module.scss';
 import { getButtonSize } from './helpers.ts';
 
-export interface AvatarCloseButtonProps extends ComponentProps<'div'> {}
+export interface AvatarCloseButtonProps extends ComponentProps<'button'> {}
 
-export const AvatarCloseButton = forwardRef<HTMLDivElement, AvatarCloseButtonProps>((props, forwardedRef) => {
+export const AvatarCloseButton = forwardRef<HTMLButtonElement, AvatarCloseButtonProps>((props, forwardedRef) => {
   const {
     className,
     onClick,
@@ -20,7 +20,7 @@ export const AvatarCloseButton = forwardRef<HTMLDivElement, AvatarCloseButtonPro
 
   const buttonSize = getButtonSize(containerSize);
 
-  const clickHandler: MouseEventHandler<HTMLDivElement> = (e) => {
+  const clickHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault();
     onClick?.(e);
   };

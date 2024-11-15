@@ -82,7 +82,8 @@ export const AsLink: Story = {
   name: 'As link',
   args: {
     title: 'Я — ссылка!',
-    subtitle: 'И у меня есть hover состояние'
+    subtitle: undefined,
+    after: undefined
   },
   render: ({ children, ...args }) => {
     return (

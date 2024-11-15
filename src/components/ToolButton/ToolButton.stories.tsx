@@ -10,7 +10,7 @@ const meta = {
   title: 'Common/ToolButton',
   component: ToolButton,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement', 'innerClassNames', 'icon']),
+    ...hideArgsControl(['asChild', 'innerClassNames', 'icon']),
     label: { type: 'string' }
   },
   args: {
@@ -43,7 +43,7 @@ export const Playground: Story = {
 };
 
 export const AsLink: Story = {
-  name: 'As Link',
+  name: 'As link',
   args: {
     label: 'Ссылка',
     onClick: undefined

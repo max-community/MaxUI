@@ -1,4 +1,8 @@
+@use '../../styles/shared-mixins/reset-clickable';
+
 .Tappable {
+  @include reset-clickable.resetClickable;
+
   position: relative;
   overflow: hidden;
 }

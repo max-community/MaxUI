@@ -12,7 +12,7 @@ const meta = {
   title: 'Common/Avatar/Avatar.Container',
   component: AvatarContainer,
   argTypes: {
-    ...hideArgsControl(['innerClassNames', 'asChild', 'fallbackElement']),
+    ...hideArgsControl(['innerClassNames', 'asChild']),
 
     overlay: { type: 'boolean' },
     rightTopCorner: {
@@ -114,8 +114,8 @@ export const Playground: Story = {
   }
 };
 
-export const AsLinks: Story = {
-  name: 'Avatar as link',
+export const AsLink: Story = {
+  name: 'As link',
   render: ({ overlay, ...props }) => {
     return (
       <>

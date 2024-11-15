@@ -9,7 +9,7 @@ const meta = {
   title: 'Layout/Container',
   component: Container,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement'])
+    ...hideArgsControl(['asChild'])
   },
   decorators: [
     (Story) => (

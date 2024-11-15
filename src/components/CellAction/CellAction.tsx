@@ -51,6 +51,7 @@ export const CellAction = forwardRef<HTMLButtonElement, CellActionProps>((props,
       className={rootClassName}
       asChild={asChild}
       as="button"
+      parentChildren={children}
       {...rest}
     >
       {hasReactNode(before) && (

@@ -46,7 +46,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
   const Comp = asChild ? Slot : rootElement;
 
   const platform = usePlatform();
-  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement: rootElement });
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, rootElement });
   const withRipple = platform === 'android' && mode !== 'link' && !disabled;
 
   const rootClassName = clsx(

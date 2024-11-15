@@ -8,7 +8,7 @@ const meta = {
   title: 'Typography/Subhead',
   component: Subhead,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement'])
+    ...hideArgsControl(['asChild'])
   },
   args: {
     children: 'Hello world',

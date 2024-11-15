@@ -1,6 +1,6 @@
 import { Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type ComponentProps, forwardRef, type ReactNode } from 'react';
+import { type ComponentProps, type ElementType, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { Icon16Chevron } from '../../icons';
@@ -19,6 +19,7 @@ interface CellOwnProps extends AsChildProp {
   before?: ReactNode
   after?: ReactNode
   showChevron?: boolean
+  as?: ElementType
 }
 
 export type CellProps = MergeProps<ComponentProps<'div'>, CellOwnProps>;
@@ -35,6 +36,7 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
     asChild = false,
     innerClassNames,
     height = 'normal',
+    as = 'div',
     ...rest
   } = props;
 
@@ -49,6 +51,8 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
       ref={forwardedRef}
       className={rootClassName}
       asChild={asChild}
+      as={as}
+      parentChildren={children}
       {...rest}
     >
       {hasReactNode(before) && (
@@ -59,7 +63,7 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
 
       <Slottable>
         {getSubtree({ asChild, children }, (children) => (
-          <span key="subtree-container" className={clsx(styles.Cell__content, innerClassNames?.content)}>
+          <div key="subtree-container" className={clsx(styles.Cell__content, innerClassNames?.content)}>
             {hasReactNode(title) && (
               <div className={clsx(styles.Cell__title, innerClassNames?.title)}>
                 {title}
@@ -73,7 +77,7 @@ export const Cell = forwardRef<HTMLDivElement, CellProps>((props, forwardedRef) 
             )}
 
             {children}
-          </span>
+          </div>
         ))}
       </Slottable>
 

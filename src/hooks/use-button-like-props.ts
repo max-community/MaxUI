@@ -9,15 +9,15 @@ export interface ButtonLikeProps {
   asChild?: boolean
   children?: ReactNode
   disabled?: boolean
-  fallbackElement?: ElementType
+  rootElement?: ElementType
 }
 
 // Хук useButtonLikeProps используется в полиморфных компонентах-кнопках (FatherComponent с asChild пропом): Button, Cell, CellAction, etc
 // Главная задача хука - собрать объект с валидными аттрибутами компонента, в зависимости от рутового элемента
 export const useButtonLikeProps = (props: ButtonLikeProps): ComponentProps<any> => {
-  const { asChild, children, fallbackElement, disabled } = props;
+  const { asChild, children, rootElement, disabled } = props;
 
-  if (!asChild && fallbackElement === 'button') {
+  if (!asChild && rootElement === 'button') {
     const buttonProps: ComponentProps<'button'> = {
       disabled
     };

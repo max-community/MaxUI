@@ -37,14 +37,14 @@ export const WithCell: Story = {
   render: ({ ...args }) => {
     return (
       <Cell
-        fallbackElement="label"
+        as="label"
         after={(
           <Switch
             {...args}
             defaultChecked={false}
           />
         )}
-        heading="Cell"
+        title="Cell"
         subtitle="Description"
       />
     );

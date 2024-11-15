@@ -1,9 +1,6 @@
 @use '../../styles/shared-mixins/typography';
-@use '../../styles/shared-mixins/reset-clickable';
 
 .Cell {
-  @include reset-clickable.resetClickable;
-
   display: flex;
   align-items: center;
   width: 100%;

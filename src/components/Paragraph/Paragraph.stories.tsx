@@ -8,7 +8,7 @@ const meta = {
   title: 'Typography/Paragraph',
   component: Paragraph,
   argTypes: {
-    ...hideArgsControl(['asChild', 'fallbackElement'])
+    ...hideArgsControl(['asChild'])
   },
   args: {
     children: 'Hello world'
