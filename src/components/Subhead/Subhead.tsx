@@ -1,22 +1,26 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
+import { type ComponentProps, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Subhead.module.scss';
 
 export type SubheadVariant = 'subhead' | 'subhead-medium';
 
-export interface SubheadProps extends FatherComponentProps {
+export interface SubheadProps extends ComponentProps<'span'>, AsChildProp {
   /** Внешний вид, в соответствии с дизайн-системой */
   variant?: SubheadVariant
 }
 
-export const Subhead = forwardRef<HTMLDivElement, SubheadProps>((props, forwardedRef) => {
+export const Subhead = forwardRef<HTMLSpanElement, SubheadProps>((props, forwardedRef) => {
   const {
     className,
     variant = 'subhead',
+    asChild,
     ...rest
   } = props;
+
+  const Comp = asChild ? Slot : 'span';
 
   const rootClassName = clsx(
     styles.Subhead,
@@ -25,7 +29,7 @@ export const Subhead = forwardRef<HTMLDivElement, SubheadProps>((props, forwarde
   );
 
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={rootClassName}
       {...rest}

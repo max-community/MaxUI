@@ -1,29 +1,31 @@
-import { Slottable } from '@radix-ui/react-slot';
+import { Slot, Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef, type ReactNode } from 'react';
+import { type ComponentProps, forwardRef, type ReactNode } from 'react';
 
 import { hasReactNode } from '../../helpers';
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './ToolButton.module.scss';
 
-export interface ToolButtonProps extends FatherComponentProps {
+export interface ToolButtonProps extends ComponentProps<'button'>, AsChildProp {
   icon?: ReactNode
   label?: ReactNode
 }
 
-export const ToolButton = forwardRef<HTMLDivElement, ToolButtonProps>((props, forwardedRef) => {
+export const ToolButton = forwardRef<HTMLButtonElement, ToolButtonProps>((props, forwardedRef) => {
   const {
     className,
     label,
     icon,
     children,
+    asChild,
     ...rest
   } = props;
 
+  const Comp = asChild ? Slot : 'button';
+
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
-      fallbackElement="button"
       className={clsx(styles.ToolButton, className)}
       {...rest}
     >
@@ -32,7 +34,7 @@ export const ToolButton = forwardRef<HTMLDivElement, ToolButtonProps>((props, fo
       <Slottable>{children}</Slottable>
 
       {hasReactNode(label) && <span className={styles.ToolButton__label}>{label}</span>}
-    </FatherComponent>
+    </Comp>
   );
 });
 

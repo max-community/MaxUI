@@ -1,20 +1,20 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
+import { type ComponentProps, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './SvgButton.module.scss';
 
-export interface SvgButtonProps extends FatherComponentProps {
-  disabled?: boolean // todo HTMLButtonElement
-}
+export interface SvgButtonProps extends ComponentProps<'button'>, AsChildProp {}
 
-export const SvgButton = forwardRef<HTMLDivElement, SvgButtonProps>((props, forwardedRef) => {
-  const { className, ...rest } = props;
+export const SvgButton = forwardRef<HTMLButtonElement, SvgButtonProps>((props, forwardedRef) => {
+  const { className, asChild, ...rest } = props;
+
+  const Comp = asChild ? Slot : 'button';
 
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
-      fallbackElement="button"
       className={clsx(styles.SvgButton, className)}
       {...rest}
     />

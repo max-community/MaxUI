@@ -1,19 +1,23 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
+import { type ComponentProps, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Text.module.scss';
 
-export interface TextProps extends FatherComponentProps {}
+export interface TextProps extends ComponentProps<'span'>, AsChildProp {}
 
-export const Text = forwardRef<HTMLDivElement, TextProps>((props, forwardedRef) => {
+export const Text = forwardRef<HTMLSpanElement, TextProps>((props, forwardedRef) => {
   const {
     className,
+    asChild,
     ...rest
   } = props;
 
+  const Comp = asChild ? Slot : 'span';
+
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={clsx(styles.Text, className)}
       {...rest}

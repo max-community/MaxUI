@@ -1,15 +1,16 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type CSSProperties, forwardRef } from 'react';
+import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
 
 import { getCssSizeValue } from '../../helpers';
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Grid.module.scss';
 
 export type GridDisplay = 'grid' | 'inline-grid';
 export type GridAlign = 'start' | 'center' | 'end' | 'baseline' | 'stretch';
 export type GridJustify = 'start' | 'center' | 'end' | 'between';
 
-export interface GridProps extends FatherComponentProps {
+export interface GridProps extends ComponentProps<'div'>, AsChildProp {
   display?: GridDisplay
   align?: GridAlign
   justify?: GridJustify
@@ -32,11 +33,14 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>((props, forwardedRef) 
     gapY,
     cols,
     rows,
+    asChild,
     ...rest
   } = props;
 
+  const Comp = asChild ? Slot : 'div';
+
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={clsx(styles.Grid, className)}
       style={{

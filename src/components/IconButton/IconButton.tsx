@@ -1,11 +1,10 @@
-import { Slottable } from '@radix-ui/react-slot';
+import { Slot, Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
+import { type ComponentProps, type ElementType, forwardRef } from 'react';
 
 import { getSubtree } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
-import { type InnerClassNamesProp } from '../../types.ts';
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp, type InnerClassNamesProp } from '../../types.ts';
 import { Ripple } from '../Ripple';
 import styles from './IconButton.module.scss';
 
@@ -14,7 +13,7 @@ export type IconButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
 export type IconButtonAppearance = 'accent' | 'negative' | 'neutral' | 'contrast-static';
 export type IconButtonInnerElementKey = 'content';
 
-export interface IconButtonProps extends FatherComponentProps {
+export interface IconButtonProps extends ComponentProps<'button'>, AsChildProp {
   size?: IconButtonSize
   mode?: IconButtonMode
   appearance?: IconButtonAppearance
@@ -22,22 +21,24 @@ export interface IconButtonProps extends FatherComponentProps {
   innerClassNames?: InnerClassNamesProp<IconButtonInnerElementKey>
 }
 
-export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, forwardedRef) => {
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, forwardedRef) => {
   const {
     children,
     className,
     disabled,
     innerClassNames,
     asChild = false,
-    fallbackElement = 'button',
     size = 'medium',
     mode = 'primary',
     appearance = 'accent',
     ...rest
   } = props;
 
+  const rootElement: ElementType = 'button';
+  const Comp = asChild ? Slot : rootElement;
+
   const platform = usePlatform();
-  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement });
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, fallbackElement: rootElement });
 
   const withRipple = platform === 'android' && mode !== 'link';
 
@@ -54,11 +55,9 @@ export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, fo
   );
 
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={rootClassName}
-      asChild={asChild}
-      fallbackElement={fallbackElement}
       {...buttonLikeProps}
       {...rest}
     >
@@ -74,7 +73,7 @@ export const IconButton = forwardRef<HTMLDivElement, IconButtonProps>((props, fo
       </Slottable>
 
       {platform === 'android' && !disabled && <Ripple className={styles.IconButton__ripple} />}
-    </FatherComponent>
+    </Comp>
   );
 });
 

@@ -1,10 +1,9 @@
-import { Slottable } from '@radix-ui/react-slot';
+import { Slot, Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type CSSProperties, forwardRef, type ReactNode } from 'react';
+import { type ComponentProps, type CSSProperties, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../../../helpers';
-import { type InnerClassNamesProp } from '../../../../types.ts';
-import { FatherComponent, type FatherComponentProps } from '../../../FatherComponent';
+import { type AsChildProp, type InnerClassNamesProp } from '../../../../types.ts';
 import styles from './AvatarContainer.module.scss';
 import { AvatarContainerContext } from './AvatarContainerContext';
 
@@ -12,7 +11,7 @@ export type AvatarContainerElementKey = 'overlay' | 'content' | 'rightBottomCorn
 export type AvatarContainerSize = 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 54 | 56 | 64 | 72 | 80 | 88 | 96 | number;
 export type AvatarContainerFrom = 'circle' | 'squircle';
 
-export interface AvatarContainerProps extends FatherComponentProps {
+export interface AvatarContainerProps extends ComponentProps<'div'>, AsChildProp {
   size?: AvatarContainerSize
   overlay?: ReactNode
   form?: AvatarContainerFrom
@@ -31,9 +30,12 @@ export const AvatarContainer = forwardRef<HTMLDivElement, AvatarContainerProps>(
     rightBottomCorner,
     innerClassNames,
     size = 48,
+    asChild,
     form = 'circle',
     ...rest
   } = props;
+
+  const Comp = asChild ? Slot : 'div';
 
   const rootClassName = clsx(
     styles.AvatarContainer,
@@ -43,7 +45,7 @@ export const AvatarContainer = forwardRef<HTMLDivElement, AvatarContainerProps>(
 
   return (
     <AvatarContainerContext.Provider value={{ size }}>
-      <FatherComponent
+      <Comp
         ref={forwardedRef}
         className={rootClassName}
         style={{
@@ -80,7 +82,7 @@ export const AvatarContainer = forwardRef<HTMLDivElement, AvatarContainerProps>(
             {rightTopCorner}
           </span>
         )}
-      </FatherComponent>
+      </Comp>
     </AvatarContainerContext.Provider>
   );
 });

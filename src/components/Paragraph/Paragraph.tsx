@@ -1,19 +1,23 @@
+import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
+import { type ComponentProps, forwardRef } from 'react';
 
-import { FatherComponent, type FatherComponentProps } from '../FatherComponent';
+import { type AsChildProp } from '../../types.ts';
 import styles from './Paragraph.module.scss';
 
-export interface ParagraphProps extends FatherComponentProps {}
+export interface ParagraphProps extends ComponentProps<'span'>, AsChildProp {}
 
-export const Paragraph = forwardRef<HTMLDivElement, ParagraphProps>((props, forwardedRef) => {
+export const Paragraph = forwardRef<HTMLSpanElement, ParagraphProps>((props, forwardedRef) => {
   const {
     className,
+    asChild,
     ...rest
   } = props;
 
+  const Comp = asChild ? Slot : 'span';
+
   return (
-    <FatherComponent
+    <Comp
       ref={forwardedRef}
       className={clsx(styles.Paragraph, className)}
       {...rest}
