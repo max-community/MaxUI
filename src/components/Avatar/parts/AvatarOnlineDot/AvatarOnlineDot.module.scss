@@ -1,4 +1,4 @@
-.AvatarOnline {
+.AvatarOnlineDot {
   position: relative;
   bottom: -2px;
   right: -2px;
@@ -8,41 +8,41 @@
 }
 
 // [Properties] Sizes
-.AvatarOnline_size_xs {
+.AvatarOnlineDot_size_xs {
   width: 12px;
   height: 12px;
 
-  .AvatarOnline__dot {
+  .AvatarOnlineDot__dot {
     width: 6px;
     height: 6px;
     border-width: 2px;
   }
 }
-.AvatarOnline_size_s {
+.AvatarOnlineDot_size_s {
   width: 16px;
   height: 16px;
 
-  .AvatarOnline__dot {
+  .AvatarOnlineDot__dot {
     width: 8px;
     height: 8px;
     border-width: 2px;
   }
 }
-.AvatarOnline_size_m {
+.AvatarOnlineDot_size_m {
   width: 20px;
   height: 20px;
 
-  .AvatarOnline__dot {
+  .AvatarOnlineDot__dot {
     width: 10px;
     height: 10px;
     border-width: 2px;
   }
 }
-.AvatarOnline_size_l {
+.AvatarOnlineDot_size_l {
   width: 24px;
   height: 24px;
 
-  .AvatarOnline__dot {
+  .AvatarOnlineDot__dot {
     width: 12px;
     height: 12px;
     border-width: 3px;
@@ -50,7 +50,7 @@
 }
 
 // [Parts] Dot
-.AvatarOnline__dot {
+.AvatarOnlineDot__dot {
   background-color: var(--icon-positive);
   border-color: var(--background-surface-primary);
   border-style: solid;

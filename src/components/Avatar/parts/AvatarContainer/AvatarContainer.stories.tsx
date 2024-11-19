@@ -30,7 +30,7 @@ const meta = {
       options: [0, 1, 2],
       mapping: [
         undefined,
-        <Avatar.Online key="online-dot" />,
+        <Avatar.OnlineDot key="online-dot" />,
         <IconButton
           key="icon-button"
           aria-label="Добавить"
@@ -42,7 +42,7 @@ const meta = {
       ],
       control: {
         type: 'select',
-        labels: ['None', 'Avatar.Online', 'IconButton']
+        labels: ['None', 'Avatar.OnlineDot', 'IconButton']
       }
     }
   },

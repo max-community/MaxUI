@@ -3,7 +3,7 @@ import {
   AvatarContainer,
   AvatarIcon,
   AvatarImage,
-  AvatarOnline,
+  AvatarOnlineDot,
   AvatarOverlay,
   AvatarText
 } from './parts';
@@ -14,9 +14,9 @@ const AvatarNamespace = Object.assign({}, {
   Overlay: AvatarOverlay,
   Icon: AvatarIcon,
   Text: AvatarText,
-  Online: AvatarOnline,
+  OnlineDot: AvatarOnlineDot,
   CloseButton: AvatarCloseButton
 });
 
 export { AvatarNamespace as Avatar };
-export type { AvatarCloseButtonProps, AvatarContainerProps, AvatarIconProps, AvatarImageProps, AvatarOnlineProps, AvatarOverlayProps, AvatarTextGradient, AvatarTextProps } from './parts';
+export type { AvatarCloseButtonProps, AvatarContainerProps, AvatarIconProps, AvatarImageProps, AvatarOnlineDotProps, AvatarOverlayProps, AvatarTextGradient, AvatarTextProps } from './parts';

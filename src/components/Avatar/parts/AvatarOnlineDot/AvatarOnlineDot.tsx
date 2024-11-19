@@ -2,13 +2,12 @@ import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef } from 'react';
 
 import { useAvatarContainerContext } from '../AvatarContainer/AvatarContainerContext.tsx';
-import styles from './AvatarOnline.module.scss';
+import styles from './AvatarOnlineDot.module.scss';
 import { getDotContainerSize } from './helpers.ts';
 
-export interface AvatarOnlineProps extends ComponentProps<'span'> {}
+export interface AvatarOnlineDotProps extends ComponentProps<'span'> {}
 
-// todo подумать над переименованием компонента в <Avatar.OnlineDot />
-export const AvatarOnline = forwardRef<HTMLSpanElement, AvatarOnlineProps>((props, forwardedRef) => {
+export const AvatarOnlineDot = forwardRef<HTMLSpanElement, AvatarOnlineDotProps>((props, forwardedRef) => {
   const {
     className,
     ...rest
@@ -19,8 +18,8 @@ export const AvatarOnline = forwardRef<HTMLSpanElement, AvatarOnlineProps>((prop
   const size = getDotContainerSize(avatarContainerSize);
 
   const rootClassName = clsx(
-    styles.AvatarOnline,
-    styles[`AvatarOnline_size_${size}`],
+    styles.AvatarOnlineDot,
+    styles[`AvatarOnlineDot_size_${size}`],
     className
   );
 
@@ -30,9 +29,9 @@ export const AvatarOnline = forwardRef<HTMLSpanElement, AvatarOnlineProps>((prop
       className={rootClassName}
       {...rest}
     >
-      <span className={styles.AvatarOnline__dot} />
+      <span className={styles.AvatarOnlineDot__dot} />
     </span>
   );
 });
 
-AvatarOnline.displayName = 'AvatarOnline';
+AvatarOnlineDot.displayName = 'AvatarOnlineDot';

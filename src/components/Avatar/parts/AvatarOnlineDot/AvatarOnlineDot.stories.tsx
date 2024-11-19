@@ -1,22 +1,22 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Icon24Placeholder from '../../../../../.storybook/assets/icons/icon-24-placeholder.svg';
-import { Avatar, type AvatarOnlineProps } from '../../index';
-import { AvatarOnline } from './AvatarOnline.tsx';
+import { Avatar, type AvatarOnlineDotProps } from '../../index';
+import { AvatarOnlineDot } from './AvatarOnlineDot.tsx';
 
 const meta = {
-  title: 'Common/Avatar/Avatar.Online',
-  component: AvatarOnline
-} satisfies Meta<AvatarOnlineProps>;
+  title: 'Common/Avatar/Avatar.OnlineDot',
+  component: AvatarOnlineDot
+} satisfies Meta<AvatarOnlineDotProps>;
 
 export default meta;
-type Story = StoryObj<AvatarOnlineProps>;
+type Story = StoryObj<AvatarOnlineDotProps>;
 
 export const Playground: Story = {
   render: ({ ...props }) => {
     return (
       <Avatar.Container
-        rightBottomCorner={<Avatar.Online {...props} />}
+        rightBottomCorner={<Avatar.OnlineDot {...props} />}
       >
         <Avatar.Icon>
           <Icon24Placeholder />
