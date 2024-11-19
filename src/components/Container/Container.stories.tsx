@@ -11,6 +11,9 @@ const meta = {
   argTypes: {
     ...hideArgsControl(['asChild'])
   },
+  args: {
+    fullWidth: false
+  },
   decorators: [
     (Story) => (
       <div style={{ width: 375, height: 375 }}>
