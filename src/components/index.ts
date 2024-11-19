@@ -19,6 +19,7 @@ export * from './Paragraph';
 export * from './Ripple';
 export * from './SearchInput';
 export * from './Section';
+export * from './Spinner';
 export * from './Subhead';
 export * from './SvgButton';
 export * from './Switch';
