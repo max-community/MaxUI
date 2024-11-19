@@ -18,6 +18,11 @@
   }
 }
 
+// [Parts] Body
+.SearchInput__body {
+  flex-grow: 1;
+}
+
 // [Parts] Search icon
 .SearchInput__icon {
   position: absolute;
@@ -44,11 +49,12 @@
   @include typography.text;
 
   box-sizing: border-box;
+  width: 100%;
 
   .SearchInput_platform_ios & {
     padding:
       var(--spacing-size-m)
-      var(--spacing-size-xl)
+      0
       var(--spacing-size-m)
       calc(var(--spacing-size-xl) + var(--spacing-size-m) + 16px);
   }
@@ -56,12 +62,10 @@
   .SearchInput_platform_android & {
     padding:
       var(--spacing-size-l)
-      var(--spacing-size-xl)
+      0
       var(--spacing-size-l)
       calc(var(--spacing-size-xl) + var(--spacing-size-m) + 16px);
   }
-
-  width: 100%;
 }
 .SearchInput__input::placeholder {
   color: var(--text-secondary);

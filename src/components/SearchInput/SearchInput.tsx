@@ -1,37 +1,27 @@
 import { clsx } from 'clsx';
-import { type ComponentProps, forwardRef, type ReactNode, useRef, useState } from 'react';
+import { type ComponentProps, forwardRef } from 'react';
 
-import { dispatchChangeNativeEvent, mergeRefs } from '../../helpers';
 import { usePlatform } from '../../hooks';
-import { Icon16CloseIos, Icon16SearchOutline, Icon24CloseAndroid } from '../../icons';
-import { type PlatformType } from '../../types.ts';
-import { SvgButton } from '../SvgButton';
+import { Icon16SearchOutline } from '../../icons';
+import { type InnerClassNamesProp } from '../../types.ts';
+import { ClearableInput } from '../ClearableInput';
 import styles from './SearchInput.module.scss';
 
-const clearIconsMapping: Record<PlatformType, ReactNode> = {
-  ios: <Icon16CloseIos />,
-  android: <Icon24CloseAndroid />
-};
+export type SearchInputElementKey = 'input' | 'clearButton' | 'body';
 
-export interface SearchInputProps extends ComponentProps<'input'> {}
+export interface SearchInputProps extends ComponentProps<'input'> {
+  innerClassNames?: InnerClassNamesProp<SearchInputElementKey>
+}
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>((props, forwardedRef) => {
   const {
     className,
     placeholder = 'Поиск',
-    onChange: onChangeProp,
+    innerClassNames,
     ...rest
   } = props;
 
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [isEmpty, setIsEmpty] = useState(!rest.value && !rest.defaultValue);
-
   const platform = usePlatform();
-
-  const clearValue = (): void => {
-    if (!inputRef.current) return;
-    dispatchChangeNativeEvent(inputRef.current);
-  };
 
   const rootClassName = clsx(
     styles.SearchInput,
@@ -40,31 +30,21 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>((props
   );
 
   return (
-    <div className={rootClassName}>
+    <label className={rootClassName}>
       <Icon16SearchOutline className={styles.SearchInput__icon} />
 
-      <input
-        ref={mergeRefs(inputRef, forwardedRef)}
-        className={styles.SearchInput__input}
+      <ClearableInput
+        ref={forwardedRef}
+        className={clsx(styles.SearchInput__body, innerClassNames?.body)}
+        innerClassNames={{
+          input: clsx(styles.SearchInput__input, innerClassNames?.input),
+          clearButton: clsx(styles.SearchInput__clearButton, innerClassNames?.clearButton)
+        }}
         type="text"
         placeholder={placeholder}
-        onChange={(e) => {
-          onChangeProp?.(e);
-          setIsEmpty(!e.target.value);
-        }}
         {...rest}
       />
-
-      {!isEmpty && (
-        <SvgButton
-          className={styles.SearchInput__clearButton}
-          onClick={clearValue}
-          aria-label="Очистить"
-        >
-          {clearIconsMapping[platform]}
-        </SvgButton>
-      )}
-    </div>
+    </label>
   );
 });
 
