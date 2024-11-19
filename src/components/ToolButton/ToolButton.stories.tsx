@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { hideArgsControl } from '../../../.storybook/shared/args-manager';
@@ -11,11 +12,12 @@ const meta = {
   component: ToolButton,
   argTypes: {
     ...hideArgsControl(['asChild', 'innerClassNames', 'icon']),
-    label: { type: 'string' }
+    children: { type: 'string' }
   },
   args: {
-    label: 'Button',
-    icon: <Icon24Placeholder />
+    children: 'Button',
+    icon: <Icon24Placeholder />,
+    onClick: fn()
   },
   decorators: [
     (Story) => (
@@ -45,17 +47,19 @@ export const Playground: Story = {
 export const AsLink: Story = {
   name: 'As link',
   args: {
-    label: 'Ссылка',
+    children: 'Ссылка',
     onClick: undefined
   },
-  render: ({ ...args }) => {
+  render: ({ children, ...args }) => {
     return (
       <ToolButton {...args} asChild>
         <a
           href="https://imgur.com/KFEnxtU"
           target="_blank"
           rel="noreferrer"
-        />
+        >
+          {children}
+        </a>
       </ToolButton>
     );
   }

@@ -1,40 +1,62 @@
-import { Slot, Slottable } from '@radix-ui/react-slot';
+import { Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef, type ReactNode } from 'react';
 
-import { hasReactNode } from '../../helpers';
-import { type AsChildProp } from '../../types.ts';
+import { getSubtree, hasReactNode } from '../../helpers';
+import { type AsChildProp, type InnerClassNamesProp } from '../../types.ts';
+import { Tappable } from '../Tappable';
 import styles from './ToolButton.module.scss';
+
+export type ToolButtonElementKey = 'label' | 'icon';
 
 export interface ToolButtonProps extends ComponentProps<'button'>, AsChildProp {
   icon?: ReactNode
-  label?: ReactNode
+  innerClassNames?: InnerClassNamesProp<ToolButtonElementKey>
 }
 
 export const ToolButton = forwardRef<HTMLButtonElement, ToolButtonProps>((props, forwardedRef) => {
   const {
     className,
-    label,
     icon,
     children,
     asChild,
+    innerClassNames,
     ...rest
   } = props;
 
-  const Comp = asChild ? Slot : 'button';
+  const rootClassName = clsx(
+    styles.ToolButton,
+    {
+      [styles.ToolButton_withLabel]: hasReactNode(children)
+    },
+    className
+  );
 
   return (
-    <Comp
+    <Tappable
       ref={forwardedRef}
-      className={clsx(styles.ToolButton, className)}
+      className={rootClassName}
+      as="button"
+      parentChildren={children}
+      asChild={asChild}
       {...rest}
     >
-      {hasReactNode(icon) && <span className={styles.ToolButton__icon}>{icon}</span>}
+      {hasReactNode(icon) && (
+        <span className={clsx(styles.ToolButton__icon, innerClassNames?.icon)}>
+          {icon}
+        </span>
+      )}
 
-      <Slottable>{children}</Slottable>
-
-      {hasReactNode(label) && <span className={styles.ToolButton__label}>{label}</span>}
-    </Comp>
+      {hasReactNode(children) && (
+        <Slottable>
+          {getSubtree({ asChild, children }, (children) => (
+            <div key="subtree-container" className={clsx(styles.ToolButton__label, innerClassNames?.label)}>
+              {children}
+            </div>
+          ))}
+        </Slottable>
+      )}
+    </Tappable>
   );
 });
 
