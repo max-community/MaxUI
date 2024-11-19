@@ -3,11 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '../Avatar';
 import { Cell } from '../Cell';
 import { Panel } from '../Panel';
-import { Section, type SectionProps } from './Section';
+import { CellList, type CellListProps } from './CellList.tsx';
 
 const meta = {
-  title: 'Common/Section',
-  component: Section,
+  title: 'Common/CellList',
+  component: CellList,
   args: {
     mode: 'island',
     filled: true
@@ -21,15 +21,15 @@ const meta = {
       </div>
     )
   ]
-} satisfies Meta<SectionProps>;
+} satisfies Meta<CellListProps>;
 
 export default meta;
-type Story = StoryObj<SectionProps>;
+type Story = StoryObj<CellListProps>;
 
 export const Playground: Story = {
   render: ({ ...args }) => {
     return (
-      <Section {...args}>
+      <CellList {...args}>
         <Cell
           title="Igor Foxik"
           before={(
@@ -70,7 +70,7 @@ export const Playground: Story = {
           showChevron
           onClick={() => {}}
         />
-      </Section>
+      </CellList>
     );
   }
 };

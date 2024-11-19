@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from '../Avatar';
 import { Cell } from '../Cell';
+import { CellList } from '../CellList';
 import { Paragraph } from '../Paragraph';
-import { Section } from '../Section';
 import { Panel, type PanelProps } from './Panel';
 
 const meta = {
@@ -46,7 +46,7 @@ export const PrimaryExample: Story = {
   render: ({ ...args }) => {
     return (
       <Panel {...args}>
-        <Section>
+        <CellList>
           <Cell
             title="Igor Foxik"
             before={(
@@ -87,7 +87,7 @@ export const PrimaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-        </Section>
+        </CellList>
       </Panel>
     );
   }
@@ -103,7 +103,7 @@ export const SecondaryExample: Story = {
   render: ({ ...args }) => {
     return (
       <Panel {...args}>
-        <Section mode="island">
+        <CellList mode="island">
           <Cell
             title="Igor Foxik"
             before={(
@@ -144,7 +144,7 @@ export const SecondaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-        </Section>
+        </CellList>
       </Panel>
     );
   }
