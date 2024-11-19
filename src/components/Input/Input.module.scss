@@ -32,6 +32,11 @@
   @include form-field-modes-builder.buildFormFieldSecondaryMode('Input');
 }
 
+// [Parts] Body
+.Input__body {
+  flex-grow: 1;
+}
+
 // [Parts] Icon Before
 .Input__iconBefore {
   color: var(--icon-primary);

@@ -2,29 +2,23 @@ import { clsx } from 'clsx';
 import {
   type ComponentProps,
   forwardRef,
-  type ReactNode,
-  useRef, useState
+  type ReactNode
 } from 'react';
 
-import { dispatchChangeNativeEvent, hasReactNode, mergeRefs } from '../../helpers';
-import { usePlatform } from '../../hooks';
-import { Icon16CloseIos, Icon20CloseAndroid } from '../../icons';
-import { type PlatformType } from '../../types.ts';
-import { SvgButton } from '../SvgButton';
+import { hasReactNode } from '../../helpers';
+import { type InnerClassNamesProp } from '../../types.ts';
+import { ClearableInput } from '../ClearableInput';
 import styles from './Input.module.scss';
 
-const clearIconsMapping: Record<PlatformType, ReactNode> = {
-  ios: <Icon16CloseIos />,
-  android: <Icon20CloseAndroid />
-};
-
 export type InputMode = 'primary' | 'secondary';
+export type InputElementKey = 'input' | 'clearButton' | 'body' | 'iconBefore' | 'iconAfter';
 
 export interface InputProps extends ComponentProps<'input'> {
   mode?: InputMode
-  compact?: boolean // todo здесь проп называется compact, а у Cell проп height: 'compact' | 'normal'
+  compact?: boolean // todo здесь проп называется compact, а у Cell проп height: 'compact' | 'normal', по хорошему бы прийти к одному неймингу
   iconBefore?: ReactNode
   iconAfter?: ReactNode
+  innerClassNames?: InnerClassNamesProp<InputElementKey>
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedRef) => {
@@ -32,21 +26,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedR
     className,
     iconBefore,
     iconAfter,
-    onChange: onChangeProp,
+    innerClassNames,
     compact = false,
     mode = 'primary',
     ...rest
   } = props;
-
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [isEmpty, setIsEmpty] = useState(!rest.value && !rest.defaultValue);
-
-  const platform = usePlatform();
-
-  const clearValue = (): void => {
-    if (!inputRef.current) return;
-    dispatchChangeNativeEvent(inputRef.current);
-  };
 
   const rootClassName = clsx(
     styles.Input,
@@ -59,31 +43,29 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedR
   );
 
   return (
-    <div ref={forwardedRef} className={rootClassName}>
-      {hasReactNode(iconBefore) && <div className={styles.Input__iconBefore}>{iconBefore}</div>}
+    <label className={rootClassName}>
+      {hasReactNode(iconBefore) && (
+        <div className={clsx(styles.Input__iconBefore, innerClassNames?.iconBefore)}>
+          {iconBefore}
+        </div>
+      )}
 
-      <input
-        ref={mergeRefs(inputRef, forwardedRef)}
-        className={styles.Input__input}
-        onChange={(e) => {
-          onChangeProp?.(e);
-          setIsEmpty(!e.target.value);
+      <ClearableInput
+        ref={forwardedRef}
+        className={clsx(styles.Input__body, innerClassNames?.body)}
+        innerClassNames={{
+          input: clsx(styles.Input__input, innerClassNames?.input),
+          clearButton: clsx(styles.Input__clearButton, innerClassNames?.clearButton)
         }}
         {...rest}
       />
 
-      {!isEmpty && (
-        <SvgButton
-          className={styles.Input__clearButton}
-          onClick={clearValue}
-          aria-label="Очистить"
-        >
-          {clearIconsMapping[platform]}
-        </SvgButton>
+      {hasReactNode(iconAfter) && (
+        <div className={clsx(styles.Input__iconAfter, innerClassNames?.iconAfter)}>
+          {iconAfter}
+        </div>
       )}
-
-      {hasReactNode(iconAfter) && <div className={styles.Input__iconAfter}>{iconAfter}</div>}
-    </div>
+    </label>
   );
 });
 
