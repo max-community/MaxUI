@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { InputCell, type InputCellProps } from './InputCell';
+import { CellInput, type CellInputProps } from './CellInput.tsx';
 
 const meta = {
-  title: 'Common/InputCell',
-  component: InputCell,
+  title: 'Common/CellInput',
+  component: CellInput,
+  argTypes: {
+    before: { type: 'string' }
+  },
   args: {
     before: 'First name',
     height: 'normal',
@@ -17,13 +20,13 @@ const meta = {
       </div>
     )
   ]
-} satisfies Meta<InputCellProps>;
+} satisfies Meta<CellInputProps>;
 
 export default meta;
-type Story = StoryObj<InputCellProps>;
+type Story = StoryObj<CellInputProps>;
 
 export const Playground: Story = {
   render: ({ ...args }) => {
-    return <InputCell {...args} />;
+    return <CellInput {...args} />;
   }
 };
