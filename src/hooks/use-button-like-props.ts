@@ -9,17 +9,19 @@ export interface ButtonLikeProps {
   asChild?: boolean
   children?: ReactNode
   disabled?: boolean
+  loading?: boolean
   rootElement?: ElementType
 }
 
 // Хук useButtonLikeProps используется в полиморфных компонентах-кнопках (FatherComponent с asChild пропом): Button, Cell, CellAction, etc
 // Главная задача хука - собрать объект с валидными аттрибутами компонента, в зависимости от рутового элемента
 export const useButtonLikeProps = (props: ButtonLikeProps): ComponentProps<any> => {
-  const { asChild, children, rootElement, disabled } = props;
+  const { asChild, children, rootElement, disabled, loading } = props;
 
   if (!asChild && rootElement === 'button') {
     const buttonProps: ComponentProps<'button'> = {
-      disabled
+      disabled,
+      ...(loading ? { 'aria-disabled': true } : {})
     };
     return buttonProps;
   }
@@ -31,7 +33,7 @@ export const useButtonLikeProps = (props: ButtonLikeProps): ComponentProps<any> 
     // Если это ссылка (тег a), то нужно добавить aria-disabled, запревентить открытие ссылки и убрать фокус, если компонент disabled
     if (type === 'a') {
       const anchorProps: ComponentProps<'a'> = {
-        'aria-disabled': disabled,
+        'aria-disabled': disabled ?? loading,
         ...(disabled
           ? {
             onClick: (e) => { e.preventDefault(); },
@@ -49,7 +51,7 @@ export const useButtonLikeProps = (props: ButtonLikeProps): ComponentProps<any> 
   const divProps: ComponentProps<'div'> = {
     role: 'button',
     tabIndex: disabled ? -1 : 0,
-    'aria-disabled': disabled,
+    'aria-disabled': disabled ?? loading,
     ...(disabled
       ? { onClick: undefined }
       : {}

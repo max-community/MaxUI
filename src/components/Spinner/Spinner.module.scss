@@ -1,5 +1,6 @@
 .Spinner {
   display: flex;
+  animation: rotation 1s infinite linear;
 }
 
 // [Properties] Appearances
@@ -34,7 +35,6 @@
   display: block;
   width: inherit;
   height: inherit;
-  animation: rotation 1s infinite linear;
 }
 
 // [Chore] Rotate animation

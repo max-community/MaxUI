@@ -17,6 +17,14 @@
   box-sizing: border-box;
 }
 
+// [State] Loading
+.Button_loading {
+
+  .Button__iconBefore, .Button__content, .Button__indicator, .Button__iconAfter {
+    visibility: hidden;
+  }
+}
+
 // [State] Disabled
 .Button_disabled {
   cursor: not-allowed;
@@ -142,6 +150,15 @@
   .Button_size_large & {
     @include typography.actionLevel1;
   }
+}
+
+// [Parts] Spinner container
+.Button__spinnerContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // [Parts] Icon before

@@ -42,7 +42,8 @@ const meta = {
     indicator: 0,
     children: 'Button',
     disabled: false,
-    stretched: false
+    stretched: false,
+    loading: false
   },
   decorators: [
     (Story, context) => {
@@ -64,7 +65,7 @@ export default meta;
 type Story = StoryObj<ButtonProps>;
 
 export const Playground: Story = {
-  render: ({ iconBefore, iconAfter, indicator, size = 'medium', ...args }) => {
+  render: ({ iconBefore, iconAfter, indicator, size = 'medium', loading, ...args }) => {
     return (
       <Button
         {...args}
@@ -72,6 +73,8 @@ export const Playground: Story = {
         iconBefore={Boolean(iconBefore) && iconsMapping[size]}
         iconAfter={Boolean(iconAfter) && iconsMapping[size]}
         indicator={indicator}
+        loading={loading}
+        aria-label={loading ? 'Loading...' : undefined}
       />
     );
   }
@@ -83,7 +86,7 @@ export const AsLink: Story = {
     children: 'Я — ссылка!',
     onClick: undefined
   },
-  render: ({ iconBefore, iconAfter, indicator, size = 'medium', children, ...args }) => {
+  render: ({ iconBefore, iconAfter, indicator, loading, size = 'medium', children, ...args }) => {
     return (
       <Button
         {...args}
@@ -91,6 +94,8 @@ export const AsLink: Story = {
         iconBefore={Boolean(iconBefore) && iconsMapping[size]}
         iconAfter={Boolean(iconAfter) && iconsMapping[size]}
         indicator={indicator}
+        loading={loading}
+        aria-label={loading ? 'Loading...' : undefined}
         asChild
       >
         <a

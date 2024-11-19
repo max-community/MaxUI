@@ -1,18 +1,20 @@
 import { Slot, Slottable } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
-import { type ComponentProps, type ElementType, forwardRef, type ReactNode } from 'react';
+import { type ComponentProps, type ElementType, forwardRef, type MouseEventHandler, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
 import { type AsChildProp, type InnerClassNamesProp } from '../../types.ts';
 import { EllipsisText } from '../EllipsisText';
 import { Ripple } from '../Ripple';
+import { Spinner } from '../Spinner';
 import styles from './Button.module.scss';
+import { getButtonSpinnerAppearance, getButtonSpinnerSize } from './helpers.ts';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 export type ButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
 export type ButtonAppearance = 'accent' | 'negative' | 'neutral' | 'contrast-static';
-export type ButtonInnerElementKey = 'iconBefore' | 'iconAfter' | 'indicator' | 'content';
+export type ButtonInnerElementKey = 'iconBefore' | 'iconAfter' | 'indicator' | 'content' | 'spinnerContainer' | 'spinner';
 
 export interface ButtonProps extends ComponentProps<'button'>, AsChildProp {
   size?: ButtonSize
@@ -23,6 +25,7 @@ export interface ButtonProps extends ComponentProps<'button'>, AsChildProp {
   iconAfter?: ReactNode
   indicator?: ReactNode
   innerClassNames?: InnerClassNamesProp<ButtonInnerElementKey>
+  loading?: boolean
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
@@ -33,6 +36,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
     iconAfter,
     indicator,
     children,
+    onClick,
+    loading,
     asChild = false,
     innerClassNames,
     stretched = false,
@@ -46,18 +51,25 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
   const Comp = asChild ? Slot : rootElement;
 
   const platform = usePlatform();
-  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, rootElement });
-  const withRipple = platform === 'android' && mode !== 'link' && !disabled;
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, rootElement, loading });
+  const inactive = disabled || loading;
+  const withRipple = platform === 'android' && mode !== 'link';
+
+  const clickHandler: MouseEventHandler<HTMLButtonElement> = (e) => {
+    if (loading) return;
+    onClick?.(e);
+  };
 
   const rootClassName = clsx(
     styles.Button,
     styles[`Button_appearance_${appearance}`],
     styles[`Button_mode_${mode}`],
     styles[`Button_size_${size}`], {
+      [styles.Button_loading]: loading,
       [styles.Button_disabled]: disabled,
       [styles.Button_stretched]: stretched,
-      [styles.Button_activeMode_highlight]: !withRipple,
-      [styles.Button_activeMode_ripple]: withRipple
+      [styles.Button_activeMode_highlight]: !inactive && !withRipple,
+      [styles.Button_activeMode_ripple]: !inactive && withRipple
     },
     className
   );
@@ -66,12 +78,23 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
     <Comp
       ref={forwardedRef}
       className={rootClassName}
+      onClick={clickHandler}
       {...buttonLikeProps}
       {...rest}
     >
       {hasReactNode(iconBefore) && (
         <span className={clsx(styles.Button__iconBefore, innerClassNames?.iconBefore)}>
           {iconBefore}
+        </span>
+      )}
+
+      {loading && (
+        <span className={clsx(styles.Button__spinnerContainer, innerClassNames?.spinnerContainer)}>
+          <Spinner
+            className={clsx(innerClassNames?.spinner)}
+            size={getButtonSpinnerSize(size)}
+            appearance={getButtonSpinnerAppearance(appearance, mode)}
+          />
         </span>
       )}
 
@@ -98,7 +121,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
         </span>
       )}
 
-      {platform === 'android' && <Ripple className={styles.Button__ripple} />}
+      {withRipple && !inactive && <Ripple className={styles.Button__ripple} />}
     </Comp>
   );
 });
