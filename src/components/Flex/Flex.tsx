@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
 
 import { getCssSizeValue } from '../../helpers';
-import { type AsChildProp } from '../../types.ts';
+import { type AsChildProp } from '../../types';
 import styles from './Flex.module.scss';
 
 export type FlexDisplay = 'flex' | 'inline-flex';

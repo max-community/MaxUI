@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Ripple, type RippleProps } from './Ripple.tsx';
+import { Ripple, type RippleProps } from './Ripple';
 
 const meta = {
   title: 'Helpers/Ripple',

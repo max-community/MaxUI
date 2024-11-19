@@ -1,1 +1,1 @@
-export { AvatarOnlineDot, type AvatarOnlineDotProps } from './AvatarOnlineDot.tsx';
+export { AvatarOnlineDot, type AvatarOnlineDotProps } from './AvatarOnlineDot';

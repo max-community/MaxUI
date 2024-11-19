@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Icon24Placeholder from '../../../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { Avatar, type AvatarCloseButtonProps } from '../../index';
-import { AvatarCloseButton } from './AvatarCloseButton.tsx';
+import { AvatarCloseButton } from './AvatarCloseButton';
 
 const meta = {
   title: 'Common/Avatar/Avatar.CloseButton',

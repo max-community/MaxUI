@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import Icon28Placeholder from '../../../.storybook/assets/icons/icon-28-placeholder.svg';
 import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { EllipsisText } from '../EllipsisText';
-import { CellAction, type CellActionProps } from './CellAction.tsx';
+import { CellAction, type CellActionProps } from './CellAction';
 
 const meta = {
   title: 'Common/CellAction',

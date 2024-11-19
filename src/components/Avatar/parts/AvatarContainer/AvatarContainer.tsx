@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import { type ComponentProps, type CSSProperties, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../../../helpers';
-import { type AsChildProp, type InnerClassNamesProp } from '../../../../types.ts';
+import { type AsChildProp, type InnerClassNamesProp } from '../../../../types';
 import styles from './AvatarContainer.module.scss';
 import { AvatarContainerContext } from './AvatarContainerContext';
 

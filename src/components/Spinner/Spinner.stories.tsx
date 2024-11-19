@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
 import { useColorScheme } from '../../hooks';
-import { Spinner, type SpinnerProps } from './Spinner.tsx';
+import { Spinner, type SpinnerProps } from './Spinner';
 
 const meta = {
   title: 'Common/Spinner',

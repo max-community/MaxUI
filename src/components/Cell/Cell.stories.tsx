@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
-import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { Counter } from '../Counter';

@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef } from 'react';
 
-import { type AsChildProp } from '../../types.ts';
+import { type AsChildProp } from '../../types';
 import styles from './Title.module.scss';
 
 export type TitleVariant = 'title1' | 'title2' | 'title2-regular' | 'title3' | 'title3-regular';

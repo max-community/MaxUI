@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { Grid, type GridProps } from './Grid';
 
 const meta = {

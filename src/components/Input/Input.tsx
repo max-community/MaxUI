@@ -6,7 +6,7 @@ import {
 } from 'react';
 
 import { hasReactNode } from '../../helpers';
-import { type InnerClassNamesProp } from '../../types.ts';
+import { type InnerClassNamesProp } from '../../types';
 import { ClearableInput } from '../ClearableInput';
 import styles from './Input.module.scss';
 

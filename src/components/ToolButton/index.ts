@@ -1,1 +1,1 @@
-export { ToolButton, type ToolButtonProps } from './ToolButton';
+export { ToolButton, type ToolButtonElementKey, type ToolButtonProps } from './ToolButton';

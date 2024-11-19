@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Cell } from '../Cell';
-import { Switch, type SwitchProps } from './Switch.tsx';
+import { Switch, type SwitchProps } from './Switch';
 
 const meta = {
   title: 'Forms/Switch',

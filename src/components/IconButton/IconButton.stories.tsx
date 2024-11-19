@@ -4,7 +4,7 @@ import { type ReactNode } from 'react';
 import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import { OverlayContainer } from '../../../.storybook/components/OverlayContainer';
-import { disableArgs, hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
+import { disableArgs, hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { useColorScheme } from '../../hooks';
 import { IconButton, type IconButtonProps, type IconButtonSize } from './IconButton';
 

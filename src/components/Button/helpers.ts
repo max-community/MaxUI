@@ -1,4 +1,4 @@
-import { type SpinnerAppearance } from '../Spinner/Spinner.tsx';
+import { type SpinnerAppearance } from '../Spinner';
 import { type ButtonAppearance, type ButtonMode, type ButtonSize } from './Button';
 
 export const getButtonSpinnerSize = (buttonSize: ButtonSize): number => {

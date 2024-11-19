@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef } from 'react';
 
-import { type AsChildProp } from '../../types.ts';
+import { type AsChildProp } from '../../types';
 import styles from './Headline.module.scss';
 
 export type HeadlineVariant = 'headline1' | 'headline2';

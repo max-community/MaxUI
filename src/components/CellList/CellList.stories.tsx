@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '../Avatar';
 import { Cell } from '../Cell';
 import { Panel } from '../Panel';
-import { CellList, type CellListProps } from './CellList.tsx';
+import { CellList, type CellListProps } from './CellList';
 
 const meta = {
   title: 'Common/CellList',

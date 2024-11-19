@@ -1,1 +1,1 @@
-export { CellList, type CellListMode, type CellListProps } from './CellList.tsx';
+export { CellList, type CellListMode, type CellListProps } from './CellList';

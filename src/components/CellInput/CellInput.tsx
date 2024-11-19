@@ -2,7 +2,7 @@ import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef, type ReactNode } from 'react';
 
 import { hasReactNode } from '../../helpers';
-import { type InnerClassNamesProp } from '../../types.ts';
+import { type InnerClassNamesProp } from '../../types';
 import { ClearableInput } from '../ClearableInput';
 import { EllipsisText } from '../EllipsisText';
 import styles from './CellInput.module.scss';

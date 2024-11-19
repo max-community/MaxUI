@@ -1,9 +1,9 @@
 import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef } from 'react';
 
-import { useAvatarContainerContext } from '../AvatarContainer/AvatarContainerContext.tsx';
+import { useAvatarContainerContext } from '../AvatarContainer/AvatarContainerContext';
 import styles from './AvatarOnlineDot.module.scss';
-import { getDotContainerSize } from './helpers.ts';
+import { getDotContainerSize } from './helpers';
 
 export interface AvatarOnlineDotProps extends ComponentProps<'span'> {}
 

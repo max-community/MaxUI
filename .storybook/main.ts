@@ -20,6 +20,13 @@ const config: StorybookConfig = {
     const { mergeConfig } = await import('vite');
 
     return mergeConfig(config, {
+      css: {
+        preprocessorOptions: {
+          scss: {
+            api: 'modern-compiler' // or "modern"
+          }
+        }
+      },
       plugins: [
         svgr({ include: '**/*.svg' })
       ]

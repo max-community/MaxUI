@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { hideArgsControl } from '../../../.storybook/shared/args-manager.ts';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { Button } from '../Button';
 import { Flex } from '../Flex';
-import { Container, type ContainerProps } from './Container.tsx';
+import { Container, type ContainerProps } from './Container';
 
 const meta = {
   title: 'Layout/Container',

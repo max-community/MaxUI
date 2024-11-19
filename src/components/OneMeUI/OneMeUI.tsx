@@ -4,7 +4,7 @@ import { type ComponentProps, forwardRef, useMemo } from 'react';
 import { isIos } from '../../helpers';
 import { useSystemColorScheme } from '../../hooks';
 import styles from './OneMeUI.module.scss';
-import { OneMeUIContext, type OneMeUIContextInterface } from './OneMeUIContext.tsx';
+import { OneMeUIContext, type OneMeUIContextInterface } from './OneMeUIContext';
 
 export interface OneMeUIProps extends Partial<OneMeUIContextInterface> {
   children: ComponentProps<'div'>['children']

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar, type AvatarTextProps } from '../../index';
-import { AvatarText } from './AvatarText.tsx';
+import { AvatarText } from './AvatarText';
 
 const meta = {
   title: 'Common/Avatar/Avatar.Text',

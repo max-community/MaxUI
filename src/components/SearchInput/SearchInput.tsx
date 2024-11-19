@@ -3,7 +3,7 @@ import { type ComponentProps, forwardRef } from 'react';
 
 import { usePlatform } from '../../hooks';
 import { Icon16SearchOutline } from '../../icons';
-import { type InnerClassNamesProp } from '../../types.ts';
+import { type InnerClassNamesProp } from '../../types';
 import { ClearableInput } from '../ClearableInput';
 import styles from './SearchInput.module.scss';
 

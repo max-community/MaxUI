@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Icon20Placeholder from '../../../.storybook/assets/icons/icon-20-placeholder.svg';
 import { hideArgsControl } from '../../../.storybook/shared/args-manager';
-import { Input, type InputProps } from './Input.tsx';
+import { Input, type InputProps } from './Input';
 
 const meta = {
   title: 'Forms/Input',

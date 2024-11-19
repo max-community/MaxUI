@@ -4,12 +4,12 @@ import { type ComponentProps, type ElementType, forwardRef, type MouseEventHandl
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
-import { type AsChildProp, type InnerClassNamesProp } from '../../types.ts';
+import { type AsChildProp, type InnerClassNamesProp } from '../../types';
 import { EllipsisText } from '../EllipsisText';
 import { Ripple } from '../Ripple';
 import { Spinner } from '../Spinner';
 import styles from './Button.module.scss';
-import { getButtonSpinnerAppearance, getButtonSpinnerSize } from './helpers.ts';
+import { getButtonSpinnerAppearance, getButtonSpinnerSize } from './helpers';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 export type ButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';

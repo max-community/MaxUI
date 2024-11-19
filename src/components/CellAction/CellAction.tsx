@@ -4,7 +4,7 @@ import { type ComponentProps, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { Icon16Chevron } from '../../icons';
-import { type AsChildProp, type InnerClassNamesProp, type MergeProps } from '../../types.ts';
+import { type AsChildProp, type InnerClassNamesProp, type MergeProps } from '../../types';
 import { Tappable } from '../Tappable';
 import styles from './CellAction.module.scss';
 

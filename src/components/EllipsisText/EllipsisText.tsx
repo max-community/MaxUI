@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
 import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
 
-import { type AsChildProp } from '../../types.ts';
+import { type AsChildProp } from '../../types';
 import styles from './EllipsisText.module.scss';
 
 export interface EllipsisTextProps extends ComponentProps<'div'>, AsChildProp {

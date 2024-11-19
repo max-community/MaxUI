@@ -1,1 +1,1 @@
-export { CellInput, type CellInputProps } from './CellInput.tsx';
+export { CellInput, type CellInputElementKey, type CellInputHeight, type CellInputProps } from './CellInput';

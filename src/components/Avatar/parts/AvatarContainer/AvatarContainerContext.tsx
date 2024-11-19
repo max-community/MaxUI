@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { type AvatarContainerSize } from './AvatarContainer.tsx';
+import { type AvatarContainerSize } from './AvatarContainer';
 
 export interface AvatarContainerContextInterface {
   size: AvatarContainerSize

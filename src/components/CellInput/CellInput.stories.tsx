@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CellInput, type CellInputProps } from './CellInput.tsx';
+import { CellInput, type CellInputProps } from './CellInput';
 
 const meta = {
   title: 'Common/CellInput',

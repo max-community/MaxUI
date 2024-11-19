@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef } from 'react';
 
-import { type InnerClassNamesProp } from '../../types.ts';
+import { type InnerClassNamesProp } from '../../types';
 import styles from './Textarea.module.scss';
 
 export type TextareaElementKey = 'textarea';

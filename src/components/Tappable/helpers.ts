@@ -1,6 +1,6 @@
 import { type AllHTMLAttributes, isValidElement } from 'react';
 
-import { type AsChildProp } from '../../types.ts';
+import { type AsChildProp } from '../../types';
 
 interface ExpectedProps extends AsChildProp {
   onClick?: AllHTMLAttributes<HTMLElement>['onClick']

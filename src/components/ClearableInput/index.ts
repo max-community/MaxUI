@@ -1,1 +1,1 @@
-export { ClearableInput, type ClearableInputProps } from './ClearableInput';
+export { ClearableInput, type ClearableInputElementKey, type ClearableInputProps } from './ClearableInput';

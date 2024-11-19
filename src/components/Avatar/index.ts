@@ -19,4 +19,4 @@ const AvatarNamespace = Object.assign({}, {
 });
 
 export { AvatarNamespace as Avatar };
-export type { AvatarCloseButtonProps, AvatarContainerProps, AvatarIconProps, AvatarImageProps, AvatarOnlineDotProps, AvatarOverlayProps, AvatarTextGradient, AvatarTextProps } from './parts';
+export type { AvatarCloseButtonProps, AvatarContainerElementKey, AvatarContainerFrom, AvatarContainerProps, AvatarContainerSize, AvatarIconProps, AvatarImageProps, AvatarOnlineDotProps, AvatarOverlayProps, AvatarTextGradient, AvatarTextProps } from './parts';

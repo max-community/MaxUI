@@ -1,5 +1,5 @@
 import { useAppearance } from '../components';
-import { type PlatformType } from '../types.ts';
+import { type PlatformType } from '../types';
 
 export const usePlatform = (): PlatformType => {
   const { platform } = useAppearance();

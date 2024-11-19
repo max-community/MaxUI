@@ -4,7 +4,7 @@ import { type ComponentProps, forwardRef, type ReactNode, useRef, useState } fro
 import { dispatchChangeNativeEvent, mergeRefs } from '../../helpers';
 import { usePlatform } from '../../hooks';
 import { Icon16CloseIos, Icon20CloseAndroid } from '../../icons';
-import { type InnerClassNamesProp, type PlatformType } from '../../types.ts';
+import { type InnerClassNamesProp, type PlatformType } from '../../types';
 import { SvgButton } from '../SvgButton';
 import styles from './ClearableInput.module.scss';
 
