@@ -3,6 +3,10 @@
 .CellHeader {
   color: var(--text-secondary);
   padding: var(--spacing-size-xs) calc(var(--spacing-size4xl) - var(--spacing-size-xl));
+  min-height: 28px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 // [Properties] Title styles
