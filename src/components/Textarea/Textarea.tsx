@@ -1,17 +1,21 @@
 import { clsx } from 'clsx';
 import { type ComponentProps, forwardRef } from 'react';
 
+import { type InnerClassNamesProp } from '../../types.ts';
 import styles from './Textarea.module.scss';
 
+export type TextareaElementKey = 'textarea';
 export type TextareaMode = 'primary' | 'secondary';
 
 export interface TextareaProps extends ComponentProps<'textarea'> {
   mode?: TextareaMode
+  innerClassNames?: InnerClassNamesProp<TextareaElementKey>
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, forwardedRef) => {
   const {
     className,
+    innerClassNames,
     mode = 'primary',
     ...rest
   } = props;
@@ -29,7 +33,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, f
     <div className={rootClassName}>
       <textarea
         ref={forwardedRef}
-        className={styles.Textarea__textarea}
+        className={clsx(styles.Textarea__textarea, innerClassNames?.textarea)}
         {...rest}
       />
     </div>
