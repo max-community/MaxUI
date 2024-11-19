@@ -26,6 +26,7 @@ const meta = {
     appearance: 'accent',
     size: 'medium',
     disabled: false,
+    loading: false,
     'aria-label': 'Название кнопки'
   },
   decorators: [
@@ -48,11 +49,13 @@ export default meta;
 type Story = StoryObj<IconButtonProps>;
 
 export const Playground: Story = {
-  render: ({ size = 'medium', ...args }) => {
+  render: ({ size = 'medium', 'aria-label': ariaLabel, loading, ...args }) => {
     return (
       <IconButton
         {...args}
         size={size}
+        loading={loading}
+        aria-label={loading ? 'Loading...' : ariaLabel}
       >
         {iconsMapping[size]}
       </IconButton>
@@ -60,17 +63,16 @@ export const Playground: Story = {
   }
 };
 
-export const LinkAsButton: Story = {
-  name: 'Link as Button',
-  args: {
-    children: 'Я — ссылка!'
-  },
-  render: ({ size = 'medium', children, ...args }) => {
+export const AsLink: Story = {
+  name: 'As link',
+  render: ({ size = 'medium', 'aria-label': ariaLabel, loading, children, ...args }) => {
     return (
       <IconButton
         {...args}
         size={size}
         asChild
+        loading={loading}
+        aria-label={loading ? 'Loading...' : ariaLabel}
       >
         <a
           href="https://imgur.com/KFEnxtU"

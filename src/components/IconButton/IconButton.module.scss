@@ -17,6 +17,14 @@
   box-sizing: border-box;
 }
 
+// [State] Loading
+.IconButton_loading {
+
+  .IconButton__content {
+    visibility: hidden;
+  }
+}
+
 // [Property] Disabled
 .IconButton_disabled {
   cursor: not-allowed;
@@ -119,6 +127,15 @@
 }
 .IconButton_mode_link.IconButton_appearance_contrast-static {
   @include button-appearances.buttonLinkContrastStatic('IconButton', true);
+}
+
+// [Parts] Spinner container
+.IconButton__spinnerContainer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // [Parts] Content

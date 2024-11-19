@@ -6,18 +6,21 @@ import { getSubtree } from '../../helpers';
 import { useButtonLikeProps, usePlatform } from '../../hooks';
 import { type AsChildProp, type InnerClassNamesProp } from '../../types.ts';
 import { Ripple } from '../Ripple';
+import { Spinner } from '../Spinner';
+import { getIconButtonSpinnerAppearance, getIconButtonSpinnerSize } from './helpers.ts';
 import styles from './IconButton.module.scss';
 
 export type IconButtonSize = 'small' | 'medium' | 'large';
 export type IconButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
 export type IconButtonAppearance = 'accent' | 'negative' | 'neutral' | 'contrast-static';
-export type IconButtonInnerElementKey = 'content';
+export type IconButtonInnerElementKey = 'content' | 'spinnerContainer' | 'spinner';
 
 export interface IconButtonProps extends ComponentProps<'button'>, AsChildProp {
   size?: IconButtonSize
   mode?: IconButtonMode
   appearance?: IconButtonAppearance
   disabled?: boolean
+  loading?: boolean
   innerClassNames?: InnerClassNamesProp<IconButtonInnerElementKey>
 }
 
@@ -27,6 +30,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     className,
     disabled,
     innerClassNames,
+    loading,
     asChild = false,
     size = 'medium',
     mode = 'primary',
@@ -38,8 +42,9 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
   const Comp = asChild ? Slot : rootElement;
 
   const platform = usePlatform();
-  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, rootElement });
+  const buttonLikeProps = useButtonLikeProps({ asChild, children, disabled, rootElement, loading });
 
+  const inactive = disabled || loading;
   const withRipple = platform === 'android' && mode !== 'link';
 
   const rootClassName = clsx(
@@ -47,9 +52,10 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     styles[`IconButton_appearance_${appearance}`],
     styles[`IconButton_mode_${mode}`],
     styles[`IconButton_size_${size}`], {
+      [styles.IconButton_loading]: loading,
       [styles.IconButton_disabled]: disabled,
-      [styles.IconButton_activeMode_highlight]: !withRipple,
-      [styles.IconButton_activeMode_ripple]: withRipple
+      [styles.IconButton_activeMode_highlight]: !inactive && !withRipple,
+      [styles.IconButton_activeMode_ripple]: !inactive && withRipple
     },
     className
   );
@@ -61,6 +67,16 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
       {...buttonLikeProps}
       {...rest}
     >
+      {loading && (
+        <span className={clsx(styles.IconButton__spinnerContainer, innerClassNames?.spinnerContainer)}>
+          <Spinner
+            className={clsx(innerClassNames?.spinner)}
+            size={getIconButtonSpinnerSize(size)}
+            appearance={getIconButtonSpinnerAppearance(appearance, mode)}
+          />
+        </span>
+      )}
+
       <Slottable>
         {getSubtree({ asChild, children }, (children) => (
           <span
@@ -72,7 +88,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
         ))}
       </Slottable>
 
-      {platform === 'android' && !disabled && <Ripple className={styles.IconButton__ripple} />}
+      {withRipple && !inactive && <Ripple className={styles.IconButton__ripple} />}
     </Comp>
   );
 });
