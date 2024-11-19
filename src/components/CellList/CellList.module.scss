@@ -1,15 +1,27 @@
-.CellList {
-  overflow: hidden;
-}
+.CellList {}
 
+// [Property] Filled
 .CellList_filled {
-  background-color: var(--background-card);
+
+  .CellList__body {
+    background-color: var(--background-card);
+  }
 }
 
+// [Properties] Modes
 .CellList_mode_full-width {}
-
 .CellList_mode_island {
   margin-left: var(--spacing-size-xl);
   margin-right: var(--spacing-size-xl);
-  border-radius: var(--size-border-radius-semantic-border-radius-card);
+
+  .CellList__body {
+    overflow: hidden;
+    border-radius: var(--size-border-radius-semantic-border-radius-card);
+  }
 }
+
+// [Parts] Header
+.CellList__header {}
+
+// [Parts] Body
+.CellList__body {}

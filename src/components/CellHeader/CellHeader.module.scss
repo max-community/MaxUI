@@ -1,0 +1,14 @@
+@use '../../styles/shared-mixins/typography';
+
+.CellHeader {
+  color: var(--text-secondary);
+  padding: var(--spacing-size-xs) calc(var(--spacing-size4xl) - var(--spacing-size-xl));
+}
+
+// [Properties] Title styles
+.CellHeader_titleStyle_caps {
+  @include typography.captionLevel1Caps;
+}
+.CellHeader_titleStyle_normal {
+  @include typography.captionLevel1Medium;
+}

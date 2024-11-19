@@ -2,6 +2,7 @@ export * from './Avatar';
 export * from './Button';
 export * from './Cell';
 export * from './CellAction';
+export * from './CellHeader';
 export * from './CellInput';
 export * from './CellList';
 export * from './Container';
