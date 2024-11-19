@@ -76,6 +76,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, forwardedR
         <SvgButton
           className={styles.Input__clearButton}
           onClick={clearValue}
+          aria-label="Очистить"
         >
           {clearIconsMapping[platform]}
         </SvgButton>

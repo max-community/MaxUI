@@ -59,6 +59,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>((props
         <SvgButton
           className={styles.SearchInput__clearButton}
           onClick={clearValue}
+          aria-label="Очистить"
         >
           {clearIconsMapping[platform]}
         </SvgButton>
