@@ -7,14 +7,16 @@ export type PanelMode = 'primary' | 'secondary';
 
 export interface PanelProps extends ComponentProps<'div'> {
   mode?: PanelMode
-  centered?: boolean
+  centeredX?: boolean
+  centeredY?: boolean
 }
 
 export const Panel = forwardRef<HTMLDivElement, PanelProps>((props, forwardedRef) => {
   const {
     className,
     mode = 'primary',
-    centered,
+    centeredX,
+    centeredY,
     ...rest
   } = props;
 
@@ -22,7 +24,8 @@ export const Panel = forwardRef<HTMLDivElement, PanelProps>((props, forwardedRef
     styles.Panel,
     styles[`Panel_mode_${mode}`],
     {
-      [styles.Panel_centered]: centered
+      [styles.Panel_centeredX]: centeredX,
+      [styles.Panel_centeredY]: centeredY
     },
     className
   );

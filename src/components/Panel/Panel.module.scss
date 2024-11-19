@@ -4,8 +4,11 @@
   flex-direction: column;
 }
 
-// [Property] Centered
-.Panel_centered {
+// [Properties] Centered
+.Panel_centeredX {
+  align-items: center;
+}
+.Panel_centeredY {
   justify-content: center;
 }
 
