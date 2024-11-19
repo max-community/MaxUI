@@ -18,7 +18,11 @@ export default {
     peerDepsExternal(),
     postcss({
       inject: false,
-      extract: 'oneme-ui.css'
+      extract: 'oneme-ui.css',
+      minimize: true,
+      modules: {
+        generateScopedName: '[local]__[hash:base64:3]'
+      }
     }),
     terser()
   ]

@@ -23,7 +23,7 @@ const config: StorybookConfig = {
       css: {
         preprocessorOptions: {
           scss: {
-            api: 'modern-compiler' // or "modern"
+            api: 'modern-compiler'
           }
         }
       },
