@@ -1,0 +1,93 @@
+.Switch {
+  position: relative;
+  display: inline-flex;
+}
+
+// [Parts]
+.Switch__toggle {
+  background-color: var(--OneMe-Switch__toggle_background);
+  padding-left: var(--OneMe-Switch__toggle_paddingX);
+  padding-right: var(--OneMe-Switch__toggle_paddingX);
+  width: var(--OneMe-Switch__toggle_width);
+  height: var(--OneMe-Switch__toggle_height);
+  border: var(--OneMe-Switch__toggle_border) var(--OneMe-Switch__toggle_borderColor);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: background-color .1s;
+}
+
+.Switch__thumb {
+  width: var(--OneMe-Switch__thumb_size);
+  height: var(--OneMe-Switch__thumb_size);
+  background-color: var(--OneMe-Switch__thumb_background);
+  transform: translateX(var(--OneMe-Switch__thumb_offset)) scale(var(--OneMe-Switch__thumb_scale, 1));
+  box-shadow: var(--OneMe-Switch__thumb_shadow);
+  transition: .1s;
+  border-radius: 100%;
+  display: block;
+}
+
+.Switch__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.Switch__input:disabled {
+  cursor: not-allowed;
+}
+.Switch__input:not(:disabled) {
+  cursor: pointer;
+}
+
+// [Properties] IOS styles
+.Switch_platform_ios {
+  --OneMe-Switch__toggle_background: var(--background-accent-neutral-fade);
+  --OneMe-Switch__toggle_paddingX: 2px;
+  --OneMe-Switch__toggle_width: 51px;
+  --OneMe-Switch__toggle_height: 31px;
+  --OneMe-Switch__thumb_size: 27px;
+  --OneMe-Switch__thumb_offset: 0;
+  --OneMe-Switch__thumb_shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+  --OneMe-Switch__thumb_background: var(--icon-contrast-static);
+}
+.Switch_platform_ios:has(.Switch__input:checked) {
+  --OneMe-Switch__toggle_background: var(--background-accent-themed);
+  --OneMe-Switch__thumb_offset: 20px;
+}
+.Switch_platform_ios:has(.Switch__input:disabled:checked) {
+  --OneMe-Switch__toggle_background: var(--states-background-disabled-themed);
+}
+.Switch_platform_ios:has(.Switch__input:disabled) {
+  --OneMe-Switch__toggle_background: var(--states-background-disabled-neutral-fade);
+}
+
+// [Properties] Android styles
+.Switch_platform_android {
+  --OneMe-Switch__toggle_paddingX: 4px;
+  --OneMe-Switch__toggle_width: 52px;
+  --OneMe-Switch__toggle_height: 32px;
+  --OneMe-Switch__toggle_border: 2px solid;
+  --OneMe-Switch__toggle_borderColor: var(--stroke-separator-primary);
+  --OneMe-Switch__thumb_size: 20px;
+  --OneMe-Switch__thumb_offset: 0;
+  --OneMe-Switch__thumb_background: var(--icon-tertiary);
+}
+.Switch_platform_android:has(.Switch__input:checked) {
+  --OneMe-Switch__toggle_background: var(--background-accent-themed);
+  --OneMe-Switch__thumb_background: var(--icon-contrast-static);
+  --OneMe-Switch__toggle_borderColor: var(--background-accent-themed);
+  --OneMe-Switch__thumb_scale: 1.2;
+  --OneMe-Switch__thumb_offset: 20px;
+}
+.Switch_platform_android:has(.Switch__input:disabled:checked) {
+  --OneMe-Switch__toggle_background: var(--states-background-disabled-themed);
+  --OneMe-Switch__toggle_borderColor: transparent;
+}
+.Switch_platform_android:has(.Switch__input:disabled:not(:checked)) {
+  --OneMe-Switch__toggle_background: var(--states-background-disabled-neutral-fade);
+  --OneMe-Switch__thumb_background: var(--icon-quaternary);
+}

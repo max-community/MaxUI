@@ -1,0 +1,151 @@
+@mixin buildButtonPrimaryModeAppearance(
+  $root,
+  $withInnerElementsDefs: false,
+
+  $background,
+  $background_disabled,
+  $background_hovered,
+  $background_pressed,
+  $foreground,
+  $foreground_disabled,
+
+  $innerElementsBackground,
+  $innerElementsBackground_disabled,
+  $innerElementsForeground,
+  $innerElementsForeground_disabled,
+) {
+  --OneMe-#{$root}_background-active: #{$background_pressed};
+
+  --OneMe-#{$root}_background: #{$background};
+  --OneMe-#{$root}_foreground: #{$foreground};
+
+  &:hover {
+    --OneMe-#{$root}_background: #{$background_hovered};
+  }
+
+  &.#{$root}_disabled {
+    --OneMe-#{$root}_background: #{$background_disabled};
+    --OneMe-#{$root}_foreground: #{$foreground_disabled};
+  }
+
+  @if $withInnerElementsDefs {
+    --OneMe-external_background: #{$innerElementsBackground};
+    --OneMe-external_foreground: #{$innerElementsForeground};
+
+    &.#{$root}_disabled {
+      --OneMe-external_background: #{$innerElementsBackground_disabled};
+      --OneMe-external_foreground: #{$innerElementsForeground_disabled};
+    }
+  }
+}
+
+@mixin buildButtonSecondaryModeAppearance(
+  $root,
+  $withInnerElementsDefs: false,
+
+  $foreground,
+  $foreground_disabled,
+
+  $innerElementsBackground,
+  $innerElementsBackground_disabled,
+  $innerElementsForeground,
+  $innerElementsForeground_disabled,
+) {
+  --OneMe-#{$root}_background-active: var(--states-background-pressed-neutral-fade);
+
+  --OneMe-#{$root}_background: var(--background-accent-neutral-fade);
+  --OneMe-#{$root}_foreground: #{$foreground};
+
+  &:hover {
+    --OneMe-#{$root}_background: var(--states-background-hovered-neutral-fade);
+  }
+
+  &.#{$root}_disabled {
+    --OneMe-#{$root}_background: var(--states-background-disabled-neutral-fade);
+    --OneMe-#{$root}_foreground: #{$foreground_disabled};
+  }
+
+  @if $withInnerElementsDefs {
+    --OneMe-external_background: #{$innerElementsBackground};
+    --OneMe-external_foreground: #{$innerElementsForeground};
+
+    &.#{$root}_disabled {
+      --OneMe-external_background: #{$innerElementsBackground_disabled};
+      --OneMe-external_foreground: #{$innerElementsForeground_disabled};
+    }
+  }
+}
+
+@mixin buildButtonTertiaryModeAppearance(
+  $root,
+  $withInnerElementsDefs: false,
+
+  $foreground,
+  $foreground_disabled,
+
+  $innerElementsBackground,
+  $innerElementsBackground_disabled,
+  $innerElementsForeground,
+  $innerElementsForeground_disabled,
+) {
+  --OneMe-#{$root}_background-active: var(--states-background-pressed-transparent);
+
+  --OneMe-#{$root}_background: transparent;
+  --OneMe-#{$root}_foreground: #{$foreground};
+
+  &:hover {
+    --OneMe-#{$root}_background: var(--states-background-hovered-transparent);
+  }
+
+  &.#{$root}_disabled {
+    --OneMe-#{$root}_foreground: #{$foreground_disabled};
+  }
+
+  @if $withInnerElementsDefs {
+    --OneMe-external_background: #{$innerElementsBackground};
+    --OneMe-external_foreground: #{$innerElementsForeground};
+
+    &.#{$root}_disabled {
+      --OneMe-external_background: #{$innerElementsBackground_disabled};
+      --OneMe-external_foreground: #{$innerElementsForeground_disabled};
+    }
+  }
+}
+
+@mixin buildButtonLinkModeAppearance(
+  $root,
+  $withInnerElementsDefs: false,
+
+  $foreground,
+  $foreground_disabled,
+  $foreground_pressed,
+  $foreground_hovered,
+
+  $innerElementsBackground,
+  $innerElementsBackground_disabled,
+  $innerElementsForeground,
+  $innerElementsForeground_disabled,
+) {
+  --OneMe-#{$root}_foreground-active: #{$foreground_pressed};
+
+  --OneMe-#{$root}_background: transparent;
+  --OneMe-#{$root}_foreground: #{$foreground};
+
+  &:hover {
+    --OneMe-#{$root}_foreground: #{$foreground_hovered};
+  }
+
+  &.#{$root}_disabled {
+    --OneMe-#{$root}_foreground: #{$foreground_disabled};
+  }
+
+  @if $withInnerElementsDefs {
+    --OneMe-external_background: #{$innerElementsBackground};
+    --OneMe-external_foreground: #{$innerElementsForeground};
+
+    &.#{$root}_disabled {
+      --OneMe-external_background: #{$innerElementsBackground_disabled};
+      --OneMe-external_foreground: #{$innerElementsForeground_disabled};
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../styles/shared-mixins/typography';
+
+.Headline {}
+
+// [Properties] Variants
+.Headline_variant_headline1 {
+  @include typography.headlineLevel1;
+}
+.Headline_variant_headline2 {
+  @include typography.headlineLevel2;
+}

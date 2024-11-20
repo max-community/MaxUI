@@ -1,0 +1,34 @@
+@use '../../styles/variables/common';
+@use '../../styles/variables/sizes';
+@use '../../styles/variables/colors';
+
+.OneMeUI {
+  @include common.commonVariables;
+
+  font-family: var(--font);
+  background-color: var(--background-surface-primary);
+  color: var(--text-primary);
+  width: 100%;
+
+  &_platform {
+
+    &_ios {
+      @include sizes.iosSizes;
+    }
+
+    &_android {
+      @include sizes.androidSizes;
+    }
+  }
+
+  &_colorScheme {
+
+    &_light {
+      @include colors.lightPalette;
+    }
+
+    &_dark {
+      @include colors.darkPalette;
+    }
+  }
+}
