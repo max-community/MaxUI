@@ -1,4 +1,7 @@
-.CellList {}
+.CellList {
+  width: 100%;
+  box-sizing: border-box;
+}
 
 // [Property] Filled
 .CellList_filled {
@@ -11,8 +14,8 @@
 // [Properties] Modes
 .CellList_mode_full-width {}
 .CellList_mode_island {
-  margin-left: var(--spacing-size-xl);
-  margin-right: var(--spacing-size-xl);
+  padding-left: var(--spacing-size-xl);
+  padding-right: var(--spacing-size-xl);
 
   .CellList__body {
     overflow: hidden;

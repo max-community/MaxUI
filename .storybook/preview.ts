@@ -17,7 +17,8 @@ const preview: Preview = {
   decorators: [withConfigProvider],
   initialGlobals: {
     theme: 'light',
-    platform: 'ios'
+    platform: 'ios',
+    withOneMeUIWrapper: true
   },
   globalTypes: {
     theme: {
