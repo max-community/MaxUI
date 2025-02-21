@@ -1,27 +1,20 @@
-.TypographyHeadline {
-  font-family: var(--family-base);
-}
+@use '../../../../styles/shared-mixins/typography';
+
+.TypographyHeadline {}
 
 // [Properties] Variants
 .TypographyHeadline_variant_large-strong {
-  font-size: var(--size-headline-large);
-  line-height: var(--height-headline-large);
-  letter-spacing: var(--letter-spacing-headline-large);
-  font-weight: 600;
+  @include typography.headlineLargeStrong;
 }
-.TypographyHeadline_variant_medium, .TypographyHeadline_variant_medium-strong {
-  font-size: var(--size-headline-medium);
-  line-height: var(--height-headline-medium);
-  letter-spacing: var(--letter-spacing-headline-medium);
+.TypographyHeadline_variant_medium {
+  @include typography.headlineMedium;
 }
 .TypographyHeadline_variant_medium-strong {
-  font-weight: 500;
+  @include typography.headlineMediumStrong;
 }
-.TypographyHeadline_variant_small, .TypographyHeadline_variant_small-strong {
-  font-size: var(--size-headline-small);
-  line-height: var(--height-headline-small);
-  letter-spacing: var(--letter-spacing-headline-medium);
+.TypographyHeadline_variant_small {
+  @include typography.headlineSmall;
 }
 .TypographyHeadline_variant_small-strong {
-  font-weight: 600;
+  @include typography.headlineSmallStrong;
 }

@@ -1,25 +1,17 @@
-.TypographyTitle {
-  font-family: var(--family-base);
-}
+@use '../../../../styles/shared-mixins/typography';
+
+.TypographyTitle {}
 
 // [Properties] Variants
 .TypographyTitle_variant_large-strong {
-  font-size: var(--size-title-large);
-  line-height: var(--height-title-large);
-  letter-spacing: var(--letter-spacing-title-large);
-  font-weight: 500;
+  @include typography.titleLargeStrong;
 }
 .TypographyTitle_variant_medium-strong {
-  font-size: var(--size-title-medium);
-  line-height: var(--height-title-medium);
-  letter-spacing: var(--letter-spacing-title-medium);
-  font-weight: 500;
+  @include typography.titleMediumStrong;
 }
-.TypographyTitle_variant_small, .TypographyTitle_variant_small-strong {
-  font-size: var(--size-title-small);
-  line-height: var(--height-title-small);
-  letter-spacing: var(--letter-spacing-title-small);
+.TypographyTitle_variant_small {
+  @include typography.titleSmall;
 }
 .TypographyTitle_variant_small-strong {
-  font-weight: 500;
+  @include typography.titleSmallStrong;
 }
