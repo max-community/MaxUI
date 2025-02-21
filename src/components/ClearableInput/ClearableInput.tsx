@@ -24,6 +24,7 @@ export const ClearableInput = forwardRef<HTMLInputElement, ClearableInputProps>(
     className,
     onChange,
     innerClassNames,
+    disabled,
     ...rest
   } = props;
 
@@ -46,10 +47,11 @@ export const ClearableInput = forwardRef<HTMLInputElement, ClearableInputProps>(
           onChange?.(e);
           setIsEmpty(!e.target.value);
         }}
+        disabled={disabled}
         {...rest}
       />
 
-      {!isEmpty && (
+      {!isEmpty && !disabled && (
         <SvgButton
           className={clsx(innerClassNames?.clearButton)}
           onClick={clearValue}

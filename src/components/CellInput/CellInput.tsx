@@ -22,12 +22,16 @@ export const CellInput = forwardRef<HTMLInputElement, CellInputProps>((props, fo
     height = 'normal',
     before,
     innerClassNames,
+    disabled,
     ...rest
   } = props;
 
   const rootClassName = clsx(
     styles.CellInput,
     styles[`CellInput_height_${height}`],
+    {
+      [styles.CellInput_disabled]: disabled
+    },
     className
   );
 
@@ -50,6 +54,7 @@ export const CellInput = forwardRef<HTMLInputElement, CellInputProps>((props, fo
           clearButton: clsx(styles.CellInput__clearButton, innerClassNames?.clearButton)
         }}
         type="text"
+        disabled={disabled}
         {...rest}
       />
     </label>

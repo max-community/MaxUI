@@ -7,6 +7,18 @@
   box-sizing: border-box;
 }
 
+// [State] Disabled
+.CellInput_disabled {
+  color: var(--states-text-disabled-primary);
+
+  .CellInput__input {
+
+    &::placeholder {
+      color: var(--states-text-disabled-primary);
+    }
+  }
+}
+
 // [Properties] Heights
 .CellInput_height_compact {
   padding: var(--spacing-size-xs) var(--spacing-size-xl);
