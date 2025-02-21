@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from '../Avatar';
-import { Cell } from '../Cell';
 import { CellList } from '../CellList';
+import { CellSimple } from '../CellSimple';
 import { Panel } from '../Panel';
 import { CellHeader, type CellHeaderProps } from './CellHeader';
 
@@ -34,7 +34,7 @@ export const Playground: Story = {
         header={<CellHeader {...args} />}
         mode="island"
       >
-        <Cell
+        <CellSimple
           title="Vadim Tregubenko"
           before={(
             <Avatar.Container size={40}>

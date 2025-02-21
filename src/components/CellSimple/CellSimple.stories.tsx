@@ -7,11 +7,11 @@ import { Avatar } from '../Avatar';
 import { Button } from '../Button';
 import { Counter } from '../Counter';
 import { EllipsisText } from '../EllipsisText';
-import { Cell, type CellProps } from './Cell';
+import { CellSimple, type CellSimpleProps } from './CellSimple';
 
 const meta = {
-  title: 'Common/Cell',
-  component: Cell,
+  title: 'Common/CellSimple',
+  component: CellSimple,
   argTypes: {
     ...hideArgsControl(['asChild', 'innerClassNames', 'onClick', 'as']),
 
@@ -41,10 +41,12 @@ const meta = {
     }
   },
   args: {
-    title: 'Cell title',
-    subtitle: 'Cell subtitle',
+    title: 'Title',
+    subtitle: 'Subtitle',
+    overline: '',
     height: 'normal',
     showChevron: false,
+    disabled: false,
     before: 1,
     after: 1
   },
@@ -55,14 +57,14 @@ const meta = {
       </div>
     )
   ]
-} satisfies Meta<CellProps>;
+} satisfies Meta<CellSimpleProps>;
 
 export default meta;
-type Story = StoryObj<CellProps>;
+type Story = StoryObj<CellSimpleProps>;
 
 export const Playground: Story = {
   render: ({ ...args }) => {
-    return <Cell {...args} />;
+    return <CellSimple {...args} />;
   }
 };
 
@@ -74,7 +76,7 @@ export const TappableCell: Story = {
     onClick: fn()
   },
   render: ({ ...args }) => {
-    return <Cell {...args} />;
+    return <CellSimple {...args} />;
   }
 };
 
@@ -87,13 +89,13 @@ export const AsLink: Story = {
   },
   render: ({ children, ...args }) => {
     return (
-      <Cell {...args} asChild>
+      <CellSimple {...args} asChild>
         <a
           href="https://imgur.com/fJDSm0v"
           target="_blank"
           rel="noreferrer"
         />
-      </Cell>
+      </CellSimple>
     );
   }
 };
@@ -106,7 +108,7 @@ export const EllipsizedTitle: Story = {
   },
   render: ({ title, children, ...args }) => {
     return (
-      <Cell
+      <CellSimple
         title={<EllipsisText>{title}</EllipsisText>}
         {...args}
       />
@@ -122,7 +124,7 @@ export const EllipsizedSubtitle: Story = {
   },
   render: ({ subtitle, children, ...args }) => {
     return (
-      <Cell
+      <CellSimple
         subtitle={<EllipsisText>{subtitle}</EllipsisText>}
         {...args}
       />

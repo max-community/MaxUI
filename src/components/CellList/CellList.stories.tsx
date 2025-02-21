@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from '../Avatar';
-import { Cell } from '../Cell';
+import { CellSimple } from '../CellSimple';
 import { Panel } from '../Panel';
 import { CellList, type CellListProps } from './CellList';
 
@@ -30,7 +30,7 @@ export const Playground: Story = {
   render: ({ ...args }) => {
     return (
       <CellList {...args}>
-        <Cell
+        <CellSimple
           title="Igor Foxik"
           before={(
             <Avatar.Container size={40}>
@@ -40,7 +40,7 @@ export const Playground: Story = {
           showChevron
           onClick={() => {}}
         />
-        <Cell
+        <CellSimple
           title="Vadim Tregubenko"
           before={(
             <Avatar.Container size={40}>
@@ -50,7 +50,7 @@ export const Playground: Story = {
           showChevron
           onClick={() => {}}
         />
-        <Cell
+        <CellSimple
           title="Ira Grishina"
           before={(
             <Avatar.Container size={40}>
@@ -60,7 +60,7 @@ export const Playground: Story = {
           showChevron
           onClick={() => {}}
         />
-        <Cell
+        <CellSimple
           title="Misha Zubkov"
           before={(
             <Avatar.Container size={40}>

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from '../Avatar';
-import { Cell } from '../Cell';
 import { CellList } from '../CellList';
+import { CellSimple } from '../CellSimple';
 import { Typography } from '../Typography';
 import { Panel, type PanelProps } from './Panel';
 
@@ -47,7 +47,7 @@ export const PrimaryExample: Story = {
     return (
       <Panel {...args}>
         <CellList>
-          <Cell
+          <CellSimple
             title="Igor Foxik"
             before={(
               <Avatar.Container size={40}>
@@ -57,7 +57,7 @@ export const PrimaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Vadim Tregubenko"
             before={(
               <Avatar.Container size={40}>
@@ -67,7 +67,7 @@ export const PrimaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Ira Grishina"
             before={(
               <Avatar.Container size={40}>
@@ -77,7 +77,7 @@ export const PrimaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Misha Zubkov"
             before={(
               <Avatar.Container size={40}>
@@ -104,7 +104,7 @@ export const SecondaryExample: Story = {
     return (
       <Panel {...args}>
         <CellList mode="island">
-          <Cell
+          <CellSimple
             title="Igor Foxik"
             before={(
               <Avatar.Container size={40}>
@@ -114,7 +114,7 @@ export const SecondaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Vadim Tregubenko"
             before={(
               <Avatar.Container size={40}>
@@ -124,7 +124,7 @@ export const SecondaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Ira Grishina"
             before={(
               <Avatar.Container size={40}>
@@ -134,7 +134,7 @@ export const SecondaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Misha Zubkov"
             before={(
               <Avatar.Container size={40}>

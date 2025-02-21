@@ -1,24 +1,33 @@
 @use '../../styles/shared-mixins/typography';
 
-.Cell {
+.CellSimple {
   display: flex;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
 
+// [Property] Disabled
+.CellSimple_disabled {
+  color: var(--states-text-disabled-primary);
+
+  .CellSimple__subtitle, .CellSimple__overline {
+    color: var(--states-text-disabled-primary);
+  }
+}
+
 // [Properties] Heights
-.Cell_height_compact {
+.CellSimple_height_compact {
   padding: var(--spacing-size-xs) var(--spacing-size-xl);
   min-height: 48px;
 }
-.Cell_height_normal {
+.CellSimple_height_normal {
   padding: var(--spacing-size-m) var(--spacing-size-xl);
   min-height: 56px;
 }
 
 // [Parts] Before
-.Cell__before {
+.CellSimple__before {
   margin-right: var(--spacing-size-xl);
   min-width: 40px;
   min-height: 40px;
@@ -28,14 +37,14 @@
 }
 
 // [Parts] After
-.Cell__after {
+.CellSimple__after {
   margin-left: var(--spacing-size-xl);
   display: flex;
   align-items: center;
 }
 
 // [Parts] Content
-.Cell__content {
+.CellSimple__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -43,23 +52,34 @@
 }
 
 // [Parts] Title
-.Cell__title {
+.CellSimple__title {
   @include typography.titleLargeStrong;
-
-  &:not(:last-child) {
-    margin-bottom: 2px;
-  }
 }
 
 // [Parts] Chevron
-.Cell__chevron {
+.CellSimple__chevron {
   color: var(--icon-quaternary);
   margin-left: var(--spacing-size-s);
 }
 
 // [Parts] Subtitle
-.Cell__subtitle {
+.CellSimple__subtitle {
   @include typography.titleSmall;
 
   color: var(--text-secondary);
+
+  &:not(:first-child) {
+    margin-top: var(--spacing-size2xs);
+  }
+}
+
+// [Parts] Overline
+.CellSimple__overline {
+  @include typography.titleSmall;
+
+  color: var(--text-secondary);
+
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-size2xs);
+  }
 }

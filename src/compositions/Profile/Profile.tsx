@@ -2,10 +2,10 @@ import { type ReactNode } from 'react';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import {
-  Avatar, Button, Cell, CellAction,
+  Avatar, Button, CellAction,
   CellHeader, CellInput,
   CellList,
-  Container, Counter,
+  CellSimple, Container, Counter,
   Flex,
   Grid, IconButton,
   Panel, Switch,
@@ -93,7 +93,7 @@ export const Profile = (): ReactNode => {
             mode="island"
             header={<CellHeader>О себе</CellHeader>}
           >
-            <Cell
+            <CellSimple
               height="compact"
               title="Frontend engineer 👨‍💻"
             />
@@ -112,7 +112,7 @@ export const Profile = (): ReactNode => {
           </CellList>
 
           <CellList mode="island">
-            <Cell
+            <CellSimple
               showChevron
               before={<Icon24Placeholder />}
               onClick={() => {}}
@@ -147,7 +147,7 @@ export const Profile = (): ReactNode => {
             placeholder="Укажите город"
           />
 
-          <Cell
+          <CellSimple
             as="label"
             title="Закрытый профиль"
             after={(
