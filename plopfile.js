@@ -1,4 +1,4 @@
-const plopConfig = function (plop) {
+export default function (plop) {
   plop.setHelper('cwd', () => process.cwd());
 
   // React component generator
@@ -61,5 +61,3 @@ const plopConfig = function (plop) {
     ]
   });
 };
-
-module.exports = plopConfig;
