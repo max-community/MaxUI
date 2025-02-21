@@ -35,7 +35,7 @@ const meta = {
   },
   args: {
     mode: 'primary',
-    appearance: 'accent',
+    appearance: 'themed',
     size: 'medium',
     iconAfter: false,
     iconBefore: false,

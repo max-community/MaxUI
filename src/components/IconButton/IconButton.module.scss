@@ -75,16 +75,16 @@
 
 // [Properties] Accent appearances
 .IconButton_mode_primary.IconButton_appearance_accent {
-  @include button-appearances.buttonPrimaryAccent('IconButton', true)
+  // @include button-appearances.buttonPrimaryAccent('IconButton', true)
 }
 .IconButton_mode_secondary.IconButton_appearance_accent {
-  @include button-appearances.buttonSecondaryAccent('IconButton', true)
+  // @include button-appearances.buttonSecondaryAccent('IconButton', true)
 }
 .IconButton_mode_tertiary.IconButton_appearance_accent {
-  @include button-appearances.buttonTertiaryAccent('IconButton', true);
+  // @include button-appearances.buttonTertiaryAccent('IconButton', true);
 }
 .IconButton_mode_link.IconButton_appearance_accent {
-  @include button-appearances.buttonLinkAccent('IconButton', true);
+  // @include button-appearances.buttonLinkAccent('IconButton', true);
 }
 
 // [Properties] Negative appearances

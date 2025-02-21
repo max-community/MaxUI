@@ -13,7 +13,7 @@ import { getButtonSpinnerAppearance, getButtonSpinnerSize } from './helpers';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 export type ButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
-export type ButtonAppearance = 'accent' | 'negative' | 'neutral' | 'contrast-static';
+export type ButtonAppearance = 'themed' | 'negative' | 'neutral' | 'neutral-themed' | 'contrast-static';
 export type ButtonInnerElementKey = 'iconBefore' | 'iconAfter' | 'indicator' | 'content' | 'spinnerContainer' | 'spinner';
 
 export interface ButtonProps extends ComponentProps<'button'>, AsChildProp {
@@ -43,7 +43,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
     stretched = false,
     size = 'medium',
     mode = 'primary',
-    appearance = 'accent',
+    appearance = 'themed',
     ...rest
   } = props;
 

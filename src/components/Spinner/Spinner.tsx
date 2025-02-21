@@ -3,7 +3,7 @@ import { type ComponentProps, forwardRef } from 'react';
 
 import styles from './Spinner.module.scss';
 
-export type SpinnerAppearance = 'primary' | 'themed' | 'primary-static' | 'contrast' | 'contrast-static' | 'negative';
+export type SpinnerAppearance = 'primary' | 'themed' | 'neutral-themed' | 'primary-static' | 'contrast' | 'contrast-static' | 'negative';
 export type SpinnerSize = 20 | 24 | number;
 
 export interface SpinnerProps extends ComponentProps<'span'> {

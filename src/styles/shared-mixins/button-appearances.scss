@@ -1,7 +1,7 @@
 @use '../builders/button-appearances-builder';
 
-// Accent
-@mixin buttonPrimaryAccent(
+// Themed
+@mixin buttonPrimaryThemed(
   $root,
   $withInnerElementsDefs: false,
 ) {
@@ -18,12 +18,12 @@
 
     $innerElementsBackground: var(--background-accent-contrast-static),
     $innerElementsBackground_disabled: var(--states-background-disabled-contrast-static),
-    $innerElementsForeground: var(--text-primary-static),
-    $innerElementsForeground_disabled: var(--states-text-disabled-primary-static),
+    $innerElementsForeground: var(--text-themed),
+    $innerElementsForeground_disabled: var(--states-text-disabled-themed),
   )
 }
 
-@mixin buttonSecondaryAccent(
+@mixin buttonSecondaryThemed(
   $root,
   $withInnerElementsDefs: false,
 ) {
@@ -41,7 +41,7 @@
   )
 }
 
-@mixin buttonTertiaryAccent(
+@mixin buttonTertiaryThemed(
   $root,
   $withInnerElementsDefs: false,
 ) {
@@ -59,7 +59,7 @@
   )
 }
 
-@mixin buttonLinkAccent(
+@mixin buttonLinkThemed(
   $root,
   $withInnerElementsDefs: false,
 ) {
@@ -97,8 +97,8 @@
 
     $innerElementsBackground: var(--background-accent-contrast-static),
     $innerElementsBackground_disabled: var(--states-background-disabled-contrast-static),
-    $innerElementsForeground: var(--text-primary-static),
-    $innerElementsForeground_disabled: var(--states-text-disabled-primary-static),
+    $innerElementsForeground: var(--text-negative),
+    $innerElementsForeground_disabled: var(--states-text-disabled-negative),
   )
 }
 
@@ -234,6 +234,85 @@
     $innerElementsBackground_disabled: var(--states-background-disabled-neutral),
     $innerElementsForeground: var(--text-contrast),
     $innerElementsForeground_disabled: var(--states-text-disabled-contrast),
+  )
+}
+
+// Neutral themed
+@mixin buttonPrimaryNeutralThemed(
+  $root,
+  $withInnerElementsDefs: false,
+) {
+  @include button-appearances-builder.buildButtonPrimaryModeAppearance(
+    $root,
+    $withInnerElementsDefs,
+
+    $background: var(--background-accent-neutral-themed),
+    $background_disabled: var(--states-background-disabled-neutral-themed),
+    $background_hovered: var(--states-background-hovered-neutral-themed),
+    $background_pressed: var(--states-background-pressed-neutral-themed),
+    $foreground: var(--text-contrast-static),
+    $foreground_disabled: var(--states-text-disabled-contrast-static),
+
+    $innerElementsBackground: var(--background-accent-contrast-static),
+    $innerElementsBackground_disabled: var(--states-background-disabled-contrast-static),
+    $innerElementsForeground: var(--text-neutral-themed),
+    $innerElementsForeground_disabled: var(--states-text-disabled-neutral-themed),
+  )
+}
+
+@mixin buttonSecondaryNeutralThemed(
+  $root,
+  $withInnerElementsDefs: false,
+) {
+  @include button-appearances-builder.buildButtonSecondaryModeAppearance(
+    $root,
+    $withInnerElementsDefs,
+
+    $foreground: var(--text-neutral-themed),
+    $foreground_disabled: var(--states-text-disabled-neutral-themed),
+
+    $innerElementsBackground: var(--background-accent-neutral-themed),
+    $innerElementsBackground_disabled: var(--states-background-disabled-neutral-themed),
+    $innerElementsForeground: var(--text-contrast-static),
+    $innerElementsForeground_disabled: var(--states-text-disabled-contrast-static),
+  )
+}
+
+@mixin buttonTertiaryNeutralThemed(
+  $root,
+  $withInnerElementsDefs: false,
+) {
+  @include button-appearances-builder.buildButtonTertiaryModeAppearance(
+    $root,
+    $withInnerElementsDefs,
+
+    $foreground: var(--text-neutral-themed),
+    $foreground_disabled: var(--states-text-disabled-neutral-themed),
+
+    $innerElementsBackground: var(--background-accent-neutral-themed),
+    $innerElementsBackground_disabled: var(--states-background-disabled-neutral-themed),
+    $innerElementsForeground: var(--text-contrast-static),
+    $innerElementsForeground_disabled: var(--states-text-disabled-contrast-static),
+  )
+}
+
+@mixin buttonLinkNeutralThemed(
+  $root,
+  $withInnerElementsDefs: false,
+) {
+  @include button-appearances-builder.buildButtonLinkModeAppearance(
+    $root,
+    $withInnerElementsDefs,
+
+    $foreground: var(--text-neutral-themed),
+    $foreground_disabled: var(--states-text-disabled-neutral-themed),
+    $foreground_pressed: var(--states-text-pressed-neutral-themed),
+    $foreground_hovered: var(--states-text-hovered-neutral-themed),
+
+    $innerElementsBackground: var(--background-accent-neutral-themed),
+    $innerElementsBackground_disabled: var(--states-background-disabled-neutral),
+    $innerElementsForeground: var(--text-contrast-static),
+    $innerElementsForeground_disabled: var(--states-text-disabled-contrast-static),
   )
 }
 
