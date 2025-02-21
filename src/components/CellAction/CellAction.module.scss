@@ -52,7 +52,7 @@
 
 // [Parts] Content
 .CellAction__content {
-  @include typography.headlineLevel1;
+  @include typography.titleLargeStrong;
 
   display: flex;
   flex-direction: column;

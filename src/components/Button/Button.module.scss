@@ -140,15 +140,15 @@
   z-index: 1;
 
   .Button_size_small & {
-    @include typography.actionLevel3;
+    @include typography.actionSmall;
   }
 
   .Button_size_medium & {
-    @include typography.actionLevel2;
+    @include typography.actionMedium;
   }
 
   .Button_size_large & {
-    @include typography.actionLevel1;
+    @include typography.actionLarge;
   }
 }
 

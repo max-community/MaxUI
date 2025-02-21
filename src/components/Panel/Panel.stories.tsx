@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '../Avatar';
 import { Cell } from '../Cell';
 import { CellList } from '../CellList';
-import { Paragraph } from '../Paragraph';
+import { Typography } from '../Typography';
 import { Panel, type PanelProps } from './Panel';
 
 const meta = {
@@ -30,7 +30,7 @@ export const Playground: Story = {
   render: ({ ...args }) => {
     return (
       <Panel {...args}>
-        <Paragraph>Panel body</Paragraph>
+        <Typography.Body variant="medium">Panel body</Typography.Body>
       </Panel>
     );
   }

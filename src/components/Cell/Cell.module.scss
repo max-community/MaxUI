@@ -44,7 +44,7 @@
 
 // [Parts] Title
 .Cell__title {
-  @include typography.headlineLevel1;
+  @include typography.titleLargeStrong;
 
   &:not(:last-child) {
     margin-bottom: 2px;
@@ -59,7 +59,7 @@
 
 // [Parts] Subtitle
 .Cell__subtitle {
-  @include typography.subhead;
+  @include typography.titleSmall;
 
   color: var(--text-secondary);
 }

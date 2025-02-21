@@ -7,11 +7,9 @@ import {
   CellList,
   Container, Counter,
   Flex,
-  Footnote,
   Grid, IconButton,
   Panel, Switch,
-  Title,
-  ToolButton
+  ToolButton, Typography
 } from '../../components';
 import styles from './Profile.module.scss';
 
@@ -46,8 +44,8 @@ export const Profile = (): ReactNode => {
               direction="column"
               align="center"
             >
-              <Title variant="title1">Vadim Tregubenko</Title>
-              <Footnote className={styles.subsLabel}>1 подписчик</Footnote>
+              <Typography.Headline variant="large-strong">Vadim Tregubenko</Typography.Headline>
+              <Typography.Body variant="small" className={styles.subsLabel}>1 подписчик</Typography.Body>
             </Flex>
 
             <Grid

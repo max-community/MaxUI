@@ -11,8 +11,8 @@
 
 // [Properties] Title styles
 .CellHeader_titleStyle_caps {
-  @include typography.captionLevel1Caps;
+  @include typography.labelLargeCaps;
 }
 .CellHeader_titleStyle_normal {
-  @include typography.captionLevel1Medium;
+  @include typography.labelLargeStrong;
 }

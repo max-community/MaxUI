@@ -1,7 +1,7 @@
 @use '../../styles/shared-mixins/typography';
 
 .Counter {
-  @include typography.subheadMedium;
+  @include typography.titleSmallStrong;
 
   min-width: var(--size-border-radius-semantic-border-radius-promo);
   min-height: var(--size-border-radius-semantic-border-radius-promo);

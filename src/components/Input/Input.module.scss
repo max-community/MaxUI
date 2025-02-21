@@ -60,7 +60,7 @@
 // [Parts] Input
 .Input__input {
   @include reset-text-field.resetTextField;
-  @include typography.text;
+  @include typography.bodyLarge;
   height: inherit;
   flex-grow: 1;
 

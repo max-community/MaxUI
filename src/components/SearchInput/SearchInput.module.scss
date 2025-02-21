@@ -46,7 +46,7 @@
 // [Parts] Input
 .SearchInput__input {
   @include reset-text-field.resetTextField;
-  @include typography.text;
+  @include typography.bodyLarge;
 
   box-sizing: border-box;
   width: 100%;
