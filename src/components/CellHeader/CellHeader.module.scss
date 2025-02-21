@@ -11,8 +11,32 @@
 
 // [Properties] Title styles
 .CellHeader_titleStyle_caps {
-  @include typography.labelLargeCaps;
+
+  .CellHeader__content {
+    @include typography.labelLargeCaps;
+  }
 }
 .CellHeader_titleStyle_normal {
-  @include typography.labelLargeStrong;
+
+  .CellHeader__content {
+    @include typography.labelLargeStrong;
+  }
+}
+
+// [Property] Fullwidth
+.CellHeader:not(.CellHeader_fullWidth) {
+  padding: var(--spacing-size-xs) var(--spacing-size-xl);
+}
+.CellHeader.CellHeader_fullWidth {
+  padding: var(--spacing-size-xs) var(--spacing-size-m);
+}
+
+// [Parts] Content
+.CellHeader__content {
+  flex-grow: 1;
+}
+
+// [Parts] After
+.CellHeader__after {
+  flex-shrink: 0;
 }
