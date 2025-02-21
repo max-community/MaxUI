@@ -1,0 +1,38 @@
+.TypographyLabel {
+  font-family: var(--family-base);
+}
+
+// [Properties] Variants
+.TypographyLabel_variant_large, .TypographyLabel_variant_large-strong, .TypographyLabel_variant_large-caps {
+  font-size: var(--size-label-large);
+  line-height: var(--height-label-large);
+  letter-spacing: var(--letter-spacing-label-large);
+}
+.TypographyLabel_variant_large-strong {
+  font-weight: 500;
+}
+.TypographyLabel_variant_large-caps {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.TypographyLabel_variant_medium, .TypographyLabel_variant_medium-strong {
+  font-size: var(--size-label-medium);
+  line-height: var(--height-label-medium);
+  letter-spacing: var(--letter-spacing-label-medium);
+}
+.TypographyLabel_variant_medium-strong {
+  font-weight: 600;
+}
+.TypographyLabel_variant_small-strong {
+  font-size: var(--size-label-small);
+  line-height: var(--height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  font-weight: 500;
+}
+.TypographyLabel_variant_small-caps {
+  font-size: var(--size-label-small);
+  line-height: var(--height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+  font-weight: 600;
+  text-transform: uppercase;
+}

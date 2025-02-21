@@ -1,0 +1,25 @@
+.TypographyTitle {
+  font-family: var(--family-base);
+}
+
+// [Properties] Variants
+.TypographyTitle_variant_large-strong {
+  font-size: var(--size-title-large);
+  line-height: var(--height-title-large);
+  letter-spacing: var(--letter-spacing-title-large);
+  font-weight: 500;
+}
+.TypographyTitle_variant_medium-strong {
+  font-size: var(--size-title-medium);
+  line-height: var(--height-title-medium);
+  letter-spacing: var(--letter-spacing-title-medium);
+  font-weight: 500;
+}
+.TypographyTitle_variant_small, .TypographyTitle_variant_small-strong {
+  font-size: var(--size-title-small);
+  line-height: var(--height-title-small);
+  letter-spacing: var(--letter-spacing-title-small);
+}
+.TypographyTitle_variant_small-strong {
+  font-weight: 500;
+}

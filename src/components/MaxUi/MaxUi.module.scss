@@ -1,6 +1,7 @@
 @use '../../styles/variables/common';
 @use '../../styles/variables/sizes';
 @use '../../styles/variables/colors';
+@use '../../styles/variables/typography';
 
 .MaxUi {
   @include common.commonVariables;
@@ -14,10 +15,12 @@
 
     &_ios {
       @include sizes.iosSizes;
+      @include typography.iosTypography;
     }
 
     &_android {
       @include sizes.androidSizes;
+      @include typography.androidTypography;
     }
   }
 

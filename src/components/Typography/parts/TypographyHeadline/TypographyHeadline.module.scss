@@ -1,0 +1,27 @@
+.TypographyHeadline {
+  font-family: var(--family-base);
+}
+
+// [Properties] Variants
+.TypographyHeadline_variant_large-strong {
+  font-size: var(--size-headline-large);
+  line-height: var(--height-headline-large);
+  letter-spacing: var(--letter-spacing-headline-large);
+  font-weight: 600;
+}
+.TypographyHeadline_variant_medium, .TypographyHeadline_variant_medium-strong {
+  font-size: var(--size-headline-medium);
+  line-height: var(--height-headline-medium);
+  letter-spacing: var(--letter-spacing-headline-medium);
+}
+.TypographyHeadline_variant_medium-strong {
+  font-weight: 500;
+}
+.TypographyHeadline_variant_small, .TypographyHeadline_variant_small-strong {
+  font-size: var(--size-headline-small);
+  line-height: var(--height-headline-small);
+  letter-spacing: var(--letter-spacing-headline-medium);
+}
+.TypographyHeadline_variant_small-strong {
+  font-weight: 600;
+}

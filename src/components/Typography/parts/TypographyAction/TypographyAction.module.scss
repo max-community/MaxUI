@@ -1,0 +1,28 @@
+.TypographyAction {
+  font-family: var(--family-base);
+}
+
+// [Properties] Variants
+.TypographyAction_variant_large {
+  font-size: var(--size-action-large);
+  line-height: var(--height-action-large);
+  letter-spacing: var(--letter-spacing-action-large);
+  font-weight: 600;
+}
+.TypographyAction_variant_medium {
+  font-size: var(--size-action-medium);
+  line-height: var(--height-action-medium);
+  letter-spacing: var(--letter-spacing-action-medium);
+  font-weight: 500;
+}
+.TypographyAction_variant_small {
+  font-size: var(--size-action-small);
+  line-height: var(--height-action-small);
+  letter-spacing: var(--letter-spacing-action-small);
+  font-weight: 500;
+}
+.TypographyAction_variant_label {
+  font-size: var(--size-action-label);
+  line-height: var(--height-action-label);
+  letter-spacing: var(--letter-spacing-action-label);
+}

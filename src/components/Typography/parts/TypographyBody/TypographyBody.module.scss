@@ -1,0 +1,27 @@
+.TypographyBody {
+  font-family: var(--family-base);
+}
+
+// [Properties] Variants
+.TypographyBody_variant_large, .TypographyBody_variant_large-tabular {
+  font-size: var(--size-body-large);
+  line-height: var(--height-body-large);
+  letter-spacing: var(--letter-spacing-body-large);
+}
+.TypographyBody_variant_medium {
+  font-size: var(--size-body-medium);
+  line-height: var(--height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+}
+.TypographyBody_variant_small, .TypographyBody_variant_small-strong, .TypographyBody_variant_small-caps {
+  font-size: var(--size-body-small);
+  line-height: var(--height-body-small);
+  letter-spacing: var(--letter-spacing-body-small);
+}
+.TypographyBody_variant_small-strong {
+  font-weight: 500;
+}
+.TypographyBody_variant_small-caps {
+  font-weight: 600;
+  text-transform: uppercase;
+}
