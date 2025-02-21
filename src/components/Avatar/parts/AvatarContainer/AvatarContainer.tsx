@@ -49,7 +49,7 @@ export const AvatarContainer = forwardRef<HTMLDivElement, AvatarContainerProps>(
         ref={forwardedRef}
         className={rootClassName}
         style={{
-          '--OneMe-AvatarContainer_size': `${size}px`,
+          '--MaxUi-AvatarContainer_size': `${size}px`,
           ...style
         } as CSSProperties}
         {...rest}

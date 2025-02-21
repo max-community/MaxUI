@@ -3,16 +3,16 @@ import { type ComponentProps, forwardRef, useMemo } from 'react';
 
 import { isIos } from '../../helpers';
 import { useSystemColorScheme } from '../../hooks';
-import styles from './OneMeUI.module.scss';
-import { OneMeUIContext, type OneMeUIContextInterface } from './OneMeUIContext';
+import styles from './MaxUi.module.scss';
+import { MaxUiContext, type MaxUiContextInterface } from './MaxUiContext';
 
-export interface OneMeUIProps extends Partial<OneMeUIContextInterface> {
+export interface MaxUiProps extends Partial<MaxUiContextInterface> {
   children: ComponentProps<'div'>['children']
 
   className?: ComponentProps<'div'>['className']
 }
 
-export const OneMeUI = forwardRef<HTMLDivElement, OneMeUIProps>((props, ref) => {
+export const MaxUi = forwardRef<HTMLDivElement, MaxUiProps>((props, ref) => {
   const {
     children,
     className,
@@ -25,25 +25,25 @@ export const OneMeUI = forwardRef<HTMLDivElement, OneMeUIProps>((props, ref) => 
   });
   const colorScheme = colorSchemeProp ?? systemColorScheme;
 
-  const config = useMemo<OneMeUIContextInterface>(() => ({
+  const config = useMemo<MaxUiContextInterface>(() => ({
     colorScheme,
     platform
   }), []);
 
   const rootClassName = clsx(
-    styles.OneMeUI,
-    styles[`OneMeUI_colorScheme_${colorScheme}`],
-    styles[`OneMeUI_platform_${platform}`],
+    styles.MaxUi,
+    styles[`MaxUi_colorScheme_${colorScheme}`],
+    styles[`MaxUi_platform_${platform}`],
     className
   );
 
   return (
-    <OneMeUIContext.Provider value={config}>
+    <MaxUiContext.Provider value={config}>
       <div ref={ref} className={rootClassName}>
         {children}
       </div>
-    </OneMeUIContext.Provider>
+    </MaxUiContext.Provider>
   );
 });
 
-OneMeUI.displayName = 'OneMeUI';
+MaxUi.displayName = 'MaxUi';

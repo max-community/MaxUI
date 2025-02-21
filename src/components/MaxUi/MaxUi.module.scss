@@ -2,7 +2,7 @@
 @use '../../styles/variables/sizes';
 @use '../../styles/variables/colors';
 
-.OneMeUI {
+.MaxUi {
   @include common.commonVariables;
 
   font-family: var(--font);

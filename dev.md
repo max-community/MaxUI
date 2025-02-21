@@ -10,12 +10,12 @@
 ### Нейминг css переменных
 CSS переменные составляются по следующему правилу:
 `--Префикс-скоуп__элемент_свойство`:
-- Префикс: `--OneMe`
+- Префикс: `--MaxUi`
 - Скоуп: 
-  - `--OneMe-Button` — переменная, которая используется в компоненте Button
-  - `--OneMe-external` — переменная используется для проброса значений в дочерние элементы, например, фон Counter внутри Button
-- Элемент, опционально: `--OneMe__iconBefore` — переменная для внутреннего элемента iconBefore в Button
-- Свойство: `--OneMe-Button_foreground`, `--OneMe-Button__iconBefore_background`
+  - `--MaxUi-Button` — переменная, которая используется в компоненте Button
+  - `--MaxUi-external` — переменная используется для проброса значений в дочерние элементы, например, фон Counter внутри Button
+- Элемент, опционально: `--MaxUi__iconBefore` — переменная для внутреннего элемента iconBefore в Button
+- Свойство: `--MaxUi-Button_foreground`, `--MaxUi-Button__iconBefore_background`
 
 ### Структура компонента
 - Component.tsx

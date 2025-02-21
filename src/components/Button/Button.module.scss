@@ -6,8 +6,8 @@
 .Button {
   @include reset-clickable.resetClickable;
 
-  background-color: var(--OneMe-Button_background);
-  color: var(--OneMe-Button_foreground);
+  background-color: var(--MaxUi-Button_background);
+  color: var(--MaxUi-Button_foreground);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,14 +39,14 @@
 .Button_activeMode {
 
   &_ripple {
-    --Ripple_backgroundColor: var(--OneMe-Button_background-active);
+    --Ripple_backgroundColor: var(--MaxUi-Button_background-active);
   }
 
   &_highlight {
 
     &:active {
-      background-color: var(--OneMe-Button_background-active);
-      color: var(--OneMe-Button_foreground-active, var(--OneMe-Button_foreground));
+      background-color: var(--MaxUi-Button_background-active);
+      color: var(--MaxUi-Button_foreground-active, var(--MaxUi-Button_foreground));
     }
   }
 }

@@ -15,7 +15,7 @@ export * from './Grid';
 export * from './Headline';
 export * from './IconButton';
 export * from './Input';
-export * from './OneMeUI';
+export * from './MaxUi';
 export * from './Panel';
 export * from './Paragraph';
 export * from './Ripple';

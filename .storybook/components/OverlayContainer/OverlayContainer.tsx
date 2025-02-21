@@ -3,7 +3,7 @@ import { type ComponentProps, type FC } from 'react';
 
 import styles from './OverlayContainer.module.scss';
 
-interface OverlayContainerProps extends ComponentProps<'div'> {
+export interface OverlayContainerProps extends ComponentProps<'div'> {
   appearance?: 'light' | 'dark'
 }
 
