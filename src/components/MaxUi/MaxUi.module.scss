@@ -1,6 +1,6 @@
 @use '../../styles/variables/common';
 @use '../../styles/variables/sizes';
-@use '../../styles/variables/colors';
+@use '../../styles/variables/appearance';
 @use '../../styles/variables/typography';
 
 .MaxUi {
@@ -27,11 +27,11 @@
   &_colorScheme {
 
     &_light {
-      @include colors.lightPalette;
+      @include appearance.lightPalette;
     }
 
     &_dark {
-      @include colors.darkPalette;
+      @include appearance.darkPalette;
     }
   }
 }
