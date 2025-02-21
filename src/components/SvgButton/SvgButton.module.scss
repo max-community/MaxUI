@@ -4,6 +4,8 @@
   @include reset-clickable.resetClickable;
 
   color: var(--icon-tertiary);
+  line-height: 0;
+  display: flex;
 
   &:not(:disabled) {
     cursor: pointer;
