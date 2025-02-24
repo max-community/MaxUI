@@ -78,7 +78,7 @@
   @include button-sizes.buttonLargeSize;
 }
 
-// [Properties] Accent appearances
+// [Properties] Themed appearances
 .Button_mode_primary.Button_appearance_themed {
   @include button-appearances.buttonPrimaryThemed('Button', true)
 }

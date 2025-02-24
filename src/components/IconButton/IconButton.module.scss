@@ -73,18 +73,18 @@
   @include button-sizes.buttonLargeSize;
 }
 
-// [Properties] Accent appearances
-.IconButton_mode_primary.IconButton_appearance_accent {
-  // @include button-appearances.buttonPrimaryAccent('IconButton', true)
+// [Properties] Themed appearances
+.IconButton_mode_primary.IconButton_appearance_themed {
+  @include button-appearances.buttonPrimaryThemed('IconButton', true)
 }
-.IconButton_mode_secondary.IconButton_appearance_accent {
-  // @include button-appearances.buttonSecondaryAccent('IconButton', true)
+.IconButton_mode_secondary.IconButton_appearance_themed {
+  @include button-appearances.buttonSecondaryThemed('IconButton', true)
 }
-.IconButton_mode_tertiary.IconButton_appearance_accent {
-  // @include button-appearances.buttonTertiaryAccent('IconButton', true);
+.IconButton_mode_tertiary.IconButton_appearance_themed {
+  @include button-appearances.buttonTertiaryThemed('IconButton', true);
 }
-.IconButton_mode_link.IconButton_appearance_accent {
-  // @include button-appearances.buttonLinkAccent('IconButton', true);
+.IconButton_mode_link.IconButton_appearance_themed {
+  @include button-appearances.buttonLinkThemed('IconButton', true);
 }
 
 // [Properties] Negative appearances
@@ -113,6 +113,20 @@
 }
 .IconButton_mode_link.IconButton_appearance_neutral {
   @include button-appearances.buttonLinkNeutral('IconButton', true);
+}
+
+// [Properties] Neutral themed appearances
+.IconButton_mode_primary.IconButton_appearance_neutral-themed {
+  @include button-appearances.buttonPrimaryNeutralThemed('IconButton', true)
+}
+.IconButton_mode_secondary.IconButton_appearance_neutral-themed {
+  @include button-appearances.buttonSecondaryNeutralThemed('IconButton', true)
+}
+.IconButton_mode_tertiary.IconButton_appearance_neutral-themed {
+  @include button-appearances.buttonTertiaryNeutralThemed('IconButton', true);
+}
+.IconButton_mode_link.IconButton_appearance_neutral-themed {
+  @include button-appearances.buttonLinkNeutralThemed('IconButton', true);
 }
 
 // [Properties] Contrast static appearances

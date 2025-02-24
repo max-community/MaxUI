@@ -23,7 +23,7 @@ const meta = {
   },
   args: {
     mode: 'primary',
-    appearance: 'accent',
+    appearance: 'themed',
     size: 'medium',
     disabled: false,
     loading: false,

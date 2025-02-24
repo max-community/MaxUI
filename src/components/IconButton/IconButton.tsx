@@ -12,7 +12,7 @@ import styles from './IconButton.module.scss';
 
 export type IconButtonSize = 'small' | 'medium' | 'large';
 export type IconButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
-export type IconButtonAppearance = 'accent' | 'negative' | 'neutral' | 'contrast-static';
+export type IconButtonAppearance = 'themed' | 'negative' | 'neutral' | 'neutral-themed' | 'contrast-static';
 export type IconButtonInnerElementKey = 'content' | 'spinnerContainer' | 'spinner';
 
 export interface IconButtonProps extends ComponentProps<'button'>, AsChildProp {
@@ -34,7 +34,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props,
     asChild = false,
     size = 'medium',
     mode = 'primary',
-    appearance = 'accent',
+    appearance = 'themed',
     ...rest
   } = props;
 
