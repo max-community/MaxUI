@@ -17,7 +17,9 @@ const meta = {
   args: {
     children: 'Button',
     icon: <Icon24Placeholder />,
-    onClick: fn()
+    onClick: fn(),
+    appearance: 'default',
+    disabled: false
   },
   decorators: [
     (Story) => (
