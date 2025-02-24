@@ -4,6 +4,7 @@ import { type ComponentProps, forwardRef, type ReactNode } from 'react';
 
 import { getSubtree, hasReactNode } from '../../helpers';
 import { type AsChildProp, type InnerClassNamesProp } from '../../types';
+import { EllipsisText } from '../EllipsisText';
 import { Tappable } from '../Tappable';
 import styles from './ToolButton.module.scss';
 
@@ -57,9 +58,13 @@ export const ToolButton = forwardRef<HTMLButtonElement, ToolButtonProps>((props,
       {hasReactNode(children) && (
         <Slottable>
           {getSubtree({ asChild, children }, (children) => (
-            <div key="subtree-container" className={clsx(styles.ToolButton__label, innerClassNames?.label)}>
+            <EllipsisText
+              key="subtree-container"
+              maxLines={1}
+              className={clsx(styles.ToolButton__label, innerClassNames?.label)}
+            >
               {children}
-            </div>
+            </EllipsisText>
           ))}
         </Slottable>
       )}

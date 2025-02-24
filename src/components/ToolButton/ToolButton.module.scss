@@ -49,4 +49,6 @@
 // [Parts] Label
 .ToolButton__label {
   @include typography.labelLarge;
+
+  max-width: 100%;
 }
