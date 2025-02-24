@@ -9,7 +9,7 @@ import { EllipsisText } from '../EllipsisText';
 import { Ripple } from '../Ripple';
 import { Spinner } from '../Spinner';
 import styles from './Button.module.scss';
-import { getButtonSpinnerAppearance, getButtonSpinnerSize } from './helpers';
+import { getButtonSpinnerAppearance, getButtonSpinnerSize, injectButtonIndicator } from './helpers';
 
 export type ButtonSize = 'small' | 'medium' | 'large';
 export type ButtonMode = 'primary' | 'secondary' | 'tertiary' | 'link';
@@ -31,13 +31,13 @@ export interface ButtonProps extends ComponentProps<'button'>, AsChildProp {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forwardedRef) => {
   const {
     className,
-    disabled,
     iconBefore,
     iconAfter,
     indicator,
     children,
     onClick,
     loading,
+    disabled = false,
     asChild = false,
     innerClassNames,
     stretched = false,
@@ -111,7 +111,12 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, forward
 
       {hasReactNode(indicator) && (
         <span className={clsx(styles.Button__indicator, innerClassNames?.indicator)}>
-          {indicator}
+          {injectButtonIndicator(
+            indicator,
+            appearance,
+            mode,
+            disabled
+          )}
         </span>
       )}
 
