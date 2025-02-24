@@ -5,12 +5,12 @@
 
 // [Parts]
 .Switch__toggle {
-  background-color: var(--OneMe-Switch__toggle_background);
-  padding-left: var(--OneMe-Switch__toggle_paddingX);
-  padding-right: var(--OneMe-Switch__toggle_paddingX);
-  width: var(--OneMe-Switch__toggle_width);
-  height: var(--OneMe-Switch__toggle_height);
-  border: var(--OneMe-Switch__toggle_border) var(--OneMe-Switch__toggle_borderColor);
+  background-color: var(--MaxUi-Switch__toggle_background);
+  padding-left: var(--MaxUi-Switch__toggle_paddingX);
+  padding-right: var(--MaxUi-Switch__toggle_paddingX);
+  width: var(--MaxUi-Switch__toggle_width);
+  height: var(--MaxUi-Switch__toggle_height);
+  border: var(--MaxUi-Switch__toggle_border) var(--MaxUi-Switch__toggle_borderColor);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -19,11 +19,11 @@
 }
 
 .Switch__thumb {
-  width: var(--OneMe-Switch__thumb_size);
-  height: var(--OneMe-Switch__thumb_size);
-  background-color: var(--OneMe-Switch__thumb_background);
-  transform: translateX(var(--OneMe-Switch__thumb_offset)) scale(var(--OneMe-Switch__thumb_scale, 1));
-  box-shadow: var(--OneMe-Switch__thumb_shadow);
+  width: var(--MaxUi-Switch__thumb_size);
+  height: var(--MaxUi-Switch__thumb_size);
+  background-color: var(--MaxUi-Switch__thumb_background);
+  transform: translateX(var(--MaxUi-Switch__thumb_offset)) scale(var(--MaxUi-Switch__thumb_scale, 1));
+  box-shadow: var(--MaxUi-Switch__thumb_shadow);
   transition: .1s;
   border-radius: 100%;
   display: block;
@@ -45,49 +45,49 @@
 
 // [Properties] IOS styles
 .Switch_platform_ios {
-  --OneMe-Switch__toggle_background: var(--background-accent-neutral-fade);
-  --OneMe-Switch__toggle_paddingX: 2px;
-  --OneMe-Switch__toggle_width: 51px;
-  --OneMe-Switch__toggle_height: 31px;
-  --OneMe-Switch__thumb_size: 27px;
-  --OneMe-Switch__thumb_offset: 0;
-  --OneMe-Switch__thumb_shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
-  --OneMe-Switch__thumb_background: var(--icon-contrast-static);
+  --MaxUi-Switch__toggle_background: var(--background-accent-neutral-fade);
+  --MaxUi-Switch__toggle_paddingX: 2px;
+  --MaxUi-Switch__toggle_width: 51px;
+  --MaxUi-Switch__toggle_height: 31px;
+  --MaxUi-Switch__thumb_size: 27px;
+  --MaxUi-Switch__thumb_offset: 0;
+  --MaxUi-Switch__thumb_shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+  --MaxUi-Switch__thumb_background: var(--icon-contrast-static);
 }
 .Switch_platform_ios:has(.Switch__input:checked) {
-  --OneMe-Switch__toggle_background: var(--background-accent-themed);
-  --OneMe-Switch__thumb_offset: 20px;
+  --MaxUi-Switch__toggle_background: var(--background-accent-themed);
+  --MaxUi-Switch__thumb_offset: 20px;
 }
 .Switch_platform_ios:has(.Switch__input:disabled:checked) {
-  --OneMe-Switch__toggle_background: var(--states-background-disabled-themed);
+  --MaxUi-Switch__toggle_background: var(--states-background-disabled-themed);
 }
 .Switch_platform_ios:has(.Switch__input:disabled) {
-  --OneMe-Switch__toggle_background: var(--states-background-disabled-neutral-fade);
+  --MaxUi-Switch__toggle_background: var(--states-background-disabled-neutral-fade);
 }
 
 // [Properties] Android styles
 .Switch_platform_android {
-  --OneMe-Switch__toggle_paddingX: 4px;
-  --OneMe-Switch__toggle_width: 52px;
-  --OneMe-Switch__toggle_height: 32px;
-  --OneMe-Switch__toggle_border: 2px solid;
-  --OneMe-Switch__toggle_borderColor: var(--stroke-separator-primary);
-  --OneMe-Switch__thumb_size: 20px;
-  --OneMe-Switch__thumb_offset: 0;
-  --OneMe-Switch__thumb_background: var(--icon-tertiary);
+  --MaxUi-Switch__toggle_paddingX: 4px;
+  --MaxUi-Switch__toggle_width: 52px;
+  --MaxUi-Switch__toggle_height: 32px;
+  --MaxUi-Switch__toggle_border: 2px solid;
+  --MaxUi-Switch__toggle_borderColor: var(--stroke-separator-primary);
+  --MaxUi-Switch__thumb_size: 20px;
+  --MaxUi-Switch__thumb_offset: 0;
+  --MaxUi-Switch__thumb_background: var(--icon-tertiary);
 }
 .Switch_platform_android:has(.Switch__input:checked) {
-  --OneMe-Switch__toggle_background: var(--background-accent-themed);
-  --OneMe-Switch__thumb_background: var(--icon-contrast-static);
-  --OneMe-Switch__toggle_borderColor: var(--background-accent-themed);
-  --OneMe-Switch__thumb_scale: 1.2;
-  --OneMe-Switch__thumb_offset: 20px;
+  --MaxUi-Switch__toggle_background: var(--background-accent-themed);
+  --MaxUi-Switch__thumb_background: var(--icon-contrast-static);
+  --MaxUi-Switch__toggle_borderColor: var(--background-accent-themed);
+  --MaxUi-Switch__thumb_scale: 1.2;
+  --MaxUi-Switch__thumb_offset: 20px;
 }
 .Switch_platform_android:has(.Switch__input:disabled:checked) {
-  --OneMe-Switch__toggle_background: var(--states-background-disabled-themed);
-  --OneMe-Switch__toggle_borderColor: transparent;
+  --MaxUi-Switch__toggle_background: var(--states-background-disabled-themed);
+  --MaxUi-Switch__toggle_borderColor: transparent;
 }
 .Switch_platform_android:has(.Switch__input:disabled:not(:checked)) {
-  --OneMe-Switch__toggle_background: var(--states-background-disabled-neutral-fade);
-  --OneMe-Switch__thumb_background: var(--icon-quaternary);
+  --MaxUi-Switch__toggle_background: var(--states-background-disabled-neutral-fade);
+  --MaxUi-Switch__thumb_background: var(--icon-quaternary);
 }

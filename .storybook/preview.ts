@@ -18,7 +18,7 @@ const preview: Preview = {
   initialGlobals: {
     theme: 'light',
     platform: 'ios',
-    withOneMeUIWrapper: true
+    withMaxUiWrapper: true
   },
   globalTypes: {
     theme: {

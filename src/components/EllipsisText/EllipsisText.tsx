@@ -41,7 +41,7 @@ export const EllipsisText = forwardRef<HTMLDivElement, EllipsisTextProps>((props
       ref={forwardedRef}
       className={rootClassName}
       style={{
-        '--OneMe-EllipsisText_linesCount': maxLines,
+        '--MaxUi-EllipsisText_linesCount': maxLines,
         ...style
       } as CSSProperties}
       {...rest}

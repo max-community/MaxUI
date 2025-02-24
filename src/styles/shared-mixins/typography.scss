@@ -1,171 +1,187 @@
-@mixin titleLevel1 {
-  font-size: var(--size-title-1);
-  line-height: var(--height-title-1);
-  letter-spacing: var(--letter-spacing-title-1);
+@mixin display {
+  font-family: var(--family-accent);
+  font-size: var(--size-display);
+  line-height: var(--height-display);
+  letter-spacing: var(--letter-spacing-display);
   font-weight: 600;
 }
 
-@mixin titleLevel2 {
-  font-size: var(--size-title-2);
-  line-height: var(--height-title-2);
-  letter-spacing: var(--letter-spacing-title-2);
-  font-weight: 500;
-}
-
-@mixin titleLevel2Regular {
-  font-size: var(--size-title-2);
-  line-height: var(--height-title-2);
-  letter-spacing: var(--letter-spacing-title-2);
-  font-weight: 400;
-}
-
-@mixin titleLevel3 {
-  font-size: var(--size-title-3);
-  line-height: var(--height-title-3);
-  letter-spacing: var(--letter-spacing-title-3);
+@mixin headlineLargeStrong {
+  font-family: var(--family-base);
+  font-size: var(--size-headline-large);
+  line-height: var(--height-headline-large);
+  letter-spacing: var(--letter-spacing-headline-large);
   font-weight: 600;
 }
 
-@mixin titleLevel3Regular {
-  font-size: var(--size-title-3);
-  line-height: var(--height-title-3);
-  letter-spacing: var(--letter-spacing-title-3);
-  font-weight: 400;
+@mixin headlineMedium {
+  font-family: var(--family-base);
+  font-size: var(--size-headline-medium);
+  line-height: var(--height-headline-medium);
+  letter-spacing: var(--letter-spacing-headline-medium);
 }
 
-@mixin headlineLevel1 {
-  font-size: var(--size-headline-1);
-  line-height: var(--height-headline-1);
-  letter-spacing: var(--letter-spacing-headline-1);
+@mixin headlineMediumStrong {
+  @include headlineMedium;
+
   font-weight: 500;
 }
 
-@mixin headlineLevel2 {
-  font-size: var(--size-headline-2);
-  line-height: var(--height-headline-2);
-  letter-spacing: var(--letter-spacing-headline-2);
-  font-weight: 500;
+@mixin headlineSmall {
+  font-family: var(--family-base);
+  font-size: var(--size-headline-small);
+  line-height: var(--height-headline-small);
+  letter-spacing: var(--letter-spacing-headline-medium);
 }
+@mixin headlineSmallStrong {
+  @include headlineSmall;
 
-@mixin text {
-  font-size: var(--size-text);
-  line-height: var(--height-text);
-  letter-spacing: var(--letter-spacing-text);
-  font-weight: 400;
-}
-
-@mixin paragraph {
-  font-size: var(--size-paragraph);
-  line-height: var(--height-paragraph);
-  letter-spacing: var(--letter-spacing-paragraph);
-  font-weight: 400;
-}
-
-@mixin subhead {
-  font-size: var(--size-subhead);
-  line-height: var(--height-subhead);
-  letter-spacing: var(--letter-spacing-subhead);
-  font-weight: 400;
-}
-
-@mixin subheadMedium {
-  font-size: var(--size-subhead);
-  line-height: var(--height-subhead);
-  letter-spacing: var(--letter-spacing-subhead);
-  font-weight: 500;
-}
-
-@mixin footnote {
-  font-size: var(--size-footnote);
-  line-height: var(--height-footnote);
-  letter-spacing: var(--letter-spacing-footnote);
-  font-weight: 400;
-}
-
-@mixin footnoteMedium {
-  font-size: var(--size-footnote);
-  line-height: var(--height-footnote);
-  letter-spacing: var(--letter-spacing-footnote);
-  font-weight: 500;
-}
-
-@mixin footnoteCaps {
-  font-size: var(--size-footnote);
-  line-height: var(--height-footnote);
-  letter-spacing: var(--letter-spacing-footnote);
   font-weight: 600;
-  text-transform: uppercase;
 }
 
-@mixin captionLevel1 {
-  font-size: var(--size-caption-1);
-  line-height: var(--height-caption-1);
-  letter-spacing: var(--letter-spacing-caption-1);
-  font-weight: 400;
-}
-
-@mixin captionLevel1Medium {
-  font-size: var(--size-caption-1);
-  line-height: var(--height-caption-1);
-  letter-spacing: var(--letter-spacing-caption-1);
+@mixin titleLargeStrong {
+  font-family: var(--family-base);
+  font-size: var(--size-title-large);
+  line-height: var(--height-title-large);
+  letter-spacing: var(--letter-spacing-title-large);
   font-weight: 500;
 }
 
-@mixin captionLevel1Caps {
-  font-size: var(--size-caption-1);
-  line-height: var(--height-caption-1);
-  letter-spacing: var(--letter-spacing-caption-1);
+@mixin titleMediumStrong {
+  font-family: var(--family-base);
+  font-size: var(--size-title-medium);
+  line-height: var(--height-title-medium);
+  letter-spacing: var(--letter-spacing-title-medium);
+  font-weight: 500;
+}
+
+@mixin titleSmall {
+  font-family: var(--family-base);
+  font-size: var(--size-title-small);
+  line-height: var(--height-title-small);
+  letter-spacing: var(--letter-spacing-title-small);
+}
+
+@mixin titleSmallStrong {
+  @include titleSmall;
+
+  font-weight: 500;
+}
+
+@mixin bodyLarge {
+  font-family: var(--family-base);
+  font-size: var(--size-body-large);
+  line-height: var(--height-body-large);
+  letter-spacing: var(--letter-spacing-body-large);
+}
+
+@mixin bodyMedium {
+  font-family: var(--family-base);
+  font-size: var(--size-body-medium);
+  line-height: var(--height-body-medium);
+  letter-spacing: var(--letter-spacing-body-medium);
+}
+
+@mixin bodySmall {
+  font-family: var(--family-base);
+  font-size: var(--size-body-small);
+  line-height: var(--height-body-small);
+  letter-spacing: var(--letter-spacing-body-small);
+}
+
+@mixin bodySmallStrong {
+  @include bodySmall;
+
+  font-weight: 500;
+}
+
+@mixin bodySmallCaps {
+  @include bodySmall;
+
   font-weight: 600;
   text-transform: uppercase;
 }
 
-@mixin captionLevel2 {
-  font-size: var(--size-caption-2);
-  line-height: var(--height-caption-2);
-  letter-spacing: var(--letter-spacing-caption-2);
-  font-weight: 400;
+@mixin labelLarge {
+  font-family: var(--family-base);
+  font-size: var(--size-label-large);
+  line-height: var(--height-label-large);
+  letter-spacing: var(--letter-spacing-label-large);
 }
 
-@mixin captionLevel2Caps {
-  font-size: var(--size-caption-2);
-  line-height: var(--height-caption-2);
-  letter-spacing: var(--letter-spacing-caption-2);
+@mixin labelLargeStrong {
+  @include labelLarge;
+
+  font-weight: 500;
+}
+
+@mixin labelLargeCaps {
+  @include labelLarge;
+
   font-weight: 600;
   text-transform: uppercase;
 }
 
-@mixin captionLevel3 {
-  font-size: var(--size-caption-3);
-  line-height: var(--height-caption-3);
-  letter-spacing: var(--letter-spacing-caption-3);
+@mixin labelMedium {
+  font-family: var(--family-base);
+  font-size: var(--size-label-medium);
+  line-height: var(--height-label-medium);
+  letter-spacing: var(--letter-spacing-label-medium);
+}
+
+@mixin labelMediumStrong {
+  @include labelMedium;
+
+  font-weight: 600;
+}
+
+@mixin labelSmall {
+  font-family: var(--family-base);
+  font-size: var(--size-label-small);
+  line-height: var(--height-label-small);
+  letter-spacing: var(--letter-spacing-label-small);
+}
+
+@mixin labelSmallStrong {
+  @include labelSmall;
+
   font-weight: 500;
 }
 
-@mixin captionLevel3Caps {
-  font-size: var(--size-caption-3);
-  line-height: var(--height-caption-3);
-  letter-spacing: var(--letter-spacing-caption-3);
+@mixin labelSmallCaps {
+  @include labelSmall;
+
   font-weight: 600;
   text-transform: uppercase;
 }
 
-@mixin actionLevel1 {
-  font-size: var(--size-title-3);
-  line-height: var(--height-title-3);
-  letter-spacing: var(--letter-spacing-title-3);
+@mixin actionLarge {
+  font-family: var(--family-base);
+  font-size: var(--size-action-large);
+  line-height: var(--height-action-large);
+  letter-spacing: var(--letter-spacing-action-large);
   font-weight: 600;
 }
 
-@mixin actionLevel2 {
-  font-size: var(--size-headline-1);
-  line-height: var(--height-headline-1);
-  letter-spacing: var(--letter-spacing-headline-1);
+@mixin actionMedium {
+  font-family: var(--family-base);
+  font-size: var(--size-action-medium);
+  line-height: var(--height-action-medium);
+  letter-spacing: var(--letter-spacing-action-medium);
   font-weight: 500;
 }
 
-@mixin actionLevel3 {
-  font-size: var(--size-subhead);
-  line-height: var(--height-subhead);
-  letter-spacing: var(--letter-spacing-subhead);
+@mixin actionSmall {
+  font-family: var(--family-base);
+  font-size: var(--size-action-small);
+  line-height: var(--height-action-small);
+  letter-spacing: var(--letter-spacing-action-small);
   font-weight: 500;
+}
+
+@mixin actionLabel {
+  font-family: var(--family-base);
+  font-size: var(--size-action-label);
+  line-height: var(--height-action-label);
+  letter-spacing: var(--letter-spacing-action-label);
 }

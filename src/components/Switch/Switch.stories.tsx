@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Cell } from '../Cell';
+import { CellSimple } from '../CellSimple';
 import { Switch, type SwitchProps } from './Switch';
 
 const meta = {
@@ -36,7 +36,7 @@ export const WithCell: Story = {
   ],
   render: ({ ...args }) => {
     return (
-      <Cell
+      <CellSimple
         as="label"
         after={(
           <Switch

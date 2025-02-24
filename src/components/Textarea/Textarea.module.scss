@@ -7,7 +7,7 @@
   color: var(--text-primary);
 }
 
-// [Property] Disabled
+// [State] Disabled
 .Textarea_disabled {
   cursor: not-allowed;
 }
@@ -23,7 +23,7 @@
 // [Parts] Textarea
 .Textarea__textarea {
   @include reset-text-field.resetTextField;
-  @include typography.text;
+  @include typography.bodyLarge;
 
   padding: var(--spacing-size-xl);
   box-sizing: border-box;

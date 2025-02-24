@@ -2,16 +2,14 @@ import { type ReactNode } from 'react';
 
 import Icon24Placeholder from '../../../.storybook/assets/icons/icon-24-placeholder.svg';
 import {
-  Avatar, Button, Cell, CellAction,
+  Avatar, Button, CellAction,
   CellHeader, CellInput,
   CellList,
-  Container, Counter,
+  CellSimple, Container, Counter,
   Flex,
-  Footnote,
   Grid, IconButton,
   Panel, Switch,
-  Title,
-  ToolButton
+  ToolButton, Typography
 } from '../../components';
 import styles from './Profile.module.scss';
 
@@ -46,8 +44,8 @@ export const Profile = (): ReactNode => {
               direction="column"
               align="center"
             >
-              <Title variant="title1">Vadim Tregubenko</Title>
-              <Footnote className={styles.subsLabel}>1 подписчик</Footnote>
+              <Typography.Headline variant="large-strong">Vadim Tregubenko</Typography.Headline>
+              <Typography.Body variant="small" className={styles.subsLabel}>1 подписчик</Typography.Body>
             </Flex>
 
             <Grid
@@ -95,7 +93,7 @@ export const Profile = (): ReactNode => {
             mode="island"
             header={<CellHeader>О себе</CellHeader>}
           >
-            <Cell
+            <CellSimple
               height="compact"
               title="Frontend engineer 👨‍💻"
             />
@@ -114,7 +112,7 @@ export const Profile = (): ReactNode => {
           </CellList>
 
           <CellList mode="island">
-            <Cell
+            <CellSimple
               showChevron
               before={<Icon24Placeholder />}
               onClick={() => {}}
@@ -149,7 +147,7 @@ export const Profile = (): ReactNode => {
             placeholder="Укажите город"
           />
 
-          <Cell
+          <CellSimple
             as="label"
             title="Закрытый профиль"
             after={(

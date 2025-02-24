@@ -23,10 +23,10 @@
   }
 }
 .CellAction_mode_custom {
-  color: var(--OneMe-CellAction_color, var(--text-themed));
+  color: var(--MaxUi-CellAction_color, var(--text-themed));
 
   &.CellAction_disabled {
-    color: var(--OneMe-CellAction_color-disabled, var(--states-text-disabled-themed));
+    color: var(--MaxUi-CellAction_color-disabled, var(--states-text-disabled-themed));
   }
 }
 
@@ -52,7 +52,7 @@
 
 // [Parts] Content
 .CellAction__content {
-  @include typography.headlineLevel1;
+  @include typography.titleLargeStrong;
 
   display: flex;
   flex-direction: column;

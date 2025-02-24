@@ -6,8 +6,8 @@
 .Button {
   @include reset-clickable.resetClickable;
 
-  background-color: var(--OneMe-Button_background);
-  color: var(--OneMe-Button_foreground);
+  background-color: var(--MaxUi-Button_background);
+  color: var(--MaxUi-Button_foreground);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,14 +39,14 @@
 .Button_activeMode {
 
   &_ripple {
-    --Ripple_backgroundColor: var(--OneMe-Button_background-active);
+    --Ripple_backgroundColor: var(--MaxUi-Button_background-active);
   }
 
   &_highlight {
 
     &:active {
-      background-color: var(--OneMe-Button_background-active);
-      color: var(--OneMe-Button_foreground-active, var(--OneMe-Button_foreground));
+      background-color: var(--MaxUi-Button_background-active);
+      color: var(--MaxUi-Button_foreground-active, var(--MaxUi-Button_foreground));
     }
   }
 }
@@ -78,18 +78,18 @@
   @include button-sizes.buttonLargeSize;
 }
 
-// [Properties] Accent appearances
-.Button_mode_primary.Button_appearance_accent {
-  @include button-appearances.buttonPrimaryAccent('Button', true)
+// [Properties] Themed appearances
+.Button_mode_primary.Button_appearance_themed {
+  @include button-appearances.buttonPrimaryThemed('Button', true)
 }
-.Button_mode_secondary.Button_appearance_accent {
-  @include button-appearances.buttonSecondaryAccent('Button', true)
+.Button_mode_secondary.Button_appearance_themed {
+  @include button-appearances.buttonSecondaryThemed('Button', true)
 }
-.Button_mode_tertiary.Button_appearance_accent {
-  @include button-appearances.buttonTertiaryAccent('Button', true);
+.Button_mode_tertiary.Button_appearance_themed {
+  @include button-appearances.buttonTertiaryThemed('Button', true);
 }
-.Button_mode_link.Button_appearance_accent {
-  @include button-appearances.buttonLinkAccent('Button', true);
+.Button_mode_link.Button_appearance_themed {
+  @include button-appearances.buttonLinkThemed('Button', true);
 }
 
 // [Properties] Negative appearances
@@ -120,6 +120,20 @@
   @include button-appearances.buttonLinkNeutral('Button', true);
 }
 
+// [Properties] Neutral themed appearances
+.Button_mode_primary.Button_appearance_neutral-themed {
+  @include button-appearances.buttonPrimaryNeutralThemed('Button', true)
+}
+.Button_mode_secondary.Button_appearance_neutral-themed {
+  @include button-appearances.buttonSecondaryNeutralThemed('Button', true)
+}
+.Button_mode_tertiary.Button_appearance_neutral-themed {
+  @include button-appearances.buttonTertiaryNeutralThemed('Button', true);
+}
+.Button_mode_link.Button_appearance_neutral-themed {
+  @include button-appearances.buttonLinkNeutralThemed('Button', true);
+}
+
 // [Properties] Contrast static appearances
 .Button_mode_primary.Button_appearance_contrast-static {
   @include button-appearances.buttonPrimaryContrastStatic('Button', true)
@@ -140,15 +154,15 @@
   z-index: 1;
 
   .Button_size_small & {
-    @include typography.actionLevel3;
+    @include typography.actionSmall;
   }
 
   .Button_size_medium & {
-    @include typography.actionLevel2;
+    @include typography.actionMedium;
   }
 
   .Button_size_large & {
-    @include typography.actionLevel1;
+    @include typography.actionLarge;
   }
 }
 

@@ -1,17 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { CellInput, type CellInputProps } from './CellInput';
 
 const meta = {
   title: 'Common/CellInput',
   component: CellInput,
   argTypes: {
+    ...hideArgsControl(['innerClassNames']),
+
     before: { type: 'string' }
   },
   args: {
     before: 'First name',
     height: 'normal',
-    placeholder: 'Иван Иванов'
+    placeholder: 'Иван Иванов',
+    disabled: false
   },
   decorators: [
     (Story) => (

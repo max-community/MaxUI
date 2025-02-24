@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from '../Avatar';
-import { Cell } from '../Cell';
 import { CellList } from '../CellList';
-import { Paragraph } from '../Paragraph';
+import { CellSimple } from '../CellSimple';
+import { Typography } from '../Typography';
 import { Panel, type PanelProps } from './Panel';
 
 const meta = {
@@ -30,7 +30,7 @@ export const Playground: Story = {
   render: ({ ...args }) => {
     return (
       <Panel {...args}>
-        <Paragraph>Panel body</Paragraph>
+        <Typography.Body variant="medium">Panel body</Typography.Body>
       </Panel>
     );
   }
@@ -47,7 +47,7 @@ export const PrimaryExample: Story = {
     return (
       <Panel {...args}>
         <CellList>
-          <Cell
+          <CellSimple
             title="Igor Foxik"
             before={(
               <Avatar.Container size={40}>
@@ -57,7 +57,7 @@ export const PrimaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Vadim Tregubenko"
             before={(
               <Avatar.Container size={40}>
@@ -67,21 +67,11 @@ export const PrimaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Ira Grishina"
             before={(
               <Avatar.Container size={40}>
                 <Avatar.Image src="https://sun9-22.userapi.com/s/v1/ig2/GIx9ixLIVcH_Cu_E5hwjYXqHSDGEO6XkE33wfKgVvs1c33VaMO24otPJ_nrgWHt7dOP1B3kWEYxoIezkFxu9ygxZ.jpg?quality=95&crop=100,579,1010,1010&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=100x100" />
-              </Avatar.Container>
-            )}
-            showChevron
-            onClick={() => {}}
-          />
-          <Cell
-            title="Misha Zubkov"
-            before={(
-              <Avatar.Container size={40}>
-                <Avatar.Image src="https://sun9-47.userapi.com/s/v1/ig2/-DYTYLapJ8r0r9wLZfAYI1OrgscIeYSwQd4o-xSzEmp0hFisghOOWRYkEwn-ZHguTPnTVvb5weq3kwAhlgPqAfWi.jpg?quality=95&crop=0,145,1800,1800&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&ava=1&cs=100x100" />
               </Avatar.Container>
             )}
             showChevron
@@ -104,7 +94,7 @@ export const SecondaryExample: Story = {
     return (
       <Panel {...args}>
         <CellList mode="island">
-          <Cell
+          <CellSimple
             title="Igor Foxik"
             before={(
               <Avatar.Container size={40}>
@@ -114,7 +104,7 @@ export const SecondaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Vadim Tregubenko"
             before={(
               <Avatar.Container size={40}>
@@ -124,21 +114,11 @@ export const SecondaryExample: Story = {
             showChevron
             onClick={() => {}}
           />
-          <Cell
+          <CellSimple
             title="Ira Grishina"
             before={(
               <Avatar.Container size={40}>
                 <Avatar.Image src="https://sun9-22.userapi.com/s/v1/ig2/GIx9ixLIVcH_Cu_E5hwjYXqHSDGEO6XkE33wfKgVvs1c33VaMO24otPJ_nrgWHt7dOP1B3kWEYxoIezkFxu9ygxZ.jpg?quality=95&crop=100,579,1010,1010&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&cs=100x100" />
-              </Avatar.Container>
-            )}
-            showChevron
-            onClick={() => {}}
-          />
-          <Cell
-            title="Misha Zubkov"
-            before={(
-              <Avatar.Container size={40}>
-                <Avatar.Image src="https://sun9-47.userapi.com/s/v1/ig2/-DYTYLapJ8r0r9wLZfAYI1OrgscIeYSwQd4o-xSzEmp0hFisghOOWRYkEwn-ZHguTPnTVvb5weq3kwAhlgPqAfWi.jpg?quality=95&crop=0,145,1800,1800&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440&ava=1&cs=100x100" />
               </Avatar.Container>
             )}
             showChevron

@@ -1,13 +1,13 @@
 import { type Decorator } from '@storybook/react';
 
-import { OneMeUI } from '../../src';
+import { MaxUi } from '../../src';
 
 export const withConfigProvider: Decorator = (Story, context) => {
-  if (!context.globals.withOneMeUIWrapper) return <Story />;
+  if (!context.globals.withMaxUiWrapper) return <Story />;
 
   return (
-    <OneMeUI platform={context.globals.platform} colorScheme={context.globals.theme}>
+    <MaxUi platform={context.globals.platform} colorScheme={context.globals.theme}>
       <Story />
-    </OneMeUI>
+    </MaxUi>
   );
 };

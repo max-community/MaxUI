@@ -1,17 +1,37 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
+import Icon16Placeholder from '../../../.storybook/assets/icons/icon-16-placeholder.svg';
+import { hideArgsControl } from '../../../.storybook/shared/args-manager';
 import { Avatar } from '../Avatar';
-import { Cell } from '../Cell';
 import { CellList } from '../CellList';
+import { CellSimple } from '../CellSimple';
 import { Panel } from '../Panel';
+import { Typography } from '../Typography';
 import { CellHeader, type CellHeaderProps } from './CellHeader';
 
 const meta = {
   title: 'Common/CellHeader',
   component: CellHeader,
+  argTypes: {
+    ...hideArgsControl(['innerClassNames']),
+
+    after: {
+      options: [0, 1, 2],
+      mapping: [
+        undefined,
+        <Typography.Action key="text" variant="small">Some action</Typography.Action>,
+        <Icon16Placeholder key="icon" />
+      ],
+      control: {
+        type: 'select',
+        labels: ['None', 'Text', 'Icon']
+      }
+    }
+  },
   args: {
     children: 'Пользователь',
-    titleStyle: 'caps'
+    titleStyle: 'caps',
+    fullWidth: false
   },
   decorators: [
     (Story) => (
@@ -34,7 +54,7 @@ export const Playground: Story = {
         header={<CellHeader {...args} />}
         mode="island"
       >
-        <Cell
+        <CellSimple
           title="Vadim Tregubenko"
           before={(
             <Avatar.Container size={40}>

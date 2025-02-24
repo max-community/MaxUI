@@ -5,17 +5,17 @@ $squircleMaskUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
 .AvatarContainer {
   @include reset-clickable.resetClickable;
 
-  width: var(--OneMe-AvatarContainer_size);
-  height: var(--OneMe-AvatarContainer_size);
+  width: var(--MaxUi-AvatarContainer_size);
+  height: var(--MaxUi-AvatarContainer_size);
   position: relative;
   display: block;
 }
 
 // [Properties] Forms
 .AvatarContainer_form_circle .AvatarContainer__content {
-  --OneMe-AvatarContainer__content_radius: 100%;
+  --MaxUi-AvatarContainer__content_radius: 100%;
 
-  border-radius: var(--OneMe-AvatarContainer__content_radius);
+  border-radius: var(--MaxUi-AvatarContainer__content_radius);
 }
 .AvatarContainer_form_squircle .AvatarContainer__content {
   mask-image: url($squircleMaskUrl);
@@ -30,6 +30,7 @@ $squircleMaskUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
   height: 100%;
   display: flex;
   overflow: hidden;
+  position: relative;
 }
 
 // [Parts] Overlay

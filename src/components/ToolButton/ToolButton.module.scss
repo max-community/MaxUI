@@ -8,9 +8,28 @@
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-size-xl) var(--spacing-size-xl);
-  background-color: var(--background-card);
   border-radius: var(--size-border-radius-action-medium);
   width: 100%;
+}
+
+// [Properties] Modes
+.ToolButton_appearance_default {
+  background-color: var(--background-surface-card);
+  color: var(--text-primary);
+
+  &.ToolButton_disabled {
+    background-color: var(--states-background-disabled-card);
+    color: var(--states-text-disabled-primary);
+  }
+}
+.ToolButton_appearance_secondary {
+  background-color: var(--background-accent-neutral-fade);
+  color: var(--text-primary);
+
+  &.ToolButton_disabled {
+    background-color: var(--states-background-disabled-neutral-fade);
+    color: var(--states-text-disabled-primary);
+  }
 }
 
 // [Property] With label
@@ -29,5 +48,7 @@
 
 // [Parts] Label
 .ToolButton__label {
-  @include typography.captionLevel1;
+  @include typography.labelLarge;
+
+  max-width: 100%;
 }

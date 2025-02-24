@@ -1,8 +1,8 @@
 .Dot {
-  --OneMe-Dot_size: 6px;
+  --MaxUi-Dot_size: 6px;
 
-  width: var(--OneMe-Dot_size);
-  height: var(--OneMe-Dot_size);
+  width: var(--MaxUi-Dot_size);
+  height: var(--MaxUi-Dot_size);
   display: flex;
   border-radius: 100%;
 }
@@ -21,5 +21,5 @@
   background-color: var(--background-accent-negative);
 }
 .Dot_appearance_inherit {
-  background-color: var(--OneMe-external_background, var(--background-accent-themed));
+  background-color: var(--MaxUi-external_background, var(--background-accent-themed));
 }

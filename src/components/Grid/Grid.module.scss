@@ -1,6 +1,6 @@
 .Grid {
-  row-gap: var(--OneMe-Grid_gapY);
-  column-gap: var(--OneMe-Grid_gapX);
-  grid-template-columns: repeat(var(--OneMe-Grid_cols), minmax(0, 1fr));
-  grid-template-rows: repeat(var(--OneMe-Grid_rows), minmax(0, 1fr));
+  row-gap: var(--MaxUi-Grid_gapY);
+  column-gap: var(--MaxUi-Grid_gapX);
+  grid-template-columns: repeat(var(--MaxUi-Grid_cols), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--MaxUi-Grid_rows), minmax(0, 1fr));
 }

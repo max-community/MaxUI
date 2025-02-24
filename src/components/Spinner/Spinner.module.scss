@@ -5,34 +5,37 @@
 
 // [Properties] Appearances
 .Spinner_appearance_primary {
-  --OneMe-Spinner_gradient-from: var(--gradients-loading-icon-primary-transparrent);
-  --OneMe-Spinner_gradient-to: var(--gradients-loading-icon-primary-filled);
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-primary-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-primary-filled);
 }
 .Spinner_appearance_themed {
-  --OneMe-Spinner_gradient-from: var(--gradients-loading-icon-themed-transparrent);
-  --OneMe-Spinner_gradient-to: var(--gradients-loading-icon-themed-filled);
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-themed-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-themed-filled);
 }
 .Spinner_appearance_primary-static {
-  --OneMe-Spinner_gradient-from: var(--gradients-loading-icon-primary-static-transparrent);
-  --OneMe-Spinner_gradient-to: var(--gradients-loading-icon-primary-static-filled);
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-primary-static-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-primary-static-filled);
 }
 .Spinner_appearance_contrast {
-  --OneMe-Spinner_gradient-from: var(--gradients-loading-icon-contrast-transparrent);
-  --OneMe-Spinner_gradient-to: var(--gradients-loading-icon-contrast-filled);
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-contrast-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-contrast-filled);
 }
 .Spinner_appearance_contrast-static {
-  --OneMe-Spinner_gradient-from: var(--gradients-loading-icon-contrast-static-transparrent);
-  --OneMe-Spinner_gradient-to: var(--gradients-loading-icon-contrast-static-filled);
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-contrast-static-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-contrast-static-filled);
 }
 .Spinner_appearance_negative {
-  --OneMe-Spinner_gradient-from: var(--gradients-loading-icon-negative-transparrent);
-  --OneMe-Spinner_gradient-to: var(--gradients-loading-icon-negative-filled);
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-negative-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-negative-filled);
+}
+.Spinner_appearance_neutral-themed {
+  --MaxUi-Spinner_gradient-from: var(--gradients-loading-icon-neutral-themed-transparent);
+  --MaxUi-Spinner_gradient-to: var(--gradients-loading-icon-neutral-themed-filled);
 }
 
 // [Parts] Spinner svg
 .Spinner__spinner {
-  background-image: conic-gradient(var(--OneMe-Spinner_gradient-from) 15%, var(--OneMe-Spinner_gradient-to) 100%);
-  display: block;
+  background: conic-gradient(var(--MaxUi-Spinner_gradient-from) 15%, var(--MaxUi-Spinner_gradient-to) 100%);
   width: inherit;
   height: inherit;
 }
