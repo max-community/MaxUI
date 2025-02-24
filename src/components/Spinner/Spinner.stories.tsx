@@ -8,7 +8,8 @@ const meta = {
   title: 'Common/Spinner',
   component: Spinner,
   args: {
-    appearance: 'primary'
+    appearance: 'primary',
+    size: 20
   },
   decorators: [
     (Story, context) => {

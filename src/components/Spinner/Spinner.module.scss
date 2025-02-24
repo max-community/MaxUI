@@ -35,8 +35,7 @@
 
 // [Parts] Spinner svg
 .Spinner__spinner {
-  background-image: conic-gradient(var(--MaxUi-Spinner_gradient-from) 15%, var(--MaxUi-Spinner_gradient-to) 100%);
-  display: block;
+  background: conic-gradient(var(--MaxUi-Spinner_gradient-from) 15%, var(--MaxUi-Spinner_gradient-to) 100%);
   width: inherit;
   height: inherit;
 }
